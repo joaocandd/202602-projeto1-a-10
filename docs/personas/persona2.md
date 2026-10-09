@@ -1,4 +1,4 @@
-# Persona 1 — Marlene Aparecida | Caso Bulbe Energia
+# Persona 2 — Marlene Aparecida | Caso Bulbe Energia
 
 > **Persona fictícia com dores fundamentadas em dados internos da Bulbe e em fontes públicas.** Dados internos informados pela Bulbe ao time; fontes públicas consultadas em **08 e 09/10/2026** (site da Bulbe e reclamações do Reclame Aqui levantadas na pesquisa da Persona 6). Os dados não permitem inferir idade, renda ou profissão dos consumidores reais. [Pesquisa da Persona 6 e fontes](persona-6-tatiane-validada.md).
 
