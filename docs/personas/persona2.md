@@ -54,46 +54,6 @@
 
 ---
 
-# Persona 2 — Helena | Caso Bulbe Energia
 
-> **Persona fictícia com dores fundamentadas em dados internos da Bulbe e em fontes públicas.** Dados internos informados pela Bulbe ao time; reclamações do Reclame Aqui levantadas na pesquisa da Persona 6, em **09/10/2026**. Os dados não permitem inferir idade, renda ou profissão dos consumidores reais. [Pesquisa da Persona 6 e fontes](persona-6-tatiane-validada.md).
-
-## Persona
-
-| Campo | Descrição |
-| --- | --- |
-| **Nome e idade** | **Helena, 63 anos** *(fictícios)*. |
-| **Contexto** | Aposentada, mora em Contagem (MG) e paga cerca de R$ 200 por mês de luz. Usa pouco o e-mail e não costuma instalar aplicativos *(cenário hipotético)*. |
-| **Objetivo** | Pagar menos na conta de luz sem ter que lidar com burocracia ou tecnologia. |
-| **Como conheceu a Bulbe** | Por indicação de uma amiga da igreja; aderiu pelo celular com a ajuda do filho *(hipótese de jornada)*. |
-| **Medos e dúvidas** | “E se a fatura não chegar e eu ficar devendo sem saber?”; “Vou ter que pagar duas contas, a da Cemig e a da Bulbe?”; “Essa mensagem de número desconhecido é golpe?”; “Se algo der errado, vou conseguir resolver sozinha?” |
-| **Canais** | WhatsApp como principal canal, celular para acessar o site com ajuda do filho e telefone para falar com atendimento; raramente usa e-mail e quase nunca o aplicativo *(hipótese)*. |
-| **Principal necessidade** | **Receber e pagar a fatura com segurança, sem depender de tecnologia**: contato confirmado, fatura que chega por um canal que ela usa e confirmação de que está tudo certo. |
-
-**Frase representativa (inventada):** “Não entendo dessas coisas de aplicativo. Só quero saber que a conta chegou, quanto eu pago e que está tudo certo.”
-
-## Mapa de jornada
-
-| Fase | Ações do usuário | Pontos de contato | Pensamentos | Emoção | Dor / evidência | Oportunidade |
-| --- | --- | --- | --- | --- | --- | --- |
-| **1. Descoberta** | Ouve a indicação de uma amiga e pede ao filho para ver o site da Bulbe. | Boca a boca, site, landing page. | “Se a minha amiga economiza, vai ver que é de confiança.” | 🙂 Curiosa | Chega sem entender como o produto funciona; a falta de entendimento é o principal motivo de churn, com **27,7%** (acumulado desde 2022). | **Explicar em poucas linhas** como a Bulbe funciona e de onde vem o desconto. |
-| **2. Adesão** | Com a ajuda do filho, envia a conta de luz e aceita o termo. | Site, WhatsApp. | “O filho disse que está certo, mas o que acontece agora?” | 😬 Insegura | Depois do “sim”, fica sem sinal de que o processo está andando e não sabe quais são os próximos passos. | **Linha do tempo pós-adesão** e tela “Confirme seus contatos” (WhatsApp e e-mail). |
-| **3. Espera pela conexão** | Aguarda a qualificação e continua pagando a Cemig. | WhatsApp, telefone. | “Já foi? Por que ainda recebo a conta da Cemig?” | 😟 Ansiosa | Clientes chegaram a ficar **20 dias sem nenhuma comunicação**; a queda do robô da Cemig atrasou a qualificação. Relato de demora de ativação em [RA 256931273](https://www.reclameaqui.com.br/bulbe-energia/propaganda-enganosa-na-oferta-demora-de-4-meses-para-ativacao-e-recusa-de-cancelamento-imediato_Ae8K1Sz0vd4fmCXX/). | **Status da conexão** e aviso proativo em caso de atraso. |
-| **4. Chegada da 1ª fatura** | Procura a fatura no WhatsApp e não encontra; pede ajuda ao filho. | WhatsApp, e-mail, app. | “Cadê a minha conta? Será que vão me cobrar sem eu ver?” | 😰 Preocupada | Cerca de **20% das mensagens de WhatsApp falham** e a fatura vai por esse canal; sem o contato confirmado, ela pode nunca receber. Falta de fatura relatada em [RA 258725025](https://www.reclameaqui.com.br/bulbe-energia/bulbe-nao-emite-fatura-e-contato-via-telefone-e-whatsapp-nao-resolve-o-problema_DsQGgdYEXSud5HYc/). | **Confirmação de contatos**, reenvio da fatura por outro canal e fatura explicada campo a campo. |
-| **5. Pagamento** | Decide se paga e como pagar; prefere pagar com alguém por perto. | PIX, boleto, atendimento. | “Não quero atrasar, mas não sei se esse boleto é de verdade.” | 😕 Insegura | Sem lembrete e com o susto de receber duas contas, o pagamento fica para depois; a inadimplência da 1ª fatura é de **32,4%**. Dúvidas sobre cobrança duplicada em [RA 237401393](https://www.reclameaqui.com.br/bulbe-energia/cobranca-duplicada-e-indevida-na-fatura-de-energia-eletrica_Q1gkPNQwxewVI-Du/). | **Lembrete de vencimento**, PIX em destaque (+50% de adoção) e passo a passo para pagar com segurança. |
-| **6. 2º mês** | Compara as contas da Cemig e da Bulbe e decide se continua. | Fatura, WhatsApp, atendimento. | “Será que valeu a pena? Não vejo o quanto economizei.” | 🤔 Incerta | Pode não perceber claramente a economia gerada e desistir do serviço (churn pós 1ª fatura de **2,14% ao mês** em 2026). Desconto efetivo contestado em [RA 258604831](https://www.reclameaqui.com.br/bulbe-energia/contratei-15-de-desconto-recebi-12-e-002-e-a-empresa-nega-reembolso-solicito-reembolso-de-r-34176_K3b_MQzSqQEduDv6/). | **Painel de economia acumulada** e resumo mensal da economia. |
-
-### Evidências e limites
-
-- Os números internos (**27,7%** de churn por falta de entendimento desde 2022, **20 dias** sem comunicação, queda do robô da Cemig, cerca de **20%** de falhas no WhatsApp, **32,4%** de inadimplência na 1ª fatura, **+50%** de adoção do PIX e **2,14% ao mês** de churn pós 1ª fatura em 2026) foram informados pela Bulbe ao time e não foram verificados de forma independente.
-- As reclamações citadas vêm do levantamento da Persona 6 no Reclame Aqui em 09/10/2026. O medo de não conseguir resolver sozinha também aparece em [RA 261030421](https://www.reclameaqui.com.br/bulbe-energia/nao-consigo-contato-com-a-bullbe-por-telefone-ou-zap_YgrW-J4gWwD-ZSWE/), caso posteriormente resolvido. São **classificações de reclamações**, não taxas da base de clientes.
-- Idade, renda e dependência do filho são hipóteses. A persona precisa ser validada com entrevistas e testes com clientes acima de 60 anos que aderiram por indicação.
-
-### Issues sugeridas no GitHub Projects (`oportunidade`)
-
-1. `OP13 Confirmar os contatos (WhatsApp e e-mail) na adesão`.
-2. `OP14 Reenviar a fatura por outro canal quando o WhatsApp falhar`.
-3. `OP15 Avisar proativamente sobre atraso na conexão`.
-4. `OP16 Explicar a fatura campo a campo`.
 
 Também reforça as issues `OP01`, `OP07`, `OP10` e `OP11` da Persona 1.
