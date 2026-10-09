@@ -1,4 +1,4 @@
-# Persona 6 — Tatiane Ferreira | Caso Bulbe Energia
+# Persona 1 — Tatiane Ferreira | Caso Bulbe Energia
 
 > **Persona fictícia com dores fundamentadas em reclamações públicas.** Pesquisa documental realizada em **09/10/2026**; amostra intencional de **34 reclamações de 2026** e consulta aos filtros do Reclame Aqui. Os dados não permitem inferir idade, renda ou profissão dos consumidores reais. [Pesquisa completa e fontes](persona-6-tatiane-validada.md).
 
