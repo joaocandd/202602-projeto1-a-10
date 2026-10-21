@@ -1,0 +1,6 @@
+[US01] Prévia Didática da Primeira Fatura
+Épico: Cobrança e Faturamento | Prioridade: Alta
+Descrição: Como cliente prestes a pagar o primeiro mês, quero receber uma explicação prévia e didática sobre os valores antes da emissão, para reconhecer a legitimidade da cobrança da conta residual e não cancelar o serviço por achar indevido.
+Critérios de Aceitação:
+·       Dado que a cliente completou os 60 a 90 dias, Quando a primeira fatura estiver prestes a ser enviada, então um alerta proativo deve ser disparado apresentando um comparativo "Antes x Agora".
+·       A comunicação deve instruir claramente a usuária a pagar  a fatura e validar tecnicamente que o somatório demonstra a economia prometida, baseando-se em dados calculados do sistema.
