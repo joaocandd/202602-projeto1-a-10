@@ -1,0 +1,3 @@
+[US03] · Reenvio da fatura e agendamento
+Descrição: Como usuário, quero solicitar o reenvio da fatura de forma automatizada ou pedir uma ligação em um período disponível, para recuperar o recebimento sem abrir um chamado genérico nem ficar esperando atendimento sem previsão.
+Validação no Reclame Aqui: Essa história é amplamente justificada pelo alto tempo de resposta da Bulbe no suporte humano. O relatório do Reclame Aqui aponta um tempo médio de resposta de 8 dias e 16 horas, o que é muito prejudicial quando se trata de cobrança ativa. Há relatos diretos de clientes que tiveram a fatura vencida e ficaram sem resposta da empresa. Criar um fluxo de reenvio autônomo ou agendamento preciso resolve a dor de ficar preso em filas de suporte sem prazo de resolução. 29,7  9.6
