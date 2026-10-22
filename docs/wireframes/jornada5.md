@@ -30,7 +30,7 @@
 
 ## Insight para o projeto
 
-**A principal oportunidade não é cobrar mais cedo nem mandar mais mensagens: é garantir que a fatura de todo mês chegue e que o cliente saiba onde ela está.** Quando o WhatsApp falha ou a fatura atrasa na emissão, o cliente só descobre perto do vencimento e não consegue falar com o suporte a tempo. O produto deve confirmar o contato, acompanhar a emissão e a entrega de cada fatura, avisar antes do vencimento quando algo falhar e permitir pagar com o PIX em texto, sem depender de PDF nem de atendimento. Essa é a base da **US05 — Status da fatura do mês e pagamento sem PDF**.
+**A principal oportunidade não é cobrar mais cedo nem mandar mais mensagens: é garantir que a fatura de todo mês chegue e que o cliente saiba onde ela está.** Quando o WhatsApp falha ou a fatura atrasa na emissão, o cliente só descobre perto do vencimento e não consegue falar com o suporte a tempo. O produto deve confirmar o contato, acompanhar a emissão e a entrega de cada fatura, avisar antes do vencimento quando algo falhar e permitir pagar com o PIX em texto, sem depender de PDF nem de atendimento. Essa persona dá origem às histórias **US03 — Confirmação ativa de contato telefônico** (fase 1), **US05 — Fatura leve com PIX copia e cola** (fases 3 e 4), **US06 — "Minha fatura não chegou", com reenvio e retorno agendado** (fases 4 a 7) e, junto com a Persona 2, **US07 — Reconhecer os canais oficiais e as mensagens legítimas da Bulbe** (medos da persona).
 
 ### Evidências e limites
 
