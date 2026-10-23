@@ -13,33 +13,24 @@ Validação no Reclame Aqui: O relatório de análise de reclamações destaca f
 Descrição: Como usuário, quero solicitar o reenvio da fatura de forma automatizada ou pedir uma ligação em um período disponível, para recuperar o recebimento sem abrir um chamado genérico nem ficar esperando atendimento sem previsão.
 Validação no Reclame Aqui: Essa história é amplamente justificada pelo alto tempo de resposta da Bulbe no suporte humano. O relatório do Reclame Aqui aponta um tempo médio de resposta de 8 dias e 16 horas, o que é muito prejudicial quando se trata de cobrança ativa. Há relatos diretos de clientes que tiveram a fatura vencida e ficaram sem resposta da empresa. Criar um fluxo de reenvio autônomo ou agendamento preciso resolve a dor de ficar preso em filas de suporte sem prazo de resolução. 29,7  9.6
 
-# [US05] · Fatura leve com PIX copia e cola
-ID: US06 · Persona: Rogério · Issues de origem: OP25 (parte de OP24) · Slides [APP]: 12 a 16
+# [US04] Mudança de endereço e continuidade do serviço
 
-User story: Como usuário, quero abrir por um link curto uma página leve com valor, vencimento e PIX copia e cola em texto, para pagar em dia sem baixar PDF nem instalar o app, mesmo com pouca memória e pouco plano de dados.
+Descrição: Como cliente da Bulbe que está mudando de endereço, quero verificar se posso continuar utilizando o serviço na minha nova residência e realizar a transferência de forma simples, entendendo os benefícios disponíveis, para não precisar cancelar o serviço por dificuldades no processo ou por não perceber valor na continuidade.
 
-Problema identificado
-·       Evidenciado: a fatura vai por WhatsApp, que falha [PPT 17]. Em 260543199, o cliente precisou abrir chamado para a 2ª via no 3º mês [RA-REL]. O app tem fatura, mas exige instalar e entrar [APP 12 a 16].
-·       Hipótese: que o PDF não abra por falta de memória ou internet (premissa da persona).
+Validação da oportunidade: O levantamento realizado identificou a mudança de endereço como a terceira maior causa de churn da Bulbe. A análise sugere que parte dos cancelamentos ocorre porque o cliente não percebe vantagens em continuar utilizando o serviço na nova residência ou encontra dificuldades durante o processo de alteração cadastral. Disponibilizar um fluxo digital para consulta de disponibilidade e transferência reduz a dependência de atendimento manual, diminui a fricção operacional e aumenta a percepção de valor ao evidenciar os benefícios e a economia que podem ser mantidos após a mudança. Além disso, o registro estruturado dos motivos de desistência permitirá validar as hipóteses de indisponibilidade do serviço, complexidade do processo e falta de valor percebido, gerando insumos para futuras ações de retenção.
 
-Evidências: [PPT 17, 19]; [RA-REL] (260543199); [APP 12 a 16] (PIX já existe dentro do app); [P5] fases 3 e 4.
 
-Solução proposta Página fatura.html (celular primeiro) que lê faturas.json: mês, "de/por", vencimento, status, botão grande "Copiar PIX" e o código visível em texto, sem PDF e sem imagens pesadas (só ícones SVG). Em atraso, o PIX continua disponível. Rodapé com o link de "Canais oficiais" (US08). No protótipo a página abre sem login; em produção o link precisaria ser individual e expirar (ver limitações).
 
-Critérios de aceitação
-1.      Dado uma fatura em aberto, quando abre a página em 360×640, então vê valor, vencimento e "Copiar PIX" sem rolar.
-2.      Dado que toca em "Copiar PIX", então o código vai para a área de transferência e aparece a confirmação "Código copiado"; se o navegador bloquear, o código está selecionável.
-3.      Dado uma fatura vencida, então o status "em atraso" aparece e o PIX continua disponível.
-4.      Dado que o JSON não carrega, então aparece uma mensagem com o canal de atendimento, nunca uma tela em branco.
-5.      Dado a página carregada, então não há PDF nem imagem raster além do logotipo.
-
-Prioridade: Alta. Demonstra de forma concreta a ponte entre "mensagem falhou" e "cliente consegue pagar", e é totalmente prototipável.
-
-Complexidade: baixa a média no protótipo; alta em produção (gerar PIX atualizado por fatura, link seguro por cliente, e o gatilho automático de reenvio por SMS quando o WhatsApp falha, que é backend).
-
-Dependências e limitações
-·       Uma página de fatura sem login expõe dados pessoais; produção exige link individual e com validade ou verificação de identidade.
-·       Não sabemos se hoje há reenvio automático por SMS ou RCS: pergunta para a Bulbe.
-·       Se a falha estiver na emissão (fatura não gerada), a página não ajuda; isso é problema de faturamento.
-
-Resultado esperado e como avaliar: Rogério paga em poucos toques sem app nem PDF. Avaliação por teste de tarefa ("pague esta fatura", registrando toques e erros) e critérios acima. Para a Bulbe, o acompanhamento seria "fatura paga por canal de entrega" em coorte; não afirmo que isso reduza a inadimplência.
+# [US05] Status da fatura do mês e pagamento sem PDF
+Épico: Entregabilidade das comunicações | Prioridade: Alta
+Origem: Persona 5 (Rogério Alves), fases 3 a 5 da jornada ("A fatura do mês não chega", "O vencimento se aproxima" e "O vencimento passa"); oportunidades OP24, OP25, OP26 e OP29.
+Descrição: Como cliente que recebe a fatura pelo WhatsApp, quero ver em que etapa está a fatura do mês (emitida, enviada ou entregue) e pagar com o PIX copia e cola mesmo sem baixar o PDF, para não perder o vencimento quando a mensagem não chegar.
+Validação nos dados da Bulbe e no Reclame Aqui: A apresentação da Bulbe aponta cerca de 20% de falha na entrega de mensagens por WhatsApp e 32,4% de inadimplência na 1ª fatura (set/2025 a jul/2026). Em 15/10/2026, o Reclame Aqui tinha 10 reclamações ativas em "Atraso na entrega" e 5 em "Forma de pagamento indisponível", com relatos como "Fatura de Maio não recebida e receio de corte de energia", "Fatura não foi gerada" e "Conta do aplicativo BULBE indisponível para pagamento". Os relatos mostram que o cliente só descobre a falha perto do vencimento e, muitas vezes, também não encontra a fatura no app.
+Critérios de Aceitação:
+·       Dado que existe uma fatura do mês, quando o cliente abre a tela, então vê uma linha do tempo com as etapas Emitida, Enviada e Entregue, com a data de cada etapa, lidas dos dados fictícios em JSON.
+·       Dado que o envio pelo WhatsApp falhou, quando o cliente abre a tela, então aparece o aviso "Não conseguimos entregar sua fatura no WhatsApp" com os botões "Reenviar fatura" (leva à tela da US03) e "Corrigir número" (leva à tela da US02).
+·       Dado que a fatura não foi emitida na data prevista, quando o cliente abre a tela, então aparece o aviso "Sua fatura está atrasada" com a nova data prevista.
+·       Dado qualquer status da fatura, inclusive vencida, então o valor, o vencimento e o código PIX copia e cola aparecem em texto na tela, e o botão "Copiar código" mostra a confirmação "Código copiado", sem precisar abrir o PDF.
+·       A tela funciona em celular (largura de 360 px) sem rolagem horizontal.
+Indicador que pretende mover: entregabilidade das comunicações (secundário: pagamento da 1ª fatura).
+Wireframe: us05-status-fatura.png
