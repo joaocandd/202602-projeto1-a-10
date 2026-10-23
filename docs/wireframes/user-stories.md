@@ -18,6 +18,9 @@ Validação no Reclame Aqui: Essa história é amplamente justificada pelo alto 
 Descrição: Como cliente da Bulbe que está mudando de endereço, quero verificar se posso continuar utilizando o serviço na minha nova residência e realizar a transferência de forma simples, entendendo os benefícios disponíveis, para não precisar cancelar o serviço por dificuldades no processo ou por não perceber valor na continuidade.
 
 Validação da oportunidade: O levantamento realizado identificou a mudança de endereço como a terceira maior causa de churn da Bulbe. A análise sugere que parte dos cancelamentos ocorre porque o cliente não percebe vantagens em continuar utilizando o serviço na nova residência ou encontra dificuldades durante o processo de alteração cadastral. Disponibilizar um fluxo digital para consulta de disponibilidade e transferência reduz a dependência de atendimento manual, diminui a fricção operacional e aumenta a percepção de valor ao evidenciar os benefícios e a economia que podem ser mantidos após a mudança. Além disso, o registro estruturado dos motivos de desistência permitirá validar as hipóteses de indisponibilidade do serviço, complexidade do processo e falta de valor percebido, gerando insumos para futuras ações de retenção.
+
+
+
 # [US05] Status da fatura do mês e pagamento sem PDF
 Épico: Entregabilidade das comunicações | Prioridade: Alta
 Origem: Persona 5 (Rogério Alves), fases 3 a 5 da jornada ("A fatura do mês não chega", "O vencimento se aproxima" e "O vencimento passa"); oportunidades OP24, OP25, OP26 e OP29.
