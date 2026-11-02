@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detalhe do pagamento: Aguardando confirmação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/pagamentos.css">
+</head>
+<body>
+<div class="app">
+  <header class="header-interno">
+    <a class="header-interno__voltar" href="pagamentos.html" aria-label="Voltar para Meus pagamentos">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+    </a>
+    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
+  </header>
+
+  <main class="conteudo conteudo--detalhe">
+    <h1 class="titulo-detalhe">Detalhe do pagamento</h1>
+
+    <section class="fatura" aria-label="Fatura de Setembro/25">
+      <div class="fatura__corpo">
+        <div class="fatura__topo">
+          <div class="fatura__identificacao">
+            <strong class="fatura__mes">Setembro/25</strong>
+            <span class="fatura__numero">Fatura nº 000123456</span>
+          </div>
+          <span class="chip chip--aguardando chip--destaque">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>Aguardando confirmação</span>
+        </div>
+        <div>
+          <span class="fatura__de">De <s>R$ 306,73</s> por</span>
+          <p class="valor"><span class="valor__moeda">R$</span><span class="valor__numero">260,72</span></p>
+        </div>
+      </div>
+      <p class="fatura__faixa"><span>Desconto Bulbe:</span><strong>R$ 46,01</strong></p>
+    </section>
+
+    <section class="acompanhamento" aria-labelledby="acomp">
+      <h2 class="acompanhamento__titulo" id="acomp">Acompanhe a confirmação</h2>
+      <ol class="etapas">
+        <li class="etapa etapa--feita">
+          <div class="etapa__marcador">
+            <span class="etapa__icone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+          </div>
+          <div class="etapa__textos">
+            <strong class="etapa__titulo">Pagamento realizado <span class="etapa__estado">(concluído)</span></strong>
+            <span class="etapa__texto">03/10/25 às 14:32 via PIX</span>
+          </div>
+        </li>
+        <li class="etapa etapa--atual" aria-current="step">
+          <div class="etapa__marcador">
+            <span class="etapa__icone">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span>
+          </div>
+          <div class="etapa__textos">
+            <strong class="etapa__titulo">Em compensação <span class="etapa__estado">(agora)</span></strong>
+            <span class="etapa__texto">Pode levar até 3 dias úteis. Previsão: até 08/10/25.</span>
+          </div>
+        </li>
+        <li class="etapa etapa--proxima">
+          <div class="etapa__marcador">
+            <span class="etapa__icone"></span>
+          </div>
+          <div class="etapa__textos">
+            <strong class="etapa__titulo">Pagamento confirmado <span class="etapa__estado">(próximo)</span></strong>
+            <span class="etapa__texto">O status muda para “Pago” e o comprovante fica disponível.</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <p class="aviso aviso--alerta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+      <span><b>Não é preciso pagar de novo.</b> Seu pagamento foi feito e está sendo processado pelo banco.</span>
+    </p>
+
+    <div class="ajuda">
+      <p class="ajuda__titulo">Não foi confirmado até 08/10/25?</p>
+      <p class="ajuda__texto">Fale com a gente e tenha em mãos o comprovante emitido pelo seu banco.</p>
+      <a class="link" href="#">Fale conosco</a>
+    </div>
+  </main>
+</div>
+</body>
+</html>
