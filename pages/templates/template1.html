@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template1.css">
+</head>
+<body>
+    <header>
+        <button class="header-menu" type="button" aria-label="Menu">
+            <img src="assets/Icon-Hamburguer.svg" alt="">
+        </button>
+        <img class="header-logo" src="assets/logo-bulbe-branca.svg" alt="Bulbe Energia">
+        <button class="header-notification" type="button" aria-label="NotificaÃ§Ãµes">
+            <img src="assets/Icon-Notificacao.svg" alt="">
+        </button>
+        <img class="header-avatar" src="assets/User-avatar.png" alt="Avatar do usuÃ¡rio">
+    </header>
+
+    <main id="content"></main>
+
+    <footer>
+        <nav>
+            <a class="tab active" href="#">
+                <img src="assets/Icon-Fatura.svg" alt="">
+                <span>Faturas</span>
+            </a>
+            <a class="tab" href="#">
+                <img src="assets/Icon-Consumo.svg" alt="">
+                <span>Consumo</span>
+            </a>
+            <a class="tab" href="#">
+                <img src="assets/Icon-Indicacao.svg" alt="">
+                <span>IndicaÃ§Ãµes</span>
+            </a>
+        </nav>
+    </footer>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+    <aside class="side-menu" id="side-menu" aria-hidden="true">
+        <button class="side-menu-close" id="menu-close" type="button" aria-label="Fechar menu">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L15 15M15 1L1 15" stroke="#536679" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="side-menu-logo">
+            <img src="assets/logo-completa.png" alt="Bulbe - sua próxima energia">
+        </div>
+        <nav class="side-menu-nav">
+            <a href="#"><img src="assets/Icon-ComoFunciona.svg" alt=""><span>Como funciona?</span></a>
+            <a href="#"><img src="assets/Icon-Perguntas.svg" alt=""><span>Perguntas frequentes</span></a>
+            <a href="#"><img src="assets/Icon-Endereço.svg" alt=""><span>Mudança de endereço</span></a>
+            <a href="#"><img src="assets/Icon-IndiqueEGanhe.svg" alt=""><span>Indique e ganhe</span></a>
+            <a href="#"><img src="assets/Icon-FaleConosco.svg" alt=""><span>Fale conosco</span></a>
+            <a href="#"><img src="assets/Icon-Termos.svg" alt=""><span>Termos</span></a>
+        </nav>
+    </aside>
+
+    <script>
+        const body = document.body;
+        const toggleMenu = (open) => {
+            body.classList.toggle('menu-open', open);
+            document.getElementById('side-menu').setAttribute('aria-hidden', String(!open));
+            document.getElementById('menu-overlay').hidden = !open;
+        };
+        document.querySelector('.header-menu').addEventListener('click', () => toggleMenu(true));
+        document.getElementById('menu-close').addEventListener('click', () => toggleMenu(false));
+        document.getElementById('menu-overlay').addEventListener('click', () => toggleMenu(false));
+    </script>
+</body>
+</html>
+
