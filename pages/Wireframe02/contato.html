@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f5f9">
+    <title>Dados de contato | Bulbe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <button class="voltar" type="button" aria-label="Voltar" onclick="history.back()">
+                <!-- Mantido o SVG original do projeto. -->
+                <img src="../templates/assets/Icon-voltar.svg" alt="">
+            </button>
+
+            <!-- Mantido o logotipo SVG original do projeto. -->
+            <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe">
+        </header>
+
+        <main id="content">
+            <section class="page-heading" aria-labelledby="page-title">
+                <h1 id="page-title">Dados de contato</h1>
+                <p>Mantenha seus canais em dia para receber faturas e avisos da Bulbe.</p>
+            </section>
+
+            <!-- História de usuário: [US02]
+            Dor atacada: mensagens de WhatsApp que não chegam, porque o número cadastrado
+            pode estar desatualizado ou incorreto. A correção exige confirmação por código.
+            -->
+            <section class="contact-card phone-card" id="phone-card" aria-labelledby="phone-title">
+                <div class="card-heading">
+                    <div class="card-label">
+                        <svg class="heading-icon whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 11.5a8.2 8.2 0 0 1-12.1 7.2L4 20l1.3-3.7A8.2 8.2 0 1 1 20 11.5Z" />
+                        </svg>
+                        <h2 id="phone-title">Telefone / WhatsApp</h2>
+                    </div>
+                    <span class="status status-review">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M8 4.8v3.7M8 11.1h.01"/></svg>
+                        revisar
+                    </span>
+                </div>
+
+                <p class="contact-value" id="phone-value">(31) 9••••-2086</p>
+                <p class="contact-description" id="phone-description">Nossas mensagens não estão sendo entregues neste número. Ele ainda é seu?</p>
+
+                <button class="primary-button" type="button" id="open-phone-sheet">Corrigir número</button>
+            </section>
+
+            <section class="contact-card email-card" aria-labelledby="email-title">
+                <div class="card-heading">
+                    <div class="card-label">
+                        <svg class="heading-icon email-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <path d="m4 7 8 6 8-6" />
+                        </svg>
+                        <h2 id="email-title">E-mail</h2>
+                    </div>
+                    <span class="status status-confirmed">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.2 3 3 6-6"/></svg>
+                        confirmado
+                    </span>
+                </div>
+
+                <p class="contact-value email-value">mar***@gmail.com</p>
+                <p class="contact-meta">Confirmado em 12/09/25</p>
+
+                <button class="secondary-button" type="button">Alterar e-mail</button>
+            </section>
+
+            <aside class="security-note">
+                <svg class="security-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3 19 6v5.2c0 4.4-2.8 7.9-7 9.8-4.2-1.9-7-5.4-7-9.8V6l7-3Z" />
+                </svg>
+                <p>Por segurança, exibimos seus dados parcialmente. Toda alteração é confirmada por código.</p>
+            </aside>
+        </main>
+
+        <footer class="app-footer">
+            <nav class="bottom-nav" aria-label="Navegação principal">
+                <a class="tab" href="#faturas">
+                    <img src="../templates/assets/Icon-Fatura.svg" alt="">
+                    <span>Faturas</span>
+                </a>
+                <a class="tab" href="#consumo">
+                    <img src="../templates/assets/Icon-Consumo.svg" alt="">
+                    <span>Consumo</span>
+                </a>
+                <a class="tab" href="#indicacoes">
+                    <img src="../templates/assets/Icon-Indicacao.svg" alt="">
+                    <span>Indicações</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
+
+<div class="sheet-overlay" id="phone-sheet" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <span class="sheet-handle" aria-hidden="true"></span>
+
+        <div class="sheet-head">
+            <h2 id="sheet-title">Corrigir telefone / WhatsApp</h2>
+            <button class="icon-button" type="button" id="close-phone-sheet" aria-label="Fechar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+
+        <p class="sheet-current">Número atual: <span id="sheet-current-value">(31) 9••••-2086</span></p>
+
+        <label class="field-label" for="new-phone">Novo número com DDD</label>
+        <input class="text-input" id="new-phone" type="tel" inputmode="numeric"
+               autocomplete="tel" placeholder="(31) 98765-4321" aria-describedby="phone-error">
+
+        <p class="field-error" id="phone-error" aria-live="polite" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5M12 16.5v.01"/><circle cx="12" cy="12" r="9"/></svg>
+            <span id="phone-error-text"></span>
+        </p>
+
+        <div class="sheet-actions">
+            <button class="primary-button" type="button" id="save-phone" disabled>Salvar e enviar código</button>
+            <button class="secondary-button" type="button" id="cancel-phone">Cancelar</button>
+        </div>
+    </section>
+</div>
+
+    <script>
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+
+        var overlay = document.getElementById('phone-sheet');
+        var openBtn = document.getElementById('open-phone-sheet');
+        var closeBtn = document.getElementById('close-phone-sheet');
+        var cancelBtn = document.getElementById('cancel-phone');
+        var saveBtn = document.getElementById('save-phone');
+        var input = document.getElementById('new-phone');
+        var errorEl = document.getElementById('phone-error');
+        var errorText = document.getElementById('phone-error-text');
+
+        function digits(v) { return (v || '').replace(/\D/g, '').slice(0, 11); }
+
+        function format(d) {
+            if (!d.length) return '';
+            if (d.length <= 2) return '(' + d;
+            var out = '(' + d.slice(0, 2) + ') ' + d.slice(2, 7);
+            if (d.length > 7) out += '-' + d.slice(7);
+            return out;
+        }
+
+        // Retorna '' se válido; senão, a mensagem de erro
+        function problemOf(d) {
+            if (!d.length) return '';
+            if (d.length < 11) return 'Número incompleto: informe DDD + 9 dígitos';
+            if (d.charAt(2) !== '9') return 'Celular deve começar com 9 após o DDD';
+            return '';
+        }
+
+        function update() {
+            var d = digits(input.value);
+            input.value = format(d);
+            var problem = problemOf(d);
+            errorText.textContent = problem;
+            errorEl.hidden = !problem;
+            input.classList.toggle('is-invalid', !!problem);
+            input.setAttribute('aria-invalid', problem ? 'true' : 'false');
+            saveBtn.disabled = !(d.length === 11 && !problem);
+        }
+
+        function open() { overlay.hidden = false; input.focus(); }
+        function close() { overlay.hidden = true; openBtn.focus(); }
+
+        openBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        cancelBtn.addEventListener('click', close);
+        overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !overlay.hidden) close();
+        });
+
+        input.addEventListener('input', update);
+        input.addEventListener('blur', update);
+
+        saveBtn.addEventListener('click', function () {
+            var d = digits(input.value);
+            if (d.length !== 11 || problemOf(d)) return;
+            window.location.href = 'confirmar-numero.html?tel=' + d;
+        });
+
+        function setPhone(mask, confirmed) {
+            document.getElementById('phone-value').textContent = mask;
+            document.getElementById('sheet-current-value').textContent = mask;
+            if (!confirmed) return;
+
+            var card = document.getElementById('phone-card');
+            card.classList.remove('phone-card');
+            var status = card.querySelector('.status');
+            status.className = 'status status-confirmed';
+            status.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.2 3 3 6-6"/></svg> confirmado';
+            document.getElementById('phone-description').textContent = 'Número confirmado por código.';
+            openBtn.textContent = 'Alterar número';
+        }
+
+        // Retorno da confirmação: mostra o número confirmado (mascarado)
+        var confirmedTel = digits(params.get('tel'));
+        var justConfirmed = params.get('confirmado') === '1' && confirmedTel.length === 11;
+        if (justConfirmed) {
+            setPhone('(' + confirmedTel.slice(0, 2) + ') 9••••-' + confirmedTel.slice(-4), true);
+        }
+
+        // Dados fictícios de exemplo (só aplica se não houver confirmação recém-feita)
+        fetch('dados/contato.json')
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                if (justConfirmed) return;
+                setPhone(d.telefone.valorMascarado, false);
+                document.getElementById('phone-description').textContent = d.telefone.descricao;
+            })
+            .catch(function () { /* mantém os valores já exibidos no HTML */ });
+
+        if (params.get('editar') === '1') open();
+    })();
+    </script>
+
+</body>
+</html>
