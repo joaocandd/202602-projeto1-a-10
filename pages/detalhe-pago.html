@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detalhe do pagamento: Pago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/pagamentos.css">
+</head>
+<body>
+<div class="app">
+  <header class="header-interno">
+    <a class="header-interno__voltar" href="pagamentos.html" aria-label="Voltar para Meus pagamentos">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+    </a>
+    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
+  </header>
+
+  <main class="conteudo conteudo--detalhe">
+    <h1 class="titulo-detalhe">Detalhe do pagamento</h1>
+
+    <section class="fatura" aria-label="Fatura de Agosto/25">
+      <div class="fatura__corpo">
+        <div class="fatura__topo">
+          <div class="fatura__identificacao">
+            <strong class="fatura__mes">Agosto/25</strong>
+            <span class="fatura__numero">Fatura nº 000119872</span>
+          </div>
+          <span class="chip chip--pago chip--destaque">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pago</span>
+        </div>
+        <div>
+          <span class="fatura__rotulo">Valor pago</span>
+          <p class="valor"><span class="valor__moeda">R$</span><span class="valor__numero">212,20</span></p>
+        </div>
+      </div>
+      <p class="fatura__faixa"><span>Desconto Bulbe:</span><strong>R$ XX,XX</strong></p>
+    </section>
+
+    <dl class="dados">
+      <div class="dados__linha">
+        <dt>Pago em</dt><dd>04/09/25</dd>
+      </div>
+      <div class="dados__linha">
+        <dt>Forma de pagamento</dt><dd>Boleto</dd>
+      </div>
+      <div class="dados__linha">
+        <dt>Instalação</dt><dd>3013588579</dd>
+      </div>
+    </dl>
+
+    <p class="aviso aviso--sucesso">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+      <span><b>Pagamento confirmado pela Bulbe.</b> Esta fatura não tem nenhum valor pendente.</span>
+    </p>
+
+    <a class="btn btn--primario btn--grande btn--fim" href="comprovante.html">
+      Ver comprovante
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg>
+    </a>
+  </main>
+</div>
+</body>
+</html>

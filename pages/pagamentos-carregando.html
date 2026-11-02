@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meus pagamentos: carregando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/pagamentos.css">
+</head>
+<body>
+<div class="app" aria-busy="true">
+  <header class="header-interno">
+    <a class="header-interno__voltar" href="menu.html" aria-label="Voltar">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+    </a>
+    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
+  </header>
+
+  <div class="titulo-pagina">
+    <h1>Meus pagamentos</h1>
+    <p class="titulo-pagina__sub">Instalação <strong>3013588579</strong></p>
+  </div>
+
+  <main class="conteudo" aria-label="Carregando pagamentos">
+    <div class="skeleton-resumo">
+      <div class="skeleton-resumo__cabecalho">
+        <div class="sk sk--circulo"></div>
+        <div class="skeleton-resumo__textos">
+          <div class="sk sk--titulo"></div>
+          <div class="sk sk--texto"></div>
+        </div>
+      </div>
+      <div class="sk sk--botao"></div>
+    </div>
+    <div class="skeleton-filtros">
+      <div class="sk"></div>
+      <div class="sk"></div>
+      <div class="sk"></div>
+      <div class="sk"></div>
+    </div>
+    <div class="skeleton-lista">
+      <div class="sk sk--secao"></div>
+        <div class="skeleton-item">
+          <div class="skeleton-item__linha"><div class="sk sk--mes"></div><div class="sk sk--chip"></div></div>
+          <div class="skeleton-item__linha"><div class="sk sk--detalhe"></div><div class="sk sk--valor"></div></div>
+        </div>
+        <div class="skeleton-item">
+          <div class="skeleton-item__linha"><div class="sk sk--mes"></div><div class="sk sk--chip"></div></div>
+          <div class="skeleton-item__linha"><div class="sk sk--detalhe"></div><div class="sk sk--valor"></div></div>
+        </div>
+        <div class="skeleton-item">
+          <div class="skeleton-item__linha"><div class="sk sk--mes"></div><div class="sk sk--chip"></div></div>
+          <div class="skeleton-item__linha"><div class="sk sk--detalhe"></div><div class="sk sk--valor"></div></div>
+        </div>
+        <div class="skeleton-item">
+          <div class="skeleton-item__linha"><div class="sk sk--mes"></div><div class="sk sk--chip"></div></div>
+          <div class="skeleton-item__linha"><div class="sk sk--detalhe"></div><div class="sk sk--valor"></div></div>
+        </div>
+    </div>
+    <span class="sr-only">Carregando seus pagamentos…</span>
+  </main>
+
+  <nav class="nav-inferior" aria-label="Navegação principal">
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M8 13h8"></path><path d="M8 17h8"></path></svg>Faturas</a>
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg>Consumo</a>
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6"></path><path d="M22 11h-6"></path></svg>Indicações</a>
+  </nav>
+</div>
+</body>
+</html>

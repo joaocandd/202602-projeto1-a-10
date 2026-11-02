@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meus pagamentos: em dia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/pagamentos.css">
+</head>
+<body>
+<div class="app">
+  <header class="header-interno">
+    <a class="header-interno__voltar" href="menu.html" aria-label="Voltar">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+    </a>
+    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
+  </header>
+
+  <div class="titulo-pagina">
+    <h1>Meus pagamentos</h1>
+    <p class="titulo-pagina__sub">Instalação <strong>3013588579</strong></p>
+  </div>
+
+  <main class="conteudo">
+    <section class="resumo resumo--emdia" aria-label="Situação da conta">
+      <div class="resumo__cabecalho">
+        <span class="resumo__icone">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        </span>
+        <div class="resumo__textos">
+          <strong class="resumo__titulo">Você está em dia</strong>
+          <span class="resumo__texto">Nenhuma fatura em atraso nesta instalação.</span>
+        </div>
+      </div>
+      <p class="resumo__nota">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <span>Setembro/25 já foi pago e está em confirmação. Não é preciso pagar de novo.</span>
+      </p>
+    </section>
+
+    <div class="filtros" role="group" aria-label="Filtrar por status" data-filtros>
+      <button class="filtro" type="button" aria-pressed="true" data-filtro="todos" data-label="Todos">Todos (5)</button>
+      <button class="filtro" type="button" aria-pressed="false" data-filtro="pago" data-label="Pagos">Pagos (4)</button>
+      <button class="filtro" type="button" aria-pressed="false" data-filtro="aguardando" data-label="Aguardando">Aguardando (1)</button>
+      <button class="filtro" type="button" aria-pressed="false" data-filtro="atraso" data-label="Em atraso">Em atraso (0)</button>
+    </div>
+
+    <section class="historico" aria-labelledby="historico-titulo">
+      <h2 class="historico__titulo" id="historico-titulo">Histórico de pagamentos</h2>
+      <ul class="lista" aria-live="polite">
+        <li data-status="aguardando">
+          <a class="item" href="detalhe-aguardando.html">
+            <div class="item__linha1">
+              <span class="item__mes">Setembro/25</span>
+              <span class="chip chip--aguardando">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>Aguardando confirmação</span>
+            </div>
+            <div class="item__linha2">
+              <span class="item__detalhe">Pago em 03/10/25 via PIX</span>
+              <span class="item__valor">R$ 260,72</span>
+            </div>
+            <span class="item__info">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>A confirmação pode levar até 3 dias úteis.</span>
+          </a>
+        </li>
+        <li data-status="pago">
+          <a class="item" href="detalhe-pago.html">
+            <div class="item__linha1">
+              <span class="item__mes">Agosto/25</span>
+              <span class="chip chip--pago">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pago</span>
+            </div>
+            <div class="item__linha2">
+              <span class="item__detalhe">Pago em 04/09/25 via boleto</span>
+              <span class="item__valor">R$ 212,20</span>
+            </div>
+          </a>
+        </li>
+        <li data-status="pago">
+          <a class="item" href="detalhe-pago.html">
+            <div class="item__linha1">
+              <span class="item__mes">Julho/25</span>
+              <span class="chip chip--pago">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pago</span>
+            </div>
+            <div class="item__linha2">
+              <span class="item__detalhe">Pago em 05/08/25 via PIX</span>
+              <span class="item__valor">R$ 252,06</span>
+            </div>
+          </a>
+        </li>
+        <li data-status="pago">
+          <a class="item" href="detalhe-pago.html">
+            <div class="item__linha1">
+              <span class="item__mes">Junho/25</span>
+              <span class="chip chip--pago">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pago</span>
+            </div>
+            <div class="item__linha2">
+              <span class="item__detalhe">Pago em 03/07/25 via PIX</span>
+              <span class="item__valor">R$ 242,59</span>
+            </div>
+          </a>
+        </li>
+        <li data-status="pago">
+          <a class="item" href="detalhe-pago.html">
+            <div class="item__linha1">
+              <span class="item__mes">Maio/25</span>
+              <span class="chip chip--pago">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pago</span>
+            </div>
+            <div class="item__linha2">
+              <span class="item__detalhe">Pago em 06/06/25 via PIX</span>
+              <span class="item__valor">R$ 231,48</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="lista-vazia" data-vazio hidden>Nenhum pagamento com este status.</p>
+    </section>
+  </main>
+
+  <nav class="nav-inferior" aria-label="Navegação principal">
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M8 13h8"></path><path d="M8 17h8"></path></svg>Faturas</a>
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg>Consumo</a>
+    <a class="nav-inferior__item" href="#">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6"></path><path d="M22 11h-6"></path></svg>Indicações</a>
+  </nav>
+</div>
+<script src="../assets/js/pagamentos.js"></script>
+</body>
+</html>

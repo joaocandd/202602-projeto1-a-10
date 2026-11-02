@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprovante de pagamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/pagamentos.css">
+</head>
+<body>
+<div class="app">
+  <header class="header-interno">
+    <a class="header-interno__voltar" href="detalhe-pago.html" aria-label="Voltar para o detalhe do pagamento">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+    </a>
+    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
+  </header>
+
+  <main class="conteudo conteudo--detalhe">
+    <h1 class="titulo-detalhe">Comprovante</h1>
+
+    <div class="confirmacao">
+      <span class="confirmacao__selo">
+        <span>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+        </span>
+      </span>
+      <p class="confirmacao__titulo">Pagamento confirmado</p>
+      <p class="confirmacao__texto">A fatura de Agosto/25 está quitada.</p>
+    </div>
+
+    <section class="fatura fatura--comprovante" aria-label="Dados do pagamento">
+      <div class="fatura__corpo">
+        <span class="fatura__rotulo">Valor pago</span>
+        <p class="valor"><span class="valor__moeda">R$</span><span class="valor__numero">212,20</span></p>
+      </div>
+      <dl class="dados dados--embutido">
+        <div class="dados__linha">
+          <dt>Data e hora</dt><dd>04/09/25 às [hh:mm]</dd>
+        </div>
+        <div class="dados__linha">
+          <dt>Referência</dt><dd>Agosto/25<br><span class="dados__sub">Fatura nº 000119872</span></dd>
+        </div>
+        <div class="dados__linha">
+          <dt>Instalação</dt><dd>3013588579</dd>
+        </div>
+        <div class="dados__linha">
+          <dt>Forma de pagamento</dt><dd>Boleto</dd>
+        </div>
+        <div class="dados__linha dados__linha--coluna">
+          <dt>Código de autenticação</dt><dd class="dados__codigo">BLB-2509-7F3A-91C2</dd>
+        </div>
+      </dl>
+      <p class="fatura__faixa">
+        <span>Desconto Bulbe aplicado:</span><strong>R$ XX,XX</strong>
+        <svg width="16" height="22" viewBox="0 0 18 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 9 13 3"></path><path d="M4 12h12"></path><path d="M3 15l10 6"></path></svg>
+      </p>
+    </section>
+
+    <p class="nota-rodape">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+      Comprovante demonstrativo
+    </p>
+
+    <div class="acoes acoes--fim">
+      <button class="btn btn--primario btn--grande" type="button">
+        Compartilhar
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 13.5 6.8 4"></path><path d="m15.4 6.5-6.8 4"></path></svg>
+      </button>
+      <button class="btn btn--secundario btn--grande" type="button">
+        Baixar PDF
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
+      </button>
+    </div>
+  </main>
+</div>
+</body>
+</html>
