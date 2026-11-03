@@ -21,9 +21,13 @@ Validação da oportunidade: O levantamento realizado identificou a mudança de 
 
 
 
-# [US05] Confirmação Ativa de Contato Telefônico
-Épico: Onboarding e Prevenção de Falhas | Prioridade: Alta
-Descrição: Como trabalhador móvel com cadastro feito às pressas, quero confirmar meu número de WhatsApp digitando um código verificador na adesão, para garantir que não digitei errado e que minhas faturas chegarão com segurança.
+# [US05] Confirmação de pagamento e comprovante
+Épico: Segurança e Faturamento | Prioridade: Média
+Descrição: Como cliente que acabou de pagar minha fatura da Bulbe, quero verificar se o pagamento foi reconhecido e consultar o respectivo comprovante, para ter segurança de que não existe uma dívida pendente.
 Critérios de Aceitação:
-·       Dado que o usuário insere seu telefone de contato na adesão, Quando ele prosseguir com o fluxo, então o app deve disparar e requerer um código OTP (One-Time Password) via SMS ou WhatsApp.
-·       O cadastro só deve ser finalizado e registrado no banco de dados se a validação for concluída, impedindo telefones inválidos.
+·       Dado que o cliente realizou um pagamento, quando acessar "Meus pagamentos", então deverá visualizar os status "Aguardando confirmação", "Pago" ou "Em atraso", conforme os dados fictícios disponíveis.
+·       Dado que o pagamento está confirmado, quando selecionar "Ver comprovante", então a interface deverá apresentar o valor, a data, a referência da fatura e uma confirmação demonstrativa de pagamento.
+Validação pelo Reclame Aqui: Uma reclamação de 11/09/2026 relata que o consumidor continuou recebendo cobranças durante uma disputa de cancelamento, mesmo após ter pago boletos anteriores. O relato sustenta a necessidade de maior clareza sobre pagamentos e obrigações pendentes, embora não comprove especificamente uma falha na baixa bancária.
+Indicador: Consultas de pagamentos e reclamações por dúvidas sobre quitação.
+Implementação: Consulta a histórico fictício de pagamentos e emissão de comprovante demonstrativo.
+Wireframes: pages/Wireframe05/
