@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="3-verificando-disponibilidade.html" aria-label="Voltar">
+            <img src="assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content">
+        <div class="wf-screen wf-screen--compact">
+            <div class="viability-breadcrumb">
+                <div class="viability-breadcrumb__left">
+                    <span class="status-dot-orange"></span>
+                    <span>VERIFICAÇÃO DE VIABILIDADE</span>
+                </div>
+                <span class="protocol-card__status" style="background: none; padding: 0;">Passo 2 de 3</span>
+            </div>
+
+            <section class="unavail-hero">
+                <div class="unavail-badge-wrap">
+                    <div class="unavail-badge-main">
+                        <img src="assets/icons/s4b-map-off.svg" alt="">
+                    </div>
+                    <div class="unavail-badge-sub">
+                        <img src="assets/icons/s4b-bell-badge.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="screen-header screen-header--center">
+                    <h1 class="screen-title">Infelizmente ainda não atendemos esse endereço</h1>
+                    <p class="screen-subtitle screen-subtitle--body">Ainda não possuímos usinas solares conectadas à distribuidora dessa região, mas estamos expandindo constantemente.</p>
+                </div>
+            </section>
+
+            <section class="wf-card" style="gap: 6px;" aria-label="Endereço consultado">
+                <div class="wf-card__header">
+                    <div class="migration-header__left" style="color: var(--wf-navy-dark);">
+                        <img src="assets/icons/s4b-pin.svg" alt="">
+                        <span>ENDEREÇO CONSULTADO</span>
+                    </div>
+                    <span class="out-of-coverage-pill">Região fora de cobertura</span>
+                </div>
+
+                <div class="consulted-address-body">
+                    <p class="address-box__street">Av. das Américas, 4200 - Barra da Tijuca, Rio de Janeiro - RJ</p>
+                    <p class="address-box__code" style="color: var(--wf-text-body);">Distribuidora local: Light S.A.</p>
+                </div>
+            </section>
+
+            <section class="priority-waitlist-card" id="lista-prioritaria" aria-labelledby="waitlist-title">
+                <img class="priority-waitlist-card__bg-icon" src="assets/icons/s4b-bg-star.svg" alt="" aria-hidden="true">
+
+                <span class="priority-pill">
+                    <img src="assets/icons/s4b-star.svg" alt="">
+                    <span>LISTA PRIORITÁRIA</span>
+                </span>
+
+                <h2 class="priority-waitlist-card__title" id="waitlist-title">Quer ser avisado em primeira mão?</h2>
+
+                <p class="priority-waitlist-card__desc">Cadastre-se na nossa lista de interesse prioritária e receba condições exclusivas de desconto assim que a Bulbe chegar ao seu novo bairro.</p>
+
+                <ul class="priority-checklist">
+                    <li class="priority-check-item">
+                        <span class="priority-check-icon priority-check-icon--green">
+                            <img src="assets/icons/s4b-check-g.svg" alt="">
+                        </span>
+                        <span>Prioridade na alocação de usinas solares</span>
+                    </li>
+                    <li class="priority-check-item">
+                        <span class="priority-check-icon priority-check-icon--orange">
+                            <img src="assets/icons/s4b-check-o.svg" alt="">
+                        </span>
+                        <span>Bônus especial no primeiro mês de ativação</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="cta-group">
+                <a class="btn-primary" href="#lista-prioritaria">
+                    <img src="assets/icons/s4b-bell-btn.svg" alt="">
+                    <span>Entrar na lista de interesse</span>
+                </a>
+
+                <a class="btn-secondary" href="#">
+                    <img src="assets/icons/s4b-chat-btn.svg" alt="">
+                    <span>Falar com atendimento</span>
+                </a>
+
+                <a class="exit-link" href="5b-motivo-da-desistencia.html">
+                    <span>Não quero continuar com a Bulbe</span>
+                    <img src="assets/icons/s4b-chevron-r.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

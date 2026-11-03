@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="1-mudanca-de-endereco.html" aria-label="Voltar">
+            <img src="assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content">
+        <div class="wf-screen">
+            <div class="progress-tracker">
+                <div class="progress-tracker__top">
+                    <span class="progress-tracker__label">PASSO A PASSO</span>
+                    <span class="progress-tracker__pill">Etapa 1 de 3</span>
+                </div>
+                <div class="progress-bar" aria-hidden="true">
+                    <div class="progress-bar__fill progress-bar__fill--green-33"></div>
+                </div>
+            </div>
+
+            <section class="screen-header screen-header--flush">
+                <div class="screen-title-row">
+                    <h1 class="screen-title">Informe seu novo endereço</h1>
+                    <span class="screen-title-icon">
+                        <img src="assets/icons/s2-bolt.svg" alt="">
+                    </span>
+                </div>
+                <p class="screen-subtitle screen-subtitle--xs">Digite o CEP para preenchimento automático das informações da sua nova residência.</p>
+            </section>
+
+            <form class="address-form" action="3-verificando-disponibilidade.html" method="get">
+                <div class="form-field">
+                    <div class="form-field__top">
+                        <label class="form-label" for="cep">CEP *</label>
+                        <a class="cep-helper" href="https://buscacepinter.correios.com.br/" target="_blank" rel="noopener">
+                            <img src="assets/icons/s2-search.svg" alt="">
+                            <span>Não sei meu CEP</span>
+                        </a>
+                    </div>
+                    <div class="input-wrapper">
+                        <input class="form-input" id="cep" name="cep" type="text" value="30140-071">
+                        <span class="input-badge-located">
+                            <img src="assets/icons/s2-check.svg" alt="">
+                            <span>Localizado</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="rua">Rua / Avenida *</label>
+                    <div class="input-wrapper">
+                        <input class="form-input" id="rua" name="rua" type="text" value="Av. Getúlio Vargas">
+                        <span class="input-icon-right">
+                            <img src="assets/icons/s2-pin.svg" alt="">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-field">
+                        <label class="form-label" for="numero">Número *</label>
+                        <input class="form-input" id="numero" name="numero" type="text" value="1420">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="complemento">Complemento</label>
+                        <input class="form-input" id="complemento" name="complemento" type="text" value="Apto 802, Bloco B">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="bairro">Bairro *</label>
+                    <input class="form-input" id="bairro" name="bairro" type="text" value="Savassi">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="cidade">Cidade / UF *</label>
+                    <input class="form-input" id="cidade" name="cidade" type="text" value="Belo Horizonte, MG">
+                </div>
+
+                <div class="callout-info">
+                    <div class="callout-info__icon">
+                        <img src="assets/icons/s2-shield.svg" alt="">
+                    </div>
+                    <div class="callout-info__body">
+                        <h2 class="callout-info__title">Validação automática</h2>
+                        <p class="callout-info__desc">Identificaremos a rede distribuidora (ex.: Cemig) diretamente a partir do CEP informado para garantir o melhor desconto.</p>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <button class="btn-primary" type="submit">
+                        <span>Verificar disponibilidade</span>
+                        <img src="assets/icons/s2-arrow.svg" alt="">
+                    </button>
+
+                    <div class="support-link">
+                        <img src="assets/icons/s1-support.svg" alt="">
+                        <span>Dúvidas sobre a mudança?</span>
+                        <a class="support-link__strong" href="#">Fale com a gente</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
