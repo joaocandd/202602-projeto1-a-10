@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="2-informar-endereco.html" aria-label="Voltar">
+            <img src="assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content">
+        <div class="wf-screen">
+            <div class="orange-promo-banner">
+                <div class="orange-promo-banner__circle" aria-hidden="true"></div>
+                <div class="orange-promo-banner__icon">
+                    <img src="assets/icons/s3-bolt-top.svg" alt="">
+                </div>
+                <div>
+                    <h2 class="orange-promo-banner__title">Desconto na luz</h2>
+                    <p class="orange-promo-banner__sub">Economia sustentável para seu novo endereço</p>
+                </div>
+            </div>
+
+            <section class="screen-header screen-header--flush">
+                <span class="screen-eyebrow">PASSO 3 DE 4</span>
+                <h1 class="screen-title screen-title--bold-dark">Verificando disponibilidade...</h1>
+                <p class="screen-subtitle screen-subtitle--body">Estamos consultando a rede elétrica e as fazendas solares disponíveis para o seu novo endereço.</p>
+            </section>
+
+            <section class="gauge-card" aria-label="Progresso da verificação">
+                <div class="gauge-wrapper">
+                    <img class="gauge-svg" src="assets/icons/s3-gauge.svg" alt="">
+                    <div class="gauge-center">
+                        <span class="gauge-pct">65%</span>
+                        <span class="gauge-sub">Concluído</span>
+                    </div>
+                </div>
+                <div class="gauge-status-pill">
+                    <span class="status-dot-blue"></span>
+                    <span>Finalizando análise de elegibilidade...</span>
+                </div>
+            </section>
+
+            <section class="address-analysis-card" aria-label="Endereço em análise">
+                <div class="address-analysis-card__icon">
+                    <img src="assets/icons/s3-pin.svg" alt="">
+                </div>
+                <div class="address-analysis-card__body">
+                    <div class="address-analysis-card__top">
+                        <span class="address-analysis-card__label">ENDEREÇO EM ANÁLISE</span>
+                        <span class="address-analysis-card__city">Belo Horizonte</span>
+                    </div>
+                    <p class="address-analysis-card__street">Av. Getúlio Vargas, 1420</p>
+                    <p class="address-analysis-card__meta">Savassi — Belo Horizonte/MG • CEP 30112-021</p>
+                </div>
+            </section>
+
+            <section class="timeline-card" aria-labelledby="etapas-title">
+                <h2 class="wf-card__title" id="etapas-title">Etapas da Consulta</h2>
+
+                <div class="timeline-list">
+                    <div class="timeline-stage">
+                        <div class="timeline-stage__marker timeline-stage__marker--done">
+                            <img src="assets/icons/s3-check.svg" alt="">
+                        </div>
+                        <div class="timeline-stage__content">
+                            <div class="timeline-stage__header">
+                                <h3 class="timeline-stage__title">Identificando distribuidora local</h3>
+                                <span class="timeline-badge timeline-badge--done">Concluído</span>
+                            </div>
+                            <p class="timeline-stage__desc">Rede compatível identificada: <strong>Cemig D</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-stage">
+                        <div class="timeline-stage__marker timeline-stage__marker--active">
+                            <img src="assets/icons/s3-sync.svg" alt="">
+                        </div>
+                        <div class="timeline-stage__content">
+                            <div class="timeline-stage__header">
+                                <h3 class="timeline-stage__title timeline-stage__title--active">Usinas solares na região</h3>
+                                <span class="timeline-badge timeline-badge--active">Em andamento</span>
+                            </div>
+                            <p class="timeline-stage__desc">Buscando cota disponível em fazendas solares de MG</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-stage">
+                        <div class="timeline-stage__marker timeline-stage__marker--waiting">
+                            <img src="assets/icons/s3-calc.svg" alt="">
+                        </div>
+                        <div class="timeline-stage__content">
+                            <div class="timeline-stage__header">
+                                <h3 class="timeline-stage__title timeline-stage__title--waiting">Projeção de economia</h3>
+                                <span class="timeline-badge timeline-badge--waiting">Aguardando</span>
+                            </div>
+                            <p class="timeline-stage__desc timeline-stage__desc--waiting">Simulação de até 15% de desconto mensal na conta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="soft-warning-bar">
+                    <img src="assets/icons/s3-info.svg" alt="">
+                    <span>Isso leva apenas alguns instantes. Por favor, aguarde sem fechar o app.</span>
+                </div>
+            </section>
+
+            <section class="navy-promo-card" aria-label="Garantia Bulbe">
+                <div class="navy-promo-card__circle" aria-hidden="true"></div>
+                <div class="navy-promo-card__body">
+                    <span class="navy-promo-card__eyebrow">GARANTIA BULBE</span>
+                    <h3 class="navy-promo-card__title">Economia sem obras nem taxas</h3>
+                    <p class="navy-promo-card__desc">Com a Bulbe, seu desconto continua automático na conta de luz todos os meses.</p>
+                </div>
+                <div class="navy-promo-card__badge">
+                    <img src="assets/icons/s3-bolt-bottom.svg" alt="">
+                </div>
+            </section>
+
+            <nav class="branch-selector" aria-label="Simular resultado da análise">
+                <a class="branch-link branch-link--available" href="4a-continuidade-disponivel.html">
+                    <span>Disponível (4A)</span>
+                    <img src="assets/icons/s1-arrow.svg" alt="">
+                </a>
+                <a class="branch-link branch-link--unavailable" href="4b-indisponibilidade.html">
+                    <span>Indisponível (4B)</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+</body>
+</html>
