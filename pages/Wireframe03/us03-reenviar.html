@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia | Reenviar fatura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../templates/template2.css">
+    <link rel="stylesheet" href="us03.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="javascript:history.back()" aria-label="Voltar">
+            <img src="../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content" class="chat-page">
+        <div class="page-heading">
+            <h1 class="page-title">Reenviar fatura</h1>
+        </div>
+
+        <section class="chat-messages" aria-label="Conversa com o Assistente Bulbe">
+            <p class="date-chip">Hoje, 10:42</p>
+
+            <div class="message message-user">
+                <p class="bubble">Reenviar minha fatura</p>
+                <span class="message-time">10:42</span>
+            </div>
+
+            <div class="message message-bot">
+                <p class="bubble">Localizei sua fatura em aberto:</p>
+            </div>
+
+            <article class="invoice-card" aria-label="Fatura de outubro de 2026">
+                <div class="invoice-head">
+                    <div>
+                        <h2 class="invoice-month">Outubro/26</h2>
+                        <p class="invoice-due">Vence 25/10/26</p>
+                    </div>
+                    <span class="badge badge-open">em aberto</span>
+                </div>
+                <hr class="invoice-divider">
+                <div class="invoice-value-row">
+                    <span class="invoice-total-label">Valor total</span>
+                    <div class="invoice-total">
+                        <p class="invoice-amount">
+                            <span class="invoice-currency">R$</span>
+                            <span class="invoice-value">252,06</span>
+                        </p>
+                        <svg class="bulbe-mark" viewBox="85.5 0.5 15 28.6" aria-hidden="true">
+                            <path d="M100 13.0273H88.7744V16.7297H100V13.0273Z" fill="#0762C7"/>
+                            <path d="M95.8098 1.18518L86.0881 6.76465L87.9504 9.97096L97.6721 4.3915L95.8098 1.18518Z" fill="#26D07C"/>
+                            <path d="M87.9518 19.7859L86.0896 22.9922L95.8113 28.5717L97.6735 25.3653L87.9518 19.7859Z" fill="#FF9E1B"/>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <div class="message message-bot">
+                <p class="bubble">Para onde envio?</p>
+            </div>
+
+            <div class="option-list" role="group" aria-label="Escolha o canal de envio">
+                <a class="option" href="us03-enviado.html">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H7"/><path d="M17 12H7"/></svg>
+                    <span>WhatsApp (31) •••••-0000</span>
+                    <svg class="icon icon-sm chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <a class="option" href="#">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>E-mail a•••••@email.com</span>
+                    <svg class="icon icon-sm chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <a class="option" href="#">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                    <span>Baixar PDF</span>
+                    <svg class="icon icon-sm chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+            </div>
+            <span class="message-time">10:42</span>
+        </section>
+
+        <div class="chat-composer">
+            <form class="composer-form" action="#">
+                <div class="composer-field">
+                    <label class="sr-only" for="mensagem">Mensagem</label>
+                    <input class="composer-input" id="mensagem" type="text" placeholder="Digite uma mensagem..." autocomplete="off">
+                    <button class="composer-attach" type="button" aria-label="Anexar arquivo">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    </button>
+                </div>
+                <button class="composer-send" type="submit" aria-label="Enviar mensagem">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 21 12 4 4l2.5 8L4 20Z"/><path d="M6.5 12H12"/></svg>
+                </button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
