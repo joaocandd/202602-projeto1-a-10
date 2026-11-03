@@ -1,0 +1,229 @@
+<!--
+História de usuário: [US02]
+Dor atacada: mensagens de WhatsApp que não chegam. O número novo só é salvo
+depois que o cliente prova que tem acesso a ele, com um código de 6 dígitos.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f5f9">
+    <title>Confirme seu número | Bulbe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <button class="voltar" type="button" id="voltar" aria-label="Voltar">
+                <img src="../templates/assets/Icon-voltar.svg" alt="">
+            </button>
+            <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe">
+        </header>
+
+        <main id="content" aria-labelledby="page-title">
+            <section class="page-heading">
+                <h1 id="page-title">Confirme seu número</h1>
+                <p>Enviamos um código de verificação para seu WhatsApp.</p>
+            </section>
+
+            <p class="confirm-number" id="numero-destino">Número não informado</p>
+            <p class="confirm-line">
+                Número incorreto?
+                <a class="inline-link" href="contato.html?editar=1">Alterar</a>
+            </p>
+
+            <span class="field-label" id="code-label">Código de 6 dígitos</span>
+            <div class="code-row" role="group" aria-labelledby="code-label">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 1" autocomplete="one-time-code">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 2">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 3">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 4">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 5">
+                <input class="code-box" type="text" inputmode="numeric" maxlength="1" aria-label="Dígito 6">
+            </div>
+            <p class="code-message" id="code-message" aria-live="polite" hidden></p>
+
+            <div class="sheet-actions">
+                <button class="primary-button" type="button" id="confirm-btn" disabled>Confirmar código</button>
+            </div>
+
+            <p class="resend-line">
+                Não recebeu o código?
+                <button class="resend-link" type="button" id="resend" disabled>Reenviar</button>
+                <span id="timer"></span>
+            </p>
+
+            <p class="demo-note" id="demo-note"></p>
+        </main>
+
+        <footer class="app-footer">
+            <nav class="bottom-nav" aria-label="Navegação principal">
+                <a class="tab" href="#faturas">
+                    <img src="../templates/assets/Icon-Fatura.svg" alt="">
+                    <span>Faturas</span>
+                </a>
+                <a class="tab" href="#consumo">
+                    <img src="../templates/assets/Icon-Consumo.svg" alt="">
+                    <span>Consumo</span>
+                </a>
+                <a class="tab" href="#indicacoes">
+                    <img src="../templates/assets/Icon-Indicacao.svg" alt="">
+                    <span>Indicações</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        var tel = (params.get('tel') || '').replace(/\D/g, '');
+
+        var boxes = Array.prototype.slice.call(document.querySelectorAll('.code-box'));
+        var confirmBtn = document.getElementById('confirm-btn');
+        var msgEl = document.getElementById('code-message');
+        var resendBtn = document.getElementById('resend');
+        var timerEl = document.getElementById('timer');
+        var demoEl = document.getElementById('demo-note');
+        var numEl = document.getElementById('numero-destino');
+
+        var cfg = null;
+        var expected = '';
+        var attempts = 0;
+        var seconds = 0;
+        var timerId = null;
+
+        if (tel.length === 11) {
+            numEl.textContent = '+55 (' + tel.slice(0, 2) + ') 9••••-' + tel.slice(-4);
+        }
+
+        document.getElementById('voltar').addEventListener('click', function () {
+            history.back();
+        });
+
+        function code() { return boxes.map(function (b) { return b.value; }).join(''); }
+
+        function showMsg(text) {
+            msgEl.textContent = text;
+            msgEl.hidden = !text;
+        }
+
+        function refresh() {
+            confirmBtn.disabled = code().length !== 6 || attempts <= 0;
+        }
+
+        function clearBoxes() {
+            boxes.forEach(function (b) { b.value = ''; b.classList.remove('is-wrong'); });
+        }
+
+        function tick() {
+            var m = Math.floor(seconds / 60);
+            var s = seconds % 60;
+            timerEl.textContent = ' em ' + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function startTimer() {
+            clearInterval(timerId);
+            seconds = cfg.reenvioSegundos;
+            resendBtn.disabled = true;
+            tick();
+            timerId = setInterval(function () {
+                seconds--;
+                if (seconds <= 0) {
+                    clearInterval(timerId);
+                    timerEl.textContent = '';
+                    resendBtn.disabled = false;
+                    return;
+                }
+                tick();
+            }, 1000);
+        }
+
+        function reset() {
+            attempts = cfg.tentativasMaximas;
+            clearBoxes();
+            showMsg('');
+            refresh();
+            startTimer();
+            boxes[0].focus();
+        }
+
+        // Dados fictícios de verificação
+        fetch('dados/verificacao.json')
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                cfg = d;
+                expected = String(d.codigo);
+                demoEl.textContent = 'Código de teste fictício: ' + expected;
+                reset();
+            })
+            .catch(function () {
+                showMsg('Não foi possível carregar a verificação. Tente novamente.');
+            });
+
+        boxes.forEach(function (box, i) {
+            box.addEventListener('input', function () {
+                box.value = box.value.replace(/\D/g, '').slice(0, 1);
+                box.classList.remove('is-wrong');
+                showMsg('');
+                if (box.value && boxes[i + 1]) boxes[i + 1].focus();
+                refresh();
+            });
+
+            box.addEventListener('keydown', function (e) {
+                if (e.key === 'Backspace' && !box.value && boxes[i - 1]) {
+                    e.preventDefault();
+                    boxes[i - 1].value = '';
+                    boxes[i - 1].focus();
+                    refresh();
+                }
+            });
+
+            box.addEventListener('paste', function (e) {
+                var text = ((e.clipboardData || window.clipboardData).getData('text') || '')
+                    .replace(/\D/g, '').slice(0, 6);
+                if (!text) return;
+                e.preventDefault();
+                text.split('').forEach(function (ch, k) { boxes[k].value = ch; });
+                boxes[Math.min(text.length, 5)].focus();
+                refresh();
+            });
+        });
+
+        confirmBtn.addEventListener('click', function () {
+            if (!expected) return;
+
+            if (code() === expected) {
+                window.location.href = 'contato.html?confirmado=1&tel=' + tel;
+                return;
+            }
+
+            attempts--;
+            clearBoxes();
+            boxes.forEach(function (b) { b.classList.add('is-wrong'); });
+
+            if (attempts > 0) {
+                showMsg('Código incorreto. Você tem mais ' + attempts +
+                        (attempts === 1 ? ' tentativa.' : ' tentativas.'));
+                boxes[0].focus();
+            } else {
+                showMsg('Muitas tentativas. Solicite um novo código.');
+                clearInterval(timerId);
+                timerEl.textContent = '';
+                resendBtn.disabled = false;
+            }
+            refresh();
+        });
+
+        resendBtn.addEventListener('click', function () {
+            if (cfg) reset();
+        });
+    })();
+    </script>
+</body>
+</html>

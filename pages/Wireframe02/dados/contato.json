@@ -1,0 +1,11 @@
+{
+  "rotulo": "Dados fictícios de demonstração",
+  "telefone": {
+    "valorMascarado": "(31) 9••••-2086",
+    "descricao": "Nossas mensagens não estão sendo entregues neste número. Ele ainda é seu?"
+  },
+  "email": {
+    "valorMascarado": "mar***@gmail.com",
+    "confirmadoEm": "12/09/25"
+  }
+}
