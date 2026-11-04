@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+// Resolve os caminhos a partir da pasta pages/ do repositório.
+// Suporta nomes com espaços e publicação do site em uma subpasta.
+(function () {
+  const path = location.pathname;
+  const marker = '/pages/';
+  const i = path.indexOf(marker);
+  if (i < 0) return;
+  const base = document.createElement('base');
+  base.href = path.slice(0, i + marker.length);
+  document.head.appendChild(base);
+})();
+</script>
+<title>Wireframe 01 · Visão geral | Bulbe</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Wireframe%2001/css/visao-geral.css"><script>
+// Usa os assets do template da equipe; se faltarem, procura na raiz compartilhada.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img[src^="templates/assets/"]').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallbackTentado) return;
+      img.dataset.fallbackTentado = '1';
+      const path = location.pathname;
+      const i = path.indexOf('/pages/');
+      if (i < 0) return;
+      img.src = path.slice(0,i+1) + 'assets/' + img.getAttribute('src').split('/').pop();
+    });
+  });
+});
+</script>
+</head><body><div class="container"><div class="top"><div><div class="eyebrow">Bulbe Energia · wireframe01</div><h1>Jornada de compreensão da fatura</h1><p class="muted">Protótipo navegável construído a partir dos templates da equipe. Clique em “Abrir tela” para navegar em tamanho real. Valores fictícios e Pix demonstrativo.</p></div><a href="Wireframe%2001/index.html">Abrir o aplicativo ↗</a></div><div class="grid"><section class="panel"><div class="panel-heading"><strong><span>01</span>Faturas</strong><a href="Wireframe%2001/index.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 01: Faturas" src="Wireframe%2001/index.html"></iframe></div></section><section class="panel"><div class="panel-heading"><strong><span>02</span>Notificação</strong><a href="Wireframe%2001/pages/notificacao.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 02: Notificação" src="Wireframe%2001/pages/notificacao.html"></iframe></div></section><section class="panel"><div class="panel-heading"><strong><span>03</span>Antes × Agora</strong><a href="Wireframe%2001/pages/comparacao.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 03: Antes × Agora" src="Wireframe%2001/pages/comparacao.html"></iframe></div></section><section class="panel"><div class="panel-heading"><strong><span>04</span>Fatura unificada</strong><a href="Wireframe%2001/pages/fatura-unificada.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 04: Fatura unificada" src="Wireframe%2001/pages/fatura-unificada.html"></iframe></div></section><section class="panel"><div class="panel-heading"><strong><span>05</span>Sua economia</strong><a href="Wireframe%2001/pages/economia.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 05: Sua economia" src="Wireframe%2001/pages/economia.html"></iframe></div></section><section class="panel"><div class="panel-heading"><strong><span>06</span>Pagamento</strong><a href="Wireframe%2001/pages/pagamento.html">Abrir tela ↗</a></div><div class="phone"><iframe loading="lazy" title="Tela 06: Pagamento" src="Wireframe%2001/pages/pagamento.html"></iframe></div></section></div><p class="note">As seis telas podem ser navegadas por botões dentro de cada visualização ou abertas separadamente. A apresentação usa iframes apenas para comparação visual.</p></div></body></html>
