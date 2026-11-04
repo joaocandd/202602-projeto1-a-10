@@ -1,28 +1,12 @@
-/* Interações comuns: menu, modal Pix demonstrativo e dados por fetch. */
+/* Interações comuns: modal Pix demonstrativo e dados por fetch. */
 (function () {
   'use strict';
   const body = document.body;
   const pagesAt = location.pathname.indexOf('/pages/');
   const root = pagesAt >= 0 ? location.pathname.slice(0, pagesAt + 1) : (body.dataset.root || './');
-  const menu = document.getElementById('side-menu');
-  const overlay = document.getElementById('menu-overlay');
-  const menuButton = document.querySelector('.header-menu');
-  const closeButton = document.getElementById('menu-close');
   const accountDropdown = document.querySelector('.account-dropdown');
   let openDialog = null;
   let previousFocus = null;
-
-  function toggleMenu(shouldOpen) {
-    if (!menu || !overlay) return;
-    body.classList.toggle('menu-open', shouldOpen);
-    menu.setAttribute('aria-hidden', String(!shouldOpen));
-    overlay.hidden = !shouldOpen;
-    if (menuButton) menuButton.setAttribute('aria-expanded', String(shouldOpen));
-    if (shouldOpen) closeButton?.focus(); else menuButton?.focus();
-  }
-  menuButton?.addEventListener('click', () => toggleMenu(true));
-  closeButton?.addEventListener('click', () => toggleMenu(false));
-  overlay?.addEventListener('click', () => toggleMenu(false));
 
   function setModal(open) {
     if (!openDialog) return;
@@ -51,7 +35,6 @@
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
     if (openDialog && !openDialog.hidden) setModal(false);
-    else if (body.classList.contains('menu-open')) toggleMenu(false);
     else if (accountDropdown?.open) accountDropdown.open = false;
   });
   document.addEventListener('click', event => {
