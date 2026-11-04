@@ -52,8 +52,8 @@ table {
 :root {
 	--bulbe-navy: #08068d;
 	--bulbe-bg: #ffffff;
-	--wf-bg: #FBF8FF;
-	--wf-navy-dark: #010055;
+	--wf-bg: #ffffff;
+	--wf-navy-dark: #08068d;
 	--wf-blue: #005CBD;
 	--wf-blue-mid: #0762C7;
 	--wf-blue-light: #D7E2FF;
@@ -64,10 +64,10 @@ table {
 	--wf-lavender-50: #F5F2FC;
 	--wf-lavender-100: #EFECF7;
 	--wf-lavender-200: #E4E1EB;
-	--wf-text-dark: #1B1B22;
-	--wf-text-body: #464653;
+	--wf-text-dark: #3e4d5b;
+	--wf-text-body: #3e4d5b;
 	--wf-text-muted: #536679;
-	--wf-text-subtle: #767684;
+	--wf-text-subtle: #536679;
 	--wf-shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 	--wf-shadow-md: 0px 2px 4px -2px rgba(0, 0, 0, 0.1), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -116,7 +116,6 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	background-color: var(--bulbe-bg);
-	border-bottom: 1px solid rgba(228, 225, 235, 0.5);
 }
 
 .header-back {
@@ -299,7 +298,7 @@ header {
 }
 
 .screen-title--bold-dark {
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--wf-navy-dark);
 }
 
@@ -532,7 +531,7 @@ header {
 }
 
 .speed-banner__text strong {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 /* Accordion (Pure HTML details/summary) */
@@ -858,7 +857,7 @@ header {
 
 .orange-promo-banner__title {
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 25px;
 	color: var(--bulbe-bg);
 }
@@ -908,7 +907,7 @@ header {
 
 .gauge-pct {
 	font-size: 28px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 28px;
 	color: var(--wf-navy-dark);
 }
@@ -1088,7 +1087,7 @@ header {
 }
 
 .timeline-stage__title--active {
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--wf-navy-dark);
 }
 
@@ -1190,7 +1189,7 @@ header {
 
 .navy-promo-card__title {
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 25px;
 	color: var(--bulbe-bg);
 }
@@ -1784,7 +1783,7 @@ header {
 
 .protocol-card__code {
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: -0.025em;
 	color: var(--wf-navy-dark);
