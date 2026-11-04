@@ -19,6 +19,9 @@
 	--app-gutter: 24px;
 	--app-column-left: max(0px, calc(50% - var(--app-max) / 2));
 
+	/* US03 (us03.css) */
+	--bulbe-text-strong: var(--app-text);
+
 	/* US02 (contato.css) */
 	--text-main: var(--app-text);
 	--border-soft: var(--app-divider);
@@ -260,9 +263,24 @@ footer nav {
 .faturas-sheet,
 .chat-messages,
 .chat-composer,
-.page-action {
+.page-action,
+.ticket,
+.list-link,
+.empty-note,
+.filter-tabs {
 	padding-right: var(--app-gutter);
 	padding-left: var(--app-gutter);
+}
+
+.install-bar {
+	margin-right: var(--app-gutter);
+	margin-left: var(--app-gutter);
+}
+
+/* Sem rolagem lateral: as abas quebram linha se não couberem */
+.filter-tabs {
+	flex-wrap: wrap;
+	overflow-x: visible;
 }
 
 /* ---------------------------------- US04 · coluna e margem lateral ---------------------------------- */
@@ -271,6 +289,23 @@ footer nav {
 	max-width: none;
 	padding-right: var(--app-gutter);
 	padding-left: var(--app-gutter);
+}
+
+/* Cards e campos dependiam do fundo lilás para aparecer; no fundo branco do template ganham borda */
+.hero-card,
+.wf-card,
+.quick-accordion,
+.form-input,
+.gauge-card,
+.address-analysis-card,
+.timeline-card,
+.economy-highlight-card,
+.advantage-card,
+.consent-card,
+.protocol-card,
+.reason-option,
+.comment-card {
+	border: 1px solid var(--app-divider);
 }
 
 /* ---------------------------------- US05 · ajustes sem editar assets/css/pagamentos.css ---------------------------------- */
@@ -282,6 +317,20 @@ footer nav {
 	min-height: 0;
 	margin: 0;
 	line-height: normal;
+}
+
+/* Sem rolagem lateral: os filtros quebram linha em vez de rolar */
+.filtros {
+	flex-wrap: wrap;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0;
+	padding-left: 0;
+	overflow-x: visible;
+}
+
+.fatura__faixa strong {
+	white-space: nowrap;
 }
 
 .resumo__titulo,
