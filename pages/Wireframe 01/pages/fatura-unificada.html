@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+// Resolve os caminhos a partir da pasta pages/ do repositório.
+// Suporta nomes com espaços e publicação do site em uma subpasta.
+(function () {
+  const path = location.pathname;
+  const marker = '/pages/';
+  const i = path.indexOf(marker);
+  if (i < 0) return;
+  const base = document.createElement('base');
+  base.href = path.slice(0, i + marker.length);
+  document.head.appendChild(base);
+})();
+</script>
+
+<meta name="theme-color" content="#11087e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Fatura unificada | Bulbe Energia</title>
+<!-- Base estrutural da equipe: template1.html + template1.css -->
+<link rel="stylesheet" href="Wireframe%2001/css/template1.css">
+<link rel="stylesheet" href="Wireframe%2001/css/bulbe.css">
+<script>
+// Usa os assets do template da equipe; se faltarem, procura na raiz compartilhada.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img[src^="templates/assets/"]').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallbackTentado) return;
+      img.dataset.fallbackTentado = '1';
+      const path = location.pathname;
+      const i = path.indexOf('/pages/');
+      if (i < 0) return;
+      img.src = path.slice(0,i+1) + 'assets/' + img.getAttribute('src').split('/').pop();
+    });
+  });
+});
+</script>
+</head>
+<body class="app-shell" data-root="./" data-screen="fatura-unificada">
+<header class="site-header">
+  <button class="header-menu" type="button" aria-label="Abrir menu" aria-controls="side-menu" aria-expanded="false">
+    <img src="templates/assets/Icon-Hamburguer.svg" alt="">
+  </button>
+  <a class="header-brand" href="Wireframe%2001/index.html" aria-label="Bulbe Energia, ir para a página inicial">
+    <img class="header-logo" src="templates/assets/logo-bulbe-branca.svg" alt="Bulbe Energia">
+  </a>
+  <a class="header-notification" href="Wireframe%2001/pages/notificacao.html" aria-label="Notificações">
+    <img src="templates/assets/Icon-Notificacao.svg" alt="">
+  </a>
+  <img class="header-avatar" src="templates/assets/User-avatar.png" alt="Avatar do usuário">
+</header>
+<div class="account-strip"><details class="account-dropdown"><summary><span class="account-copy"><span class="account-caption">Unidade consumidora</span><strong>Casa · <span data-bind="cliente.unidade">204588731</span></strong></span><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary>
+  <div class="account-menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#home"></use></svg><div><strong>Casa</strong><small>Instalação de demonstração · <span data-bind="cliente.unidade">204588731</span></small></div><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#check"></use></svg></div>
+</details></div>
+<main id="content" class="page-content" tabindex="-1">
+<div class="page-heading"><p class="eyebrow">Prévia da cobrança</p><h1>Sua fatura unificada</h1></div>
+<section class="card bill-card" aria-labelledby="bill-heading">
+  <div class="section-top"><h2 id="bill-heading" class="muted-label">Valor total</h2><span class="pill pill-blue">Prévia</span></div>
+  <p class="price price-large"><small>R$</small> <span data-bind="fatura.total_formatado">255,00</span></p>
+  <div class="line"></div>
+  <div class="two-meta"><div><span>Vencimento</span><strong data-bind="fatura.vencimento_formatado">15 abr 2026</strong></div><div><span>Período</span><strong data-bind="fatura.periodo">01/03 a 31/03</strong></div></div>
+  <div class="line"></div>
+  <details class="bill-detail"><summary>Detalhamento do valor <svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary>
+    <div class="breakdown">
+      <div><span>Custo de referência</span><strong>R$ <span data-bind="fatura.referencia_formatado">300,00</span></strong></div>
+      <div class="discount-line"><span>Economia Bulbe</span><strong>− R$ <span data-bind="fatura.economia_formatada">45,00</span></strong></div>
+      <div class="total-line"><span>Total estimado</span><strong>R$ <span data-bind="fatura.total_formatado">255,00</span></strong></div>
+      <p>Composição demonstrativa do wireframe. Consulte a fatura emitida para conferir os componentes reais.</p>
+    </div>
+  </details>
+  <p class="detail-hint">Toque acima para ver energia, encargos e desconto.</p>
+</section>
+<div class="success-strip"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#check"></use></svg><div><strong>Uma cobrança, tudo explicado</strong><p>O valor consolidado reúne os componentes da fatura e explica seu desconto.</p></div></div>
+<p class="micro-note">Valores e categorias ilustrativos. Consulte o documento emitido para os dados oficiais.</p>
+<a class="btn btn-primary " href="Wireframe%2001/pages/economia.html"><span>Ver como economizei</span><svg class="icon icon-small" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#arrow-right"></use></svg></a>
+</main>
+<footer class="site-footer">
+  <nav aria-label="Navegação principal">
+    <a class="tab active" href="Wireframe%2001/index.html" aria-current="page"><img src="templates/assets/Icon-Fatura.svg" alt=""><span>Faturas</span></a>
+    <a class="tab" href="Wireframe%2001/pages/economia.html"><img src="templates/assets/Icon-Consumo.svg" alt=""><span>Consumo</span></a>
+    <a class="tab" href="#"><img src="templates/assets/Icon-Indicacao.svg" alt=""><span>Indicações</span></a>
+  </nav>
+</footer>
+<div class="menu-overlay" id="menu-overlay" hidden></div>
+<aside class="side-menu" id="side-menu" aria-hidden="true" aria-label="Menu lateral">
+  <button class="side-menu-close" id="menu-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#x"></use></svg></button>
+  <div class="side-menu-logo"><img src="templates/assets/logo-completa.png" alt="Bulbe Energia · sua próxima energia"></div>
+  <nav class="side-menu-nav"><a href="Wireframe%2001/pages/ajuda.html"><img src="templates/assets/Icon-ComoFunciona.svg" alt=""><span>Como funciona?</span></a>
+<a href="Wireframe%2001/pages/ajuda.html"><img src="templates/assets/Icon-Perguntas.svg" alt=""><span>Perguntas frequentes</span></a>
+<a href="Wireframe%2001/pages/comparacao.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chart"></use></svg><span>Comparar meus custos</span></a>
+<a href="Wireframe%2001/pages/fatura-unificada.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#receipt"></use></svg><span>Fatura unificada</span></a>
+<a href="Wireframe%2001/pages/economia.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#leaf"></use></svg><span>Minha economia</span></a>
+<a href="Wireframe%2001/pages/ajuda.html"><img src="templates/assets/Icon-FaleConosco.svg" alt=""><span>Fale conosco</span></a></nav>
+  <p class="menu-note">Protótipo acadêmico · informações ilustrativas</p>
+</aside>
+<script src="Wireframe%2001/js/api.js" defer></script>
+<script src="Wireframe%2001/js/main.js" defer></script>
+</body></html>
