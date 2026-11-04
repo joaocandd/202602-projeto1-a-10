@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="4b-indisponibilidade.html" aria-label="Voltar">
+            <img src="assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content">
+        <div class="wf-screen wf-screen--compact">
+            <section class="screen-header screen-header--flush">
+                <span class="survey-pill">
+                    <img src="assets/icons/s1-timer.svg" alt="">
+                    <span>PESQUISA DE MELHORIA</span>
+                </span>
+                <h1 class="screen-title">Você poderia nos ajudar a entender o motivo?</h1>
+                <p class="screen-subtitle">Sua opinião é fundamental para melhorarmos a experiência da Bulbe e priorizarmos nossa expansão.</p>
+            </section>
+
+            <form class="reason-list" action="1-mudanca-de-endereco.html" method="get">
+                <label class="reason-option">
+                    <span class="reason-option__left">
+                        <input class="reason-radio" type="radio" name="motivo" value="indisponivel" checked>
+                        <span class="reason-option__text">Serviço indisponível no novo endereço</span>
+                    </span>
+                    <img src="assets/icons/s5b-opt1.svg" alt="">
+                </label>
+
+                <label class="reason-option">
+                    <span class="reason-option__left">
+                        <input class="reason-radio" type="radio" name="motivo" value="complexo">
+                        <span class="reason-option__text">Processo muito complexo</span>
+                    </span>
+                    <img src="assets/icons/s5b-opt2.svg" alt="">
+                </label>
+
+                <label class="reason-option">
+                    <span class="reason-option__left">
+                        <input class="reason-radio" type="radio" name="motivo" value="sem-vantagens">
+                        <span class="reason-option__text">Não vejo vantagens em continuar</span>
+                    </span>
+                    <img src="assets/icons/s5b-opt3.svg" alt="">
+                </label>
+
+                <label class="reason-option">
+                    <span class="reason-option__left">
+                        <input class="reason-radio" type="radio" name="motivo" value="outra-solucao">
+                        <span class="reason-option__text">Vou contratar outra solução</span>
+                    </span>
+                    <img src="assets/icons/s5b-opt4.svg" alt="">
+                </label>
+
+                <label class="reason-option">
+                    <span class="reason-option__left">
+                        <input class="reason-radio" type="radio" name="motivo" value="outro">
+                        <span class="reason-option__text">Outro motivo</span>
+                    </span>
+                    <img src="assets/icons/s5b-opt5.svg" alt="">
+                </label>
+
+                <div class="comment-card">
+                    <div class="comment-card__top">
+                        <label class="comment-card__label" for="comentario">Conte mais detalhes <span>(opcional)</span></label>
+                        <span class="comment-card__counter">0/300</span>
+                    </div>
+                    <textarea class="comment-textarea" id="comentario" name="comentario" maxlength="300" placeholder="Deixe seu comentário ou sugestão para nossa equipe..."></textarea>
+                </div>
+
+                <div class="trust-badge-card">
+                    <div class="trust-badge-card__icon">
+                        <img src="assets/icons/s5b-shield.svg" alt="">
+                    </div>
+                    <div>
+                        <h2 class="trust-badge-card__title">Conta preservada com segurança</h2>
+                        <p class="trust-badge-card__desc">Seus dados permanecem protegidos e você poderá reativar seu plano quando quiser sem burocracia.</p>
+                    </div>
+                </div>
+
+                <div class="cta-group" style="padding-top: 8px;">
+                    <button class="btn-primary" type="submit">
+                        <span>Enviar resposta</span>
+                        <img src="assets/icons/s1-arrow.svg" alt="">
+                    </button>
+
+                    <a class="back-home-link" href="1-mudanca-de-endereco.html">Voltar para o início</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

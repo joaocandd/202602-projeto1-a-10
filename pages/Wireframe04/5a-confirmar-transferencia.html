@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="template2.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="4a-continuidade-disponivel.html" aria-label="Voltar">
+            <img src="assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content">
+        <div class="wf-screen wf-screen--compact">
+            <div class="progress-tracker">
+                <div class="progress-tracker__top">
+                    <span class="progress-tracker__label">ETAPA 2 DE 3 • REVISÃO</span>
+                    <span class="progress-tracker__pct">66%</span>
+                </div>
+                <div class="progress-bar" aria-hidden="true">
+                    <div class="progress-bar__fill progress-bar__fill--navy-66"></div>
+                </div>
+            </div>
+
+            <section class="screen-header screen-header--flush">
+                <h1 class="screen-title">Confirme os dados da transferência</h1>
+                <p class="screen-subtitle screen-subtitle--body">Verifique as informações antes de oficializar a migração do seu plano Bulbe para o novo endereço.</p>
+            </section>
+
+            <section class="wf-card" style="gap: 12px;" aria-label="Comparação de endereço">
+                <div class="migration-header">
+                    <div class="migration-header__left">
+                        <img src="assets/icons/s5a-swap.svg" alt="">
+                        <span>MIGRAÇÃO DE UNIDADE CONSUMIDORA</span>
+                    </div>
+                    <span class="status-dot-green"></span>
+                </div>
+
+                <div class="address-box address-box--origin">
+                    <div class="address-box__top">
+                        <span class="address-tag address-tag--origin">Endereço atual</span>
+                        <span class="address-box__code">Cemig nº 3013588579</span>
+                    </div>
+                    <p class="address-box__street">Rua Fernandes Tourinho, 340</p>
+                    <p class="address-box__city">Funcionários, Belo Horizonte/MG</p>
+                </div>
+
+                <div class="migration-connector" aria-hidden="true">
+                    <div class="migration-connector__circle">
+                        <img src="assets/icons/s5a-down.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="address-box address-box--dest">
+                    <div class="address-box__top">
+                        <span class="address-tag address-tag--dest">Novo endereço</span>
+                        <span class="address-box__eligible">
+                            <img src="assets/icons/s2-check.svg" alt="">
+                            <span>Elegível</span>
+                        </span>
+                    </div>
+                    <p class="address-box__street">Av. Getúlio Vargas, 1420, Apt 802</p>
+                    <p class="address-box__city">Savassi, Belo Horizonte/MG</p>
+                </div>
+            </section>
+
+            <section class="wf-card" style="gap: 12px;" aria-labelledby="dados-title">
+                <div class="wf-card__header">
+                    <div class="migration-header__left" style="font-size: 12px;">
+                        <img src="assets/icons/s5a-user.svg" alt="">
+                        <h2 id="dados-title" style="font-size: 12px; font-weight: 600;">DADOS CADASTRAIS VINCULADOS</h2>
+                    </div>
+                    <img src="assets/icons/s5a-lock.svg" alt="">
+                </div>
+
+                <div class="data-rows">
+                    <div class="data-row">
+                        <span class="data-row__label">Titular</span>
+                        <span class="data-row__value">Mariana S. Oliveira</span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-row__label">CPF</span>
+                        <span class="data-row__value">•••.492.186-••</span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-row__label">E-mail</span>
+                        <span class="data-row__value">m•••••@gmail.com</span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-row__label">Distribuidora</span>
+                        <span class="data-row__value">
+                            <span>Cemig D</span>
+                            <span class="data-row__sub">(Mesma concessionária)</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="no-docs-banner">
+                    <img src="assets/icons/s5a-doc-ok.svg" alt="">
+                    <span>Nenhuma nova documentação exigida.</span>
+                </div>
+            </section>
+
+            <section class="activation-forecast-card" aria-label="Previsão de ativação">
+                <div class="activation-forecast-card__icon">
+                    <img src="assets/icons/s5a-calendar.svg" alt="">
+                </div>
+                <div class="activation-forecast-card__body">
+                    <span class="activation-forecast-card__eyebrow">PREVISÃO DE ATIVAÇÃO</span>
+                    <p class="activation-forecast-card__date">Data prevista: <strong>Próximo ciclo (01/11/2026)</strong>.</p>
+                    <p class="activation-forecast-card__desc">Sua energia continuará funcionando normalmente sem interrupção durante todo o período.</p>
+                </div>
+            </section>
+
+            <label class="consent-card">
+                <input class="consent-checkbox" type="checkbox" checked>
+                <span class="consent-text">Estou ciente e autorizo a Bulbe a transferir os créditos de energia solar para o novo endereço.</span>
+            </label>
+
+            <div class="cta-group">
+                <a class="btn-primary" href="6a-solicitacao-realizada.html">
+                    <span>Confirmar solicitação</span>
+                    <img src="assets/icons/s5a-check-btn.svg" alt="">
+                </a>
+
+                <div class="microcopy-row">
+                    <img src="assets/icons/s5a-shield-sm.svg" alt="">
+                    <span>Transferência sem custos adicionais ou multas.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

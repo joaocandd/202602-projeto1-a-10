@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+// Resolve os caminhos a partir da pasta pages/ do repositório.
+// Suporta nomes com espaços e publicação do site em uma subpasta.
+(function () {
+  const path = location.pathname;
+  const marker = '/pages/';
+  const i = path.indexOf(marker);
+  if (i < 0) return;
+  const base = document.createElement('base');
+  base.href = path.slice(0, i + marker.length);
+  document.head.appendChild(base);
+})();
+</script>
+
+<meta name="theme-color" content="#11087e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Ajuda | Bulbe Energia</title>
+<!-- Base estrutural da equipe: template2.html + template2.css -->
+<link rel="stylesheet" href="Wireframe%2001/css/template2.css">
+<link rel="stylesheet" href="Wireframe%2001/css/bulbe.css">
+<script>
+// Usa os assets do template da equipe; se faltarem, procura na raiz compartilhada.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img[src^="templates/assets/"]').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallbackTentado) return;
+      img.dataset.fallbackTentado = '1';
+      const path = location.pathname;
+      const i = path.indexOf('/pages/');
+      if (i < 0) return;
+      img.src = path.slice(0,i+1) + 'assets/' + img.getAttribute('src').split('/').pop();
+    });
+  });
+});
+</script>
+</head>
+<body class="secondary-page" data-root="./" data-screen="ajuda">
+<header><a class="header-back" href="Wireframe%2001/pages/pagamento.html" aria-label="Voltar para o pagamento"><img src="templates/assets/Icon-voltar.svg" alt=""></a><a href="Wireframe%2001/index.html" aria-label="Início"><img class="header-logo" src="templates/assets/logo-bulbe.svg" alt="Bulbe Energia"></a></header>
+<main id="content" class="page-content">
+<div class="page-heading"><p class="eyebrow">Central de ajuda</p><h1>Vamos tirar suas dúvidas?</h1><p class="subtitle">Entenda o exemplo da nova experiência de fatura e saiba o que conferir antes de pagar.</p></div>
+<section class="card help-card"><div class="help-intro"><svg class="icon icon-large" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#shield-check"></use></svg><div><strong>Entenda sua conta com segurança</strong><p>A transparência começa antes do pagamento.</p></div></div>
+ <details><summary>Como o valor de R$ 255,00 foi calculado? <svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary><p>É um exemplo: custo de referência de R$ 300,00, menos R$ 45,00 de economia ilustrativa, resultando em R$ 255,00.</p></details>
+ <details><summary>Esta já é uma fatura oficial? <svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary><p>Não. As seis telas são um protótipo acadêmico com dados fictícios. A cobrança real depende da documentação emitida pela empresa.</p></details>
+ <details><summary>O Pix desta tela faz uma cobrança? <svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary><p>Não. O botão apenas apresenta um aviso de demonstração. Nenhum pagamento pode ser realizado neste protótipo.</p></details>
+ <details><summary>O que devo conferir antes de pagar? <svg class="icon" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#chevron-right"></use></svg></summary><p>Confira se a cobrança é oficial, beneficiário, valor, período e vencimento pelos canais verificados da empresa.</p></details>
+</section>
+<a class="btn btn-primary" href="Wireframe%2001/pages/pagamento.html">Voltar para minha fatura <svg class="icon icon-small" aria-hidden="true" focusable="false"><use href="Wireframe%2001/img/icons.svg#arrow-right"></use></svg></a>
+</main>
+<script src="Wireframe%2001/js/api.js" defer></script><script src="Wireframe%2001/js/main.js" defer></script>
+</body></html>
