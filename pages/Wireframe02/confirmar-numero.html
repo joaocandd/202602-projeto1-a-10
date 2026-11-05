@@ -13,17 +13,18 @@ depois que o cliente prova que tem acesso a ele, com um código de 6 dígitos.
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../templates/template2.css">
     <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="../templates/app.css">
 </head>
 <body>
-    <div class="app-shell">
-        <header class="app-header">
-            <button class="voltar" type="button" id="voltar" aria-label="Voltar">
-                <img src="../templates/assets/Icon-voltar.svg" alt="">
-            </button>
-            <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe">
-        </header>
+    <header>
+        <a class="header-back" href="javascript:history.back()" aria-label="Voltar">
+            <img src="../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
 
         <main id="content" aria-labelledby="page-title">
             <section class="page-heading">
@@ -61,23 +62,22 @@ depois que o cliente prova que tem acesso a ele, com um código de 6 dígitos.
             <p class="demo-note" id="demo-note"></p>
         </main>
 
-        <footer class="app-footer">
-            <nav class="bottom-nav" aria-label="Navegação principal">
-                <a class="tab" href="#faturas">
-                    <img src="../templates/assets/Icon-Fatura.svg" alt="">
-                    <span>Faturas</span>
-                </a>
-                <a class="tab" href="#consumo">
-                    <img src="../templates/assets/Icon-Consumo.svg" alt="">
-                    <span>Consumo</span>
-                </a>
-                <a class="tab" href="#indicacoes">
-                    <img src="../templates/assets/Icon-Indicacao.svg" alt="">
-                    <span>Indicações</span>
-                </a>
-            </nav>
-        </footer>
-    </div>
+        <footer>
+        <nav aria-label="Navegação principal">
+            <a class="tab" href="../Wireframe%2001/index.html">
+                <img src="../templates/assets/Icon-Fatura.svg" alt="">
+                <span>Faturas</span>
+            </a>
+            <a class="tab" href="../Wireframe%2001/pages/economia.html">
+                <img src="../templates/assets/Icon-Consumo.svg" alt="">
+                <span>Consumo</span>
+            </a>
+            <a class="tab" href="#">
+                <img src="../templates/assets/Icon-Indicacao.svg" alt="">
+                <span>Indicações</span>
+            </a>
+        </nav>
+    </footer>
 
     <script>
     (function () {
@@ -101,10 +101,6 @@ depois que o cliente prova que tem acesso a ele, com um código de 6 dígitos.
         if (tel.length === 11) {
             numEl.textContent = '+55 (' + tel.slice(0, 2) + ') 9••••-' + tel.slice(-4);
         }
-
-        document.getElementById('voltar').addEventListener('click', function () {
-            history.back();
-        });
 
         function code() { return boxes.map(function (b) { return b.value; }).join(''); }
 
