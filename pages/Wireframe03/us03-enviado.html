@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia | Fatura enviada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../templates/template2.css">
+    <link rel="stylesheet" href="us03.css">
+    <link rel="stylesheet" href="../templates/app.css">
+</head>
+<body>
+    <header>
+        <a class="header-back" href="javascript:history.back()" aria-label="Voltar">
+            <img src="../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+
+    <main id="content" class="chat-page">
+        <div class="page-heading">
+            <h1 class="page-title">Assistente Bulbe</h1>
+        </div>
+
+        <section class="chat-messages muted" aria-label="Conversa com o Assistente Bulbe">
+            <div class="message message-user">
+                <div class="bubble">
+                    WhatsApp (31) •••••-0000
+                    <span class="bubble-meta">
+                        10:43
+                        <svg class="icon icon-xs" viewBox="0 0 24 24" role="img" aria-label="Lida"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="notice notice-success" role="status">
+                <span class="notice-check">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <div>
+                    <p class="notice-title">Pronto! Enviei a fatura de outubro para seu WhatsApp às 10:43.</p>
+                    <p class="notice-meta">Protocolo: <a href="us03-atendimentos.html">20261021-0042</a></p>
+                </div>
+            </div>
+
+            <section class="panel" aria-labelledby="fatura-titulo">
+                <div class="panel-head">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                    <h2 class="panel-title" id="fatura-titulo">Fatura Outubro/2026</h2>
+                    <span class="badge badge-open badge-sm">em aberto</span>
+                </div>
+                <button class="btn btn-primary btn-block" type="button">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    Copiar código PIX
+                </button>
+                <a class="btn btn-secondary btn-block" href="#">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+                    Ver PDF
+                </a>
+            </section>
+
+            <section class="panel panel-help" aria-labelledby="ajuda-titulo">
+                <div class="panel-head">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                    <div>
+                        <h2 class="panel-title" id="ajuda-titulo">Não chegou em 10 minutos?</h2>
+                        <p class="panel-text">Verifique sua conexão ou escolha uma das alternativas abaixo para atendimento imediato.</p>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-secondary" href="us03-reenviar.html">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        Reenviar
+                    </a>
+                    <a class="btn btn-secondary" href="#">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Enviar por e-mail
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <div class="chat-composer">
+            <form class="composer-form" action="#">
+                <div class="composer-field">
+                    <label class="sr-only" for="mensagem">Mensagem</label>
+                    <input class="composer-input" id="mensagem" type="text" placeholder="Digite uma mensagem..." autocomplete="off">
+                    <button class="composer-attach" type="button" aria-label="Anexar arquivo">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    </button>
+                </div>
+                <button class="composer-send" type="submit" aria-label="Enviar mensagem">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 21 12 4 4l2.5 8L4 20Z"/><path d="M6.5 12H12"/></svg>
+                </button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

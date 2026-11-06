@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbe Energia | Faturas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../templates/template1.css">
+    <link rel="stylesheet" href="us03.css">
+    <link rel="stylesheet" href="../templates/app.css">
+</head>
+<body>
+    <header>
+        <button class="header-menu" type="button" aria-label="Menu">
+            <img src="../templates/assets/Icon-Hamburguer.svg" alt="">
+        </button>
+        <img class="header-logo" src="../templates/assets/logo-bulbe-branca.svg" alt="Bulbe Energia">
+        <a class="header-notification" href="../Wireframe%2001/pages/notificacao.html" aria-label="Notificações">
+            <img src="../templates/assets/Icon-Notificacao.svg" alt="">
+        </a>
+        <a class="header-avatar-link" href="../Wireframe02/contato.html" aria-label="Meus dados de contato">
+            <img class="header-avatar" src="../templates/assets/User-avatar.png" alt="">
+        </a>
+    </header>
+
+    <main id="content" class="faturas">
+        <section class="faturas-top">
+            <a class="promo-banner" href="#">
+                <span class="promo-icon">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+                </span>
+                <span><strong>Indique e ganhe</strong> R$ 50 na próxima fatura</span>
+                <svg class="icon icon-sm promo-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+
+            <div class="install-row">
+                <span id="install-label">Instalação:</span>
+                <button class="install-select" type="button" aria-labelledby="install-label install-number">
+                    <span id="install-number">3013588579</span>
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="faturas-sheet">
+            <h1 class="sheet-label">Faturas</h1>
+
+            <article class="invoice-card" aria-label="Fatura de outubro de 2026">
+                <div class="invoice-head">
+                    <div>
+                        <h2 class="invoice-month">Outubro/26</h2>
+                        <p class="invoice-due">Vence dia 25/10/26</p>
+                    </div>
+                    <span class="badge badge-open">em aberto</span>
+                </div>
+
+                <p class="invoice-from">De <s>R$ 294,80</s> por</p>
+                <div class="invoice-value-row">
+                    <p class="invoice-amount">
+                        <span class="invoice-currency">R$</span>
+                        <span class="invoice-value">252,06</span>
+                    </p>
+                    <svg class="bulbe-mark" viewBox="85.5 0.5 15 28.6" aria-hidden="true">
+                        <path d="M100 13.0273H88.7744V16.7297H100V13.0273Z" fill="#0762C7"/>
+                        <path d="M95.8098 1.18518L86.0881 6.76465L87.9504 9.97096L97.6721 4.3915L95.8098 1.18518Z" fill="#26D07C"/>
+                        <path d="M87.9518 19.7859L86.0896 22.9922L95.8113 28.5717L97.6735 25.3653L87.9518 19.7859Z" fill="#FF9E1B"/>
+                    </svg>
+                </div>
+                <p class="invoice-discount">Desconto Bulbe: R$ 42,74</p>
+
+                <div class="invoice-actions">
+                    <a class="btn btn-primary" href="#">
+                        Pagar com PIX
+                        <svg class="pix-mark" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 8 8 14.5 1.5 8Z" fill="#FFFFFF"/><path d="M8 5.6 10.4 8 8 10.4 5.6 8Z" fill="#08068D"/></svg>
+                    </a>
+                    <a class="btn-link" href="#">Ver detalhes</a>
+                </div>
+            </article>
+
+            <div class="carousel-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+
+            <a class="help-link" href="us03-assistente.html">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                <span>Não recebi minha fatura por e-mail</span>
+            </a>
+
+            <h2 class="section-title">Histórico de faturas</h2>
+            <ul class="history-list">
+                <li>
+                    <span>Outubro</span>
+                    <span class="badge badge-open">em aberto</span>
+                    <span class="history-value">R$ 252,06</span>
+                </li>
+                <li>
+                    <span>Setembro</span>
+                    <span class="badge badge-ok"><svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>paga</span>
+                    <span class="history-value">R$ 240,10</span>
+                </li>
+                <li>
+                    <span>Agosto</span>
+                    <span class="badge badge-ok"><svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>paga</span>
+                    <span class="history-value">R$ 260,00</span>
+                </li>
+                <li>
+                    <span>Julho</span>
+                    <span class="badge badge-ok"><svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>paga</span>
+                    <span class="history-value">R$ 248,50</span>
+                </li>
+            </ul>
+        </section>
+
+        <a class="help-fab" href="us03-assistente.html">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+            Ajuda
+        </a>
+    </main>
+
+    <footer>
+        <nav aria-label="Navegação principal">
+            <a class="tab active" href="../Wireframe%2001/index.html" aria-current="page">
+                <img src="../templates/assets/Icon-Fatura.svg" alt="">
+                <span>Faturas</span>
+            </a>
+            <a class="tab" href="../Wireframe%2001/pages/economia.html">
+                <img src="../templates/assets/Icon-Consumo.svg" alt="">
+                <span>Consumo</span>
+            </a>
+            <a class="tab" href="#">
+                <img src="../templates/assets/Icon-Indicacao.svg" alt="">
+                <span>Indicações</span>
+            </a>
+        </nav>
+    </footer>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+    <aside class="side-menu" id="side-menu" aria-hidden="true">
+        <button class="side-menu-close" id="menu-close" type="button" aria-label="Fechar menu">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L15 15M15 1L1 15" stroke="#536679" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="side-menu-logo">
+            <img src="../templates/assets/logo-completa.png" alt="Bulbe - sua próxima energia">
+        </div>
+        <nav class="side-menu-nav" aria-label="Menu lateral">
+            <a href="#"><img src="../templates/assets/Icon-ComoFunciona.svg" alt=""><span>Como funciona?</span></a>
+            <a href="../Wireframe%2001/pages/ajuda.html"><img src="../templates/assets/Icon-Perguntas.svg" alt=""><span>Perguntas frequentes</span></a>
+            <a href="../pagamentos.html"><img src="../templates/assets/Icon-Pagamentos.svg" alt=""><span>Meus pagamentos</span></a>
+            <a href="../Wireframe04/index.html"><img src="../templates/assets/Icon-Endereço.svg" alt=""><span>Mudança de endereço</span></a>
+            <a href="#"><img src="../templates/assets/Icon-IndiqueEGanhe.svg" alt=""><span>Indique e ganhe</span></a>
+            <a href="us03-assistente.html"><img src="../templates/assets/Icon-FaleConosco.svg" alt=""><span>Fale conosco</span></a>
+            <a href="#"><img src="../templates/assets/Icon-Termos.svg" alt=""><span>Termos</span></a>
+        </nav>
+    </aside>
+
+    <script>
+        const body = document.body;
+        const toggleMenu = (open) => {
+            body.classList.toggle('menu-open', open);
+            document.getElementById('side-menu').setAttribute('aria-hidden', String(!open));
+            document.getElementById('menu-overlay').hidden = !open;
+        };
+        document.querySelector('.header-menu').addEventListener('click', () => toggleMenu(true));
+        document.getElementById('menu-close').addEventListener('click', () => toggleMenu(false));
+        document.getElementById('menu-overlay').addEventListener('click', () => toggleMenu(false));
+    </script>
+</body>
+</html>

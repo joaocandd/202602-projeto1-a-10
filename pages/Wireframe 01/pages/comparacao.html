@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08068d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Antes e agora | Bulbe Energia</title>
+<!-- Base estrutural da equipe: template2.html + template2.css -->
+<link rel="stylesheet" href="../../templates/template2.css">
+<link rel="stylesheet" href="../css/bulbe.css">
+<link rel="stylesheet" href="../../templates/app.css">
+</head>
+<body class="app-shell" data-root="./" data-screen="comparacao">
+<header>
+        <a class="header-back" href="javascript:history.back()" aria-label="Voltar">
+            <img src="../../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+<div class="account-strip"><details class="account-dropdown"><summary><span class="account-copy"><span class="account-caption">Unidade consumidora</span><strong>Casa · <span data-bind="cliente.unidade">204588731</span></strong></span><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#chevron-right"></use></svg></summary>
+  <div class="account-menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#home"></use></svg><div><strong>Casa</strong><small>Instalação de demonstração · <span data-bind="cliente.unidade">204588731</span></small></div><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#check"></use></svg></div>
+</details></div>
+<main id="content" class="page-content" tabindex="-1">
+<div class="page-heading"><p class="eyebrow">Comparação mensal</p><h1>Veja a diferença no seu custo</h1><p class="subtitle">Comparamos o valor de referência sem a Bulbe com a estimativa após a ativação.</p></div>
+<section class="card comparison-card" aria-label="Comparação do custo estimado">
+  <div class="comparison-columns">
+    <div class="comparison-column"><span>Sem Bulbe</span><strong>R$ <span data-bind="fatura.referencia_formatado">300,00</span></strong><div class="bar-area"><div class="compare-bar baseline"></div></div><small>Custo de referência</small></div>
+    <span class="compare-arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#arrow-right"></use></svg></span>
+    <div class="comparison-column"><span>Com Bulbe</span><strong class="navy">R$ <span data-bind="fatura.total_formatado">255,00</span></strong><div class="bar-area"><div class="compare-bar discounted"></div></div><small>Total estimado</small></div>
+  </div>
+</section>
+<section class="saving-highlight"><span class="icon-tile white-tile"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#leaf"></use></svg></span><div class="saving-copy"><p>Economia ilustrativa</p><strong><small>R$</small> <span data-bind="fatura.economia_formatada">45,00</span></strong></div><span class="floating-percent"><span data-bind="fatura.percentual_economia">15</span>% neste exemplo</span></section>
+<div class="info-strip"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#shield-check"></use></svg><div><strong>Comparação transparente</strong><p>Na versão real, usamos períodos de consumo comparáveis e cálculos do sistema.</p></div></div>
+<a class="btn btn-primary " href="fatura-unificada.html"><span>Ver fatura unificada</span><svg class="icon icon-small" aria-hidden="true" focusable="false"><use href="../img/icons.svg#arrow-right"></use></svg></a>
+</main>
+<script src="../js/api.js" defer></script>
+<script src="../js/main.js" defer></script>
+</body></html>

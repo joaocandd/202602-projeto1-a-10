@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08068d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Notificação | Bulbe Energia</title>
+<!-- Base estrutural da equipe: template2.html + template2.css -->
+<link rel="stylesheet" href="../../templates/template2.css">
+<link rel="stylesheet" href="../css/bulbe.css">
+<link rel="stylesheet" href="../../templates/app.css">
+</head>
+<body class="app-shell" data-root="./" data-screen="notificacao">
+<header>
+        <a class="header-back" href="../index.html" aria-label="Voltar">
+            <img src="../../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+<div class="account-strip"><details class="account-dropdown"><summary><span class="account-copy"><span class="account-caption">Unidade consumidora</span><strong>Casa · <span data-bind="cliente.unidade">204588731</span></strong></span><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#chevron-right"></use></svg></summary>
+  <div class="account-menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#home"></use></svg><div><strong>Casa</strong><small>Instalação de demonstração · <span data-bind="cliente.unidade">204588731</span></small></div><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#check"></use></svg></div>
+</details></div>
+<main id="content" class="page-content" tabindex="-1">
+<div class="page-heading"><p class="eyebrow">Central de notificações</p><h1>Sua fatura está quase pronta</h1></div>
+<section class="feature-hero" aria-label="Próxima emissão da fatura">
+  <div class="hero-illustration"><div class="receipt-circle"><svg class="icon icon-large" aria-hidden="true" focusable="false"><use href="../img/icons.svg#receipt"></use></svg></div><span class="orange-bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#bell"></use></svg></span></div>
+  <p class="overline amber">Emissão prevista em 8 dias</p>
+  <h2>Entenda a cobrança antes de pagar</h2>
+  <p>Após o período de ativação, sua primeira fatura unificada apresenta o valor total consolidado e todos os componentes da sua economia.</p>
+</section>
+<section class="card feature-list" aria-label="Vantagens da fatura unificada">
+  <div class="feature-item"><span class="icon-tile lavender"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#receipt"></use></svg></span><div><h3>Um valor total</h3><p>Tudo organizado em uma fatura unificada.</p></div></div>
+  <div class="feature-item"><span class="icon-tile lavender"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#leaf"></use></svg></span><div><h3>Economia detalhada</h3><p>Você vê claramente como o desconto foi calculado.</p></div></div>
+  <div class="feature-item"><span class="icon-tile lavender"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#shield-check"></use></svg></span><div><h3>Sem cobrança surpresa</h3><p>Valores, período e vencimento antes do pagamento.</p></div></div>
+</section>
+<a class="btn btn-primary " href="comparacao.html"><span>Entender minha fatura</span><svg class="icon icon-small" aria-hidden="true" focusable="false"><use href="../img/icons.svg#arrow-right"></use></svg></a>
+<p class="micro-note centered">Exemplo ilustrativo. Sua fatura real pode variar.</p>
+</main>
+<script src="../js/api.js" defer></script>
+<script src="../js/main.js" defer></script>
+</body></html>

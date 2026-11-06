@@ -1,0 +1,249 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------------------------------- Main CSS ---------------------------------- */
+
+:root {
+	--bulbe-navy: #08068d;
+	--bulbe-gray: #c2ccd6;
+	--bulbe-bg: #ffffff;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 70px minmax(0, 1fr) 79px;
+	min-height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--bulbe-navy);
+}
+
+button {
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+
+/* Header */
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 70px;
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--bulbe-navy);
+}
+
+.header-menu {
+	display: flex;
+	width: 21px;
+}
+
+.header-logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: auto;
+}
+
+.header-notification {
+	display: flex;
+	margin-left: auto;
+	margin-right: 24px;
+}
+
+.header-avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 2px solid #e6e6e6;
+	object-fit: cover;
+}
+
+/* Content */
+
+#content {
+	grid-row: 2;
+	width: 100%;
+	background-color: var(--bulbe-bg);
+}
+
+/* Footer */
+
+footer {
+	grid-row: 3;
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	height: 79px;
+	background-color: #ffffff;
+	box-shadow: 0 -2px 8px rgba(8, 6, 141, 0.06);
+}
+
+footer nav {
+	display: flex;
+	height: 100%;
+	padding: 0 24px;
+}
+
+.tab {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	border-top: 2px solid transparent;
+	color: var(--bulbe-gray);
+	font-size: 12px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.tab img {
+	height: 22px;
+}
+
+.tab.active {
+	border-top-color: var(--bulbe-navy);
+	color: var(--bulbe-navy);
+	font-weight: 600;
+}
+
+/* Side menu */
+
+.menu-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 20;
+	background-color: rgba(8, 6, 141, 0.2);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+
+.menu-overlay[hidden] {
+	display: none;
+}
+
+.side-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30;
+	width: 66.666%;
+	max-width: 320px;
+	height: 100%;
+	background-color: #ffffff;
+	border-radius: 0 24px 0 0;
+	transform: translateX(-100%);
+	visibility: hidden;
+	transition: transform 0.3s ease, visibility 0.3s;
+	overflow-y: auto;
+}
+
+body.menu-open .side-menu {
+	transform: translateX(0);
+	visibility: visible;
+}
+
+.side-menu-close {
+	position: absolute;
+	top: 6px;
+	right: 14px;
+	display: flex;
+	padding: 8px;
+}
+
+.side-menu-logo {
+	display: flex;
+	justify-content: center;
+	padding: 28px 0 22px;
+	border-bottom: 1px solid #d9e0e6;
+}
+
+.side-menu-logo img {
+	width: 122px;
+	height: auto;
+}
+
+.side-menu-nav {
+	padding-top: 20px;
+}
+
+.side-menu-nav a {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 20px;
+	color: #536679;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.35;
+	text-decoration: none;
+}
+
+.side-menu-nav a img {
+	width: 22px;
+	flex-shrink: 0;
+}
+
+.side-menu-nav a.active {
+	color: var(--bulbe-navy);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08068d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Fatura unificada | Bulbe Energia</title>
+<!-- Base estrutural da equipe: template2.html + template2.css -->
+<link rel="stylesheet" href="../../templates/template2.css">
+<link rel="stylesheet" href="../css/bulbe.css">
+<link rel="stylesheet" href="../../templates/app.css">
+</head>
+<body class="app-shell" data-root="./" data-screen="fatura-unificada">
+<header>
+        <a class="header-back" href="javascript:history.back()" aria-label="Voltar">
+            <img src="../../templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="../../templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
+<div class="account-strip"><details class="account-dropdown"><summary><span class="account-copy"><span class="account-caption">Unidade consumidora</span><strong>Casa · <span data-bind="cliente.unidade">204588731</span></strong></span><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#chevron-right"></use></svg></summary>
+  <div class="account-menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#home"></use></svg><div><strong>Casa</strong><small>Instalação de demonstração · <span data-bind="cliente.unidade">204588731</span></small></div><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#check"></use></svg></div>
+</details></div>
+<main id="content" class="page-content" tabindex="-1">
+<div class="page-heading"><p class="eyebrow">Prévia da cobrança</p><h1>Sua fatura unificada</h1></div>
+<section class="card bill-card" aria-labelledby="bill-heading">
+  <div class="section-top"><h2 id="bill-heading" class="muted-label">Valor total</h2><span class="pill pill-blue">Prévia</span></div>
+  <p class="price price-large"><small>R$</small> <span data-bind="fatura.total_formatado">255,00</span></p>
+  <div class="line"></div>
+  <div class="two-meta"><div><span>Vencimento</span><strong data-bind="fatura.vencimento_formatado">15 abr 2026</strong></div><div><span>Período</span><strong data-bind="fatura.periodo">01/03 a 31/03</strong></div></div>
+  <div class="line"></div>
+  <details class="bill-detail"><summary>Detalhamento do valor <svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#chevron-right"></use></svg></summary>
+    <div class="breakdown">
+      <div><span>Custo de referência</span><strong>R$ <span data-bind="fatura.referencia_formatado">300,00</span></strong></div>
+      <div class="discount-line"><span>Economia Bulbe</span><strong>− R$ <span data-bind="fatura.economia_formatada">45,00</span></strong></div>
+      <div class="total-line"><span>Total estimado</span><strong>R$ <span data-bind="fatura.total_formatado">255,00</span></strong></div>
+      <p>Composição demonstrativa do wireframe. Consulte a fatura emitida para conferir os componentes reais.</p>
+    </div>
+  </details>
+  <p class="detail-hint">Toque acima para ver energia, encargos e desconto.</p>
+</section>
+<div class="success-strip"><svg class="icon" aria-hidden="true" focusable="false"><use href="../img/icons.svg#check"></use></svg><div><strong>Uma cobrança, tudo explicado</strong><p>O valor consolidado reúne os componentes da fatura e explica seu desconto.</p></div></div>
+<p class="micro-note">Valores e categorias ilustrativos. Consulte o documento emitido para os dados oficiais.</p>
+<a class="btn btn-primary " href="economia.html"><span>Ver como economizei</span><svg class="icon icon-small" aria-hidden="true" focusable="false"><use href="../img/icons.svg#arrow-right"></use></svg></a>
+</main>
+<script src="../js/api.js" defer></script>
+<script src="../js/main.js" defer></script>
+</body></html>
