@@ -257,6 +257,17 @@ footer nav {
 	background-color: #060462;
 }
 
+
+
+.btn-secondary{
+		height: auto;
+		border: 1px solid var(--bulbe-gray);
+	min-height: 48px;
+	background-color: white;
+	color: var(--bulbe-navy);
+	font-size: 16px;
+	font-weight: 600;
+}
 /* ---------------------------------- US03 · margem lateral ---------------------------------- */
 
 .faturas-top,
