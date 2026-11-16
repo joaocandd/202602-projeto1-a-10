@@ -246,7 +246,7 @@ Da tela inicial, o cliente chega a todos os fluxos em até dois toques.
 | Menu lateral › Fale conosco | Assistente Bulbe | US03 | 2 |
 | Menu lateral › Perguntas frequentes | Ajuda | US01 | 2 |
 
-Links entre fluxos: o "Fale conosco" da US04 e da US05 abre o Assistente da US03, e "Dúvidas frequentes" da US03 abre a Ajuda da US01. Itens sem tela (Como funciona?, Indique e ganhe, Termos, aba Indicações) ficam com `href="#"`.
+Links entre fluxos: o "Fale conosco" da US04 e da US05 e o botão "Falar com um atendente" da Ajuda da US01 abrem o Assistente da US03, e "Dúvidas frequentes" da US03 abre a Ajuda da US01. Itens sem tela (Como funciona?, Indique e ganhe, Termos, aba Indicações) ficam com `href="#"`.
 
 ## 11. Acessibilidade (WCAG 2.1 AA)
 
