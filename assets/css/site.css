@@ -1208,7 +1208,7 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
 }
 
 .ampliacao[open] { display: grid; place-items: center; }
-.ampliacao::backdrop { background: rgba(3, 2, 49, 0.88); }
+.ampliacao::backdrop { background: rgba(3, 2, 49, 0.94); }
 
 .ampliacao figure {
   display: grid;
