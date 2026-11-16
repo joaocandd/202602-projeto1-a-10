@@ -275,7 +275,7 @@ O que concluímos:
 
 Próximas sprints:
 - Aplicar as 8 correções de contraste da tabela de WCAG.
-- Usar no mínimo 12 px em todo texto; a US01 ainda tem 9 e 10 px.
+- Usar no mínimo 12 px em todo texto; a US01 ainda tem 9 e 10 px e a US02, 11 px.
 - Testar o app com usuários de fora do grupo.
 - Ligar as telas aos dados fictícios em JSON (`data/`).
 - Criar as telas Como funciona?, Indique e ganhe e Termos.
