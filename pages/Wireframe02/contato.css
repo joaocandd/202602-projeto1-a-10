@@ -30,6 +30,61 @@ button {
     cursor: pointer;
 }
 
+/* ---------------------------------- Device frame ---------------------------------- */
+
+/* Mesma proporção do iPhone SE. Em telas menores, reduz pela largura mantendo a proporção. */
+.app-shell {
+    width: min(var(--device-w), 100vw);
+    height: calc(min(var(--device-w), 100vw) * var(--device-h) / var(--device-w));
+    display: grid;
+    grid-template-rows: 70px minmax(0, 1fr) 79px;
+    overflow: hidden;
+    background: var(--bulbe-bg);
+}
+
+/* ---------------------------------- Header ---------------------------------- */
+
+.app-header {
+    grid-row: 1;
+    position: relative;
+    z-index: 10;
+    height: 70px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.voltar {
+    width: 21px;
+    height: 21px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 0;
+    background: transparent;
+}
+
+.voltar img {
+    display: block;
+    width: 21px;
+    height: auto;
+    object-fit: contain;
+}
+
+.header-logo {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
 /* ---------------------------------- Content ---------------------------------- */
 
 #content {
@@ -444,6 +499,12 @@ button {
     display: flex;
     gap: 8px;
     margin-top: 8px;
+    justify-content: center;
+}
+
+#code-label {
+    display: block;
+    margin-left: 12.5px;
 }
 
 .code-box {
