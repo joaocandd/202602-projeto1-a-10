@@ -168,7 +168,8 @@
   /* ------------------------------------------------------------------ */
 
   var TELA_INICIAL_DO_APP = new URL('pages/Wireframe%2001/index.html', document.baseURI);
-  var VOLTAR_PELO_HISTORICO = 'a[href^="javascript:history.back"]';
+  // Voltar das telas: links com history.back() no href ou no onclick
+  var VOLTAR_PELO_HISTORICO = 'a[href^="javascript:history.back"], a[onclick*="history.back"]';
 
   function caminhoLegivel(caminho) {
     try { return decodeURIComponent(caminho); } catch (erro) { return caminho; }
@@ -228,15 +229,17 @@
       catch (erro) { iframe.src = absoluto; }
     }
 
-    // Voltar: tela anterior deste celular; sem tela anterior, a tela inicial do app
-    function voltar() {
+    // Voltar: tela anterior deste celular. Sem tela anterior, o endereço do
+    // próprio link; se o link só tiver javascript:, a tela inicial do app.
+    function voltar(link) {
       var destino;
+      var href = link ? link.getAttribute('href') || '' : '';
       if (pilha.length > 1) {
         pilha.pop();
         destino = new URL(pilha[pilha.length - 1], location.href).href;
       } else {
         pilha.length = 0;
-        destino = TELA_INICIAL_DO_APP.href;
+        destino = href && !/^javascript:/i.test(href) ? link.href : TELA_INICIAL_DO_APP.href;
       }
       abrir(destino);
     }
@@ -277,8 +280,10 @@
       documento.addEventListener('click', function (evento) {
         var link = evento.target.closest ? evento.target.closest(VOLTAR_PELO_HISTORICO) : null;
         if (!link) return;
+        // Captura no documento: roda antes do onclick do link e o impede de rodar
         evento.preventDefault();
-        voltar();
+        evento.stopPropagation();
+        voltar(link);
       }, true);
 
       // Esc fora de um campo devolve o foco (e o teclado) para a apresentação
