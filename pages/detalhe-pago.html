@@ -6,19 +6,21 @@
 <title>Detalhe do pagamento: Pago</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="templates/template2.css">
 <link rel="stylesheet" href="../assets/css/pagamentos.css">
+<link rel="stylesheet" href="templates/app.css">
 </head>
 <body>
+<header>
+        <a class="header-back" href="pagamentos.html" aria-label="Voltar para Meus pagamentos">
+            <img src="templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
 <div class="app">
-  <header class="header-interno">
-    <a class="header-interno__voltar" href="pagamentos.html" aria-label="Voltar para Meus pagamentos">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
-    </a>
-    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
-  </header>
 
-  <main class="conteudo conteudo--detalhe">
+  <main id="content" class="conteudo conteudo--detalhe">
     <h1 class="titulo-detalhe">Detalhe do pagamento</h1>
 
     <section class="fatura" aria-label="Fatura de Agosto/25">

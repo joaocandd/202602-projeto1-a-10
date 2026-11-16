@@ -6,27 +6,29 @@
 <title>Meus pagamentos: vazio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="templates/template2.css">
 <link rel="stylesheet" href="../assets/css/pagamentos.css">
+<link rel="stylesheet" href="templates/app.css">
 </head>
 <body>
+<header>
+        <a class="header-back" href="pagamentos.html" aria-label="Voltar para Meus pagamentos">
+            <img src="templates/assets/Icon-voltar.svg" alt="">
+        </a>
+        <img class="header-logo" src="templates/assets/logo-bulbe.svg" alt="Bulbe Energia">
+    </header>
 <div class="app">
-  <header class="header-interno">
-    <a class="header-interno__voltar" href="menu.html" aria-label="Voltar">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
-    </a>
-    <img class="header-interno__logo" src="../assets/img/logo-bulbe-header.svg" alt="Bulbe" width="121" height="30">
-  </header>
 
   <div class="titulo-pagina">
     <h1>Meus pagamentos</h1>
     <p class="titulo-pagina__sub">Instalação <strong>3013588579</strong></p>
   </div>
 
-  <main class="estado-vazio">
+  <main id="content" class="estado-vazio">
     <svg width="148" height="128" viewBox="0 0 148 128" fill="none" aria-hidden="true">
       <circle cx="74" cy="64" r="60" fill="#EEF3FB"></circle>
-      <path d="M48 22h44v80l-5.5-4-5.5 4-5.5-4-5.5 4-5.5-4-5.5 4-5.5-4-5.5 4z" fill="#FFFFFF" stroke="#0C0C8A" stroke-width="3" stroke-linejoin="round"></path>
+      <path d="M48 22h44v80l-5.5-4-5.5 4-5.5-4-5.5 4-5.5-4-5.5 4-5.5-4-5.5 4z" fill="#FFFFFF" stroke="#08068d" stroke-width="3" stroke-linejoin="round"></path>
       <path d="M58 40h24M58 52h24M58 64h14" stroke="#A9B4C6" stroke-width="3" stroke-linecap="round"></path>
       <circle cx="96" cy="84" r="16" fill="#FFFFFF" stroke="#0762C7" stroke-width="3"></circle>
       <path d="m108 96 10 10" stroke="#0762C7" stroke-width="4" stroke-linecap="round"></path>
@@ -36,17 +38,24 @@
     </svg>
     <h2 class="estado-vazio__titulo">Nenhum pagamento encontrado</h2>
     <p class="estado-vazio__texto">Quando você pagar uma fatura, ela aparece aqui. A confirmação pode levar até 3 dias úteis.</p>
-    <a class="btn btn--secundario" href="#">Ver minhas faturas</a>
+    <a class="btn btn--secundario" href="Wireframe%2001/index.html">Ver minhas faturas</a>
   </main>
-
-  <nav class="nav-inferior" aria-label="Navegação principal">
-    <a class="nav-inferior__item" href="#">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M8 13h8"></path><path d="M8 17h8"></path></svg>Faturas</a>
-    <a class="nav-inferior__item" href="#">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg>Consumo</a>
-    <a class="nav-inferior__item" href="#">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6"></path><path d="M22 11h-6"></path></svg>Indicações</a>
-  </nav>
 </div>
+<footer>
+        <nav aria-label="Navegação principal">
+            <a class="tab" href="Wireframe%2001/index.html">
+                <img src="templates/assets/Icon-Fatura.svg" alt="">
+                <span>Faturas</span>
+            </a>
+            <a class="tab" href="Wireframe%2001/pages/economia.html">
+                <img src="templates/assets/Icon-Consumo.svg" alt="">
+                <span>Consumo</span>
+            </a>
+            <a class="tab" href="#">
+                <img src="templates/assets/Icon-Indicacao.svg" alt="">
+                <span>Indicações</span>
+            </a>
+        </nav>
+    </footer>
 </body>
 </html>

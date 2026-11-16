@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../templates/template1.css">
     <link rel="stylesheet" href="us03.css">
+    <link rel="stylesheet" href="../templates/app.css">
 </head>
 <body>
     <header>
@@ -16,10 +17,12 @@
             <img src="../templates/assets/Icon-Hamburguer.svg" alt="">
         </button>
         <img class="header-logo" src="../templates/assets/logo-bulbe-branca.svg" alt="Bulbe Energia">
-        <button class="header-notification" type="button" aria-label="Notificações">
+        <a class="header-notification" href="../Wireframe%2001/pages/notificacao.html" aria-label="Notificações">
             <img src="../templates/assets/Icon-Notificacao.svg" alt="">
-        </button>
-        <img class="header-avatar" src="../templates/assets/User-avatar.png" alt="Avatar do usuário">
+        </a>
+        <a class="header-avatar-link" href="../Wireframe02/contato.html" aria-label="Meus dados de contato">
+            <img class="header-avatar" src="../templates/assets/User-avatar.png" alt="">
+        </a>
     </header>
 
     <main id="content" class="faturas">
@@ -115,12 +118,12 @@
     </main>
 
     <footer>
-        <nav aria-label="Seções do app">
-            <a class="tab active" href="#">
+        <nav aria-label="Navegação principal">
+            <a class="tab active" href="../Wireframe%2001/index.html" aria-current="page">
                 <img src="../templates/assets/Icon-Fatura.svg" alt="">
                 <span>Faturas</span>
             </a>
-            <a class="tab" href="#">
+            <a class="tab" href="../Wireframe%2001/pages/economia.html">
                 <img src="../templates/assets/Icon-Consumo.svg" alt="">
                 <span>Consumo</span>
             </a>
@@ -140,8 +143,9 @@
         </div>
         <nav class="side-menu-nav" aria-label="Menu lateral">
             <a href="#"><img src="../templates/assets/Icon-ComoFunciona.svg" alt=""><span>Como funciona?</span></a>
-            <a href="#"><img src="../templates/assets/Icon-Perguntas.svg" alt=""><span>Perguntas frequentes</span></a>
-            <a href="#"><img src="../templates/assets/Icon-Endereço.svg" alt=""><span>Mudança de endereço</span></a>
+            <a href="../Wireframe%2001/pages/ajuda.html"><img src="../templates/assets/Icon-Perguntas.svg" alt=""><span>Perguntas frequentes</span></a>
+            <a href="../pagamentos.html"><img src="../templates/assets/Icon-Pagamentos.svg" alt=""><span>Meus pagamentos</span></a>
+            <a href="../Wireframe04/index.html"><img src="../templates/assets/Icon-Endereço.svg" alt=""><span>Mudança de endereço</span></a>
             <a href="#"><img src="../templates/assets/Icon-IndiqueEGanhe.svg" alt=""><span>Indique e ganhe</span></a>
             <a href="us03-assistente.html"><img src="../templates/assets/Icon-FaleConosco.svg" alt=""><span>Fale conosco</span></a>
             <a href="#"><img src="../templates/assets/Icon-Termos.svg" alt=""><span>Termos</span></a>
