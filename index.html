@@ -3,29 +3,1141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bulbe | Nome da solução do squad</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="theme-color" content="#08068D">
+  <meta name="description" content="Apresentação final do Squad 10 para a Bulbe Energia: da dor do cliente ao app, com as telas funcionando.">
+  <title>Da dor do cliente ao app da Bulbe | Squad 10</title>
+  <link rel="icon" href="pages/templates/assets/logo-bulbe.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <header class="topo">
-    <h1>Nome da solução do squad</h1>
-    <p>Projeto em Ciência de Dados  I · Bulbe Energia</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Clientes (dados fictícios)</h2>
-      <p class="aviso">Exemplo inicial: esta lista é carregada de <code>data/clientes.json</code> com <code>fetch</code>.
-        Substituam pelo conteúdo da solução do squad.</p>
-      <ul id="lista-clientes" class="lista"></ul>
-      <p><a href="pages/exemplo.html">Ver página de exemplo</a></p>
-    </section>
-  </main>
+<!-- Ícones de contorno usados pelo site (traço de 2 px, cantos arredondados) -->
+<svg class="so-leitor" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-reiniciar" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></symbol>
+  <symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-baixar" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="i-ampliar" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></symbol>
+  <symbol id="i-anterior" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-proxima" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></symbol>
+  <symbol id="i-fone" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/></symbol>
+  <symbol id="i-duvida" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.2a3 3 0 0 1 5.7 1c0 2-2.9 2.6-2.9 4"/><path d="M12 17.5h.01"/></symbol>
+  <symbol id="i-sino" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4l2-2Z"/><path d="M10 21h4"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7Z"/></symbol>
+</svg>
 
-  <footer class="rodape">
-    <p>Squad XX · Turma X · 2º semestre de 2026</p>
-  </footer>
+<button class="pular" type="button" data-ir="conteudo">Pular para o conteúdo</button>
 
-  <script type="module" src="assets/js/main.js"></script>
+<nav class="indice" aria-label="Seções da apresentação">
+  <img class="indice-logo" src="pages/templates/assets/logo-bulbe.svg" alt="Bulbe Energia" width="100" height="29">
+  <button class="indice-alternar" type="button" aria-expanded="false" aria-controls="indice-lista">Seções</button>
+  <ol class="indice-lista" id="indice-lista">
+    <li><button type="button" data-ir="abertura"><span class="indice-ponto"></span><span class="indice-rotulo">Abertura</span></button></li>
+    <li><button type="button" data-ir="problema"><span class="indice-ponto"></span><span class="indice-rotulo">O problema</span></button></li>
+    <li><button type="button" data-ir="personas"><span class="indice-ponto"></span><span class="indice-rotulo">As personas</span></button></li>
+    <li><button type="button" data-ir="solucoes"><span class="indice-ponto"></span><span class="indice-rotulo">As soluções</span></button></li>
+    <li class="indice-sub"><button type="button" data-ir="us01"><span class="indice-ponto"></span><span class="indice-rotulo">US01 · Prévia da 1ª fatura</span></button></li>
+    <li class="indice-sub"><button type="button" data-ir="us02"><span class="indice-ponto"></span><span class="indice-rotulo">US02 · Canal de contato</span></button></li>
+    <li class="indice-sub"><button type="button" data-ir="us03"><span class="indice-ponto"></span><span class="indice-rotulo">US03 · Reenvio da fatura</span></button></li>
+    <li class="indice-sub"><button type="button" data-ir="us04"><span class="indice-ponto"></span><span class="indice-rotulo">US04 · Mudança de endereço</span></button></li>
+    <li class="indice-sub"><button type="button" data-ir="us05"><span class="indice-ponto"></span><span class="indice-rotulo">US05 · Pagamento e comprovante</span></button></li>
+    <li><button type="button" data-ir="app"><span class="indice-ponto"></span><span class="indice-rotulo">O app completo</span></button></li>
+    <li><button type="button" data-ir="ideacao"><span class="indice-ponto"></span><span class="indice-rotulo">Como chegamos lá</span></button></li>
+    <li><button type="button" data-ir="ia"><span class="indice-ponto"></span><span class="indice-rotulo">Como usamos IA</span></button></li>
+    <li><button type="button" data-ir="evolucao"><span class="indice-ponto"></span><span class="indice-rotulo">Evolução</span></button></li>
+    <li><button type="button" data-ir="acessibilidade"><span class="indice-ponto"></span><span class="indice-rotulo">Acessibilidade</span></button></li>
+    <li><button type="button" data-ir="conclusao"><span class="indice-ponto"></span><span class="indice-rotulo">Equipe e conclusão</span></button></li>
+  </ol>
+</nav>
+
+<main id="conteudo" tabindex="-1">
+
+  <!-- ============================== 1. Abertura ============================== -->
+  <section class="secao abertura" id="abertura" data-parada data-indice tabindex="-1" aria-labelledby="abertura-titulo">
+    <div class="abertura-corpo miolo">
+      <div class="abertura-texto">
+        <img class="abertura-logo" src="pages/templates/assets/logo-bulbe-branca.svg" alt="Bulbe Energia" width="100" height="29">
+        <p class="abertura-squad">Squad 10 · Turma A · Ibmec BH</p>
+        <h1 id="abertura-titulo">Da dor do cliente ao app da Bulbe</h1>
+        <p class="abertura-sub">Cinco dores medidas viraram cinco user stories, 31 telas em HTML e CSS e um app único, navegável a partir da tela inicial.</p>
+        <div class="abertura-acoes">
+          <button class="botao botao--claro" type="button" data-ir="app">Ver o app funcionando</button>
+          <a class="botao botao--contorno-claro" href="docs/apresentacao-final/Bulbe_Squad10_Design_UX.pdf" download>
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-baixar"></use></svg>Baixar os slides (PDF)
+          </a>
+        </div>
+        <p class="abertura-dica">No computador, as setas do teclado mudam de seção e a tecla F liga a tela cheia.</p>
+      </div>
+      <div class="abertura-celular">
+        <div class="celular" data-celular="abertura" data-inicio="pages/index.html" data-reserva="215">
+          <div class="celular-tela">
+            <iframe src="pages/index.html" title="App da Bulbe completo, a partir da tela inicial" width="390" height="844"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faixa-numeros">
+      <ul class="miolo" aria-label="Números do processo">
+        <li><strong>36</strong><span>oportunidades levantadas nos mapas de jornada</span></li>
+        <li><strong>17</strong><span>notas no SCAMPER sobre o app atual</span></li>
+        <li><strong>4</strong><span>Crazy 8's desenhados à mão</span></li>
+        <li><strong>31</strong><span>telas finais em HTML e CSS</span></li>
+        <li><strong>12</strong><span>pull requests em duas semanas</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== 2. O problema ============================== -->
+  <section class="secao" id="problema" data-parada data-indice tabindex="-1" aria-labelledby="problema-titulo">
+    <div class="miolo">
+      <h2 id="problema-titulo">O problema</h2>
+      <p class="lide">A Bulbe dá desconto na conta de luz com energia solar, mas a comunicação de fatura e pagamento falha nos primeiros meses, e o cliente desiste ou deixa de pagar.</p>
+      <ul class="dores">
+        <li class="dor">
+          <p class="dor-numero">32,4%</p>
+          <div class="dor-texto">
+            <h3>A 1ª fatura não é reconhecida e parece golpe</h3>
+            <p>32,4% de inadimplência na 1ª fatura, de set/2025 a jul/2026.</p>
+            <p class="dor-fonte">Fonte: dado da Bulbe</p>
+          </div>
+          <button class="botao botao--leve" type="button" data-ir="us01">Ver a US01</button>
+        </li>
+        <li class="dor">
+          <p class="dor-numero">~20%</p>
+          <div class="dor-texto">
+            <h3>As mensagens vão para o número errado</h3>
+            <p>~20% das mensagens de WhatsApp não chegam ao destino.</p>
+            <p class="dor-fonte">Fonte: dado da Bulbe</p>
+          </div>
+          <button class="botao botao--leve" type="button" data-ir="us02">Ver a US02</button>
+        </li>
+        <li class="dor">
+          <p class="dor-numero">8 dias e 16 h</p>
+          <div class="dor-texto">
+            <h3>A fatura não chega e o suporte demora</h3>
+            <p>8 dias e 16 horas de tempo médio de resposta do suporte.</p>
+            <p class="dor-fonte">Fonte: Reclame Aqui</p>
+          </div>
+          <button class="botao botao--leve" type="button" data-ir="us03">Ver a US03</button>
+        </li>
+        <li class="dor">
+          <p class="dor-numero">3ª causa</p>
+          <div class="dor-texto">
+            <h3>Quem muda de casa cancela o serviço</h3>
+            <p>A mudança de endereço é a 3ª maior causa de churn.</p>
+            <p class="dor-fonte">Fonte: dado da Bulbe</p>
+          </div>
+          <button class="botao botao--leve" type="button" data-ir="us04">Ver a US04</button>
+        </li>
+        <li class="dor">
+          <p class="dor-numero">3 dias úteis</p>
+          <div class="dor-texto">
+            <h3>O cliente paga e não sabe se o pagamento entrou</h3>
+            <p>Até 3 dias úteis de compensação sem saber se o pagamento entrou.</p>
+            <p class="dor-fonte">Fonte: reclamação de 11/09/2026 no Reclame Aqui</p>
+          </div>
+          <button class="botao botao--leve" type="button" data-ir="us05">Ver a US05</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== 3. As personas ============================== -->
+  <section class="secao secao--suave" id="personas" data-parada data-indice tabindex="-1" aria-labelledby="personas-titulo">
+    <div class="miolo">
+      <h2 id="personas-titulo">As personas</h2>
+      <p class="lide">Nome e idade são ilustrativos; as dores vêm de reclamações públicas e de dados da Bulbe.</p>
+      <ul class="personas">
+        <li class="cartao persona">
+          <h3>Marlene Aparecida, 58</h3>
+          <p class="persona-quem">Costureira em Contagem, paga cerca de R$ 250 de luz por mês.</p>
+          <p class="persona-precisa"><span>O que precisa</span>Entender a 1ª cobrança antes de pagar.</p>
+          <p class="persona-us"><span class="selo">US01</span></p>
+        </li>
+        <li class="cartao persona">
+          <h3>Rogério Alves, 52</h3>
+          <p class="persona-quem">Motorista de aplicativo em BH, dois chips e WhatsApp em só um.</p>
+          <p class="persona-precisa"><span>O que precisa</span>Receber a fatura no número certo e pagar por PIX entre corridas.</p>
+          <p class="persona-us"><span class="selo">US02</span> <span class="selo">US03</span></p>
+        </li>
+        <li class="cartao persona">
+          <h3>Lucas Mendes, 31</h3>
+          <p class="persona-quem">Analista de suporte em BH, vai entregar o apartamento alugado.</p>
+          <p class="persona-precisa"><span>O que precisa</span>Resolver a mudança sozinho, sem fila no WhatsApp.</p>
+          <p class="persona-us"><span class="selo">US04</span></p>
+        </li>
+        <li class="cartao persona">
+          <h3>Ricardo Nogueira, 45</h3>
+          <p class="persona-quem">Ex-cliente cobrado quase três anos depois de cancelar.</p>
+          <p class="persona-precisa"><span>O que precisa</span>Provar o que pagou e saber o que ainda deve.</p>
+          <p class="persona-us"><span class="selo">US05</span></p>
+        </li>
+        <li class="cartao persona">
+          <h3>Tatiane Ferreira, 37</h3>
+          <p class="persona-quem">Diarista em Betim, controla os gastos pelo celular.</p>
+          <p class="persona-precisa"><span>O que precisa</span>Saber quanto pagar, qual desconto recebeu e se o valor foi repassado.</p>
+          <p class="persona-us"><span class="selo">Pesquisa base</span> 34 reclamações de 2026</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== 4. As soluções ============================== -->
+  <section class="secao" id="solucoes" data-parada data-indice tabindex="-1" aria-labelledby="solucoes-titulo">
+    <div class="miolo">
+      <h2 id="solucoes-titulo">As soluções</h2>
+      <p class="lide">Cada tela entra onde o cliente já toca e termina com uma prova do que foi resolvido.</p>
+      <ol class="principios">
+        <li><h3>Começar pela dor, não pela tela</h3><p>Cada fluxo responde ao momento da jornada em que a persona desiste.</p></li>
+        <li><h3>Entrar pelo que o cliente já conhece</h3><p>Fatura, foto de perfil, menu lateral ou botão Ajuda; nada de menu novo.</p></li>
+        <li><h3>Uma decisão por tela</h3><p>Telas curtas, um botão principal e o status sempre escrito.</p></li>
+        <li><h3>Terminar com uma prova</h3><p>Protocolo, código confirmado, transferência solicitada ou comprovante.</p></li>
+      </ol>
+      <div class="atalhos-us">
+        <button class="atalho-us" type="button" data-ir="us01"><strong>US01</strong><span>Prévia da 1ª fatura</span></button>
+        <button class="atalho-us" type="button" data-ir="us02"><strong>US02</strong><span>Correção do canal de contato</span></button>
+        <button class="atalho-us" type="button" data-ir="us03"><strong>US03</strong><span>Reenvio da fatura pelo Assistente Bulbe</span></button>
+        <button class="atalho-us" type="button" data-ir="us04"><strong>US04</strong><span>Mudança de endereço</span></button>
+        <button class="atalho-us" type="button" data-ir="us05"><strong>US05</strong><span>Confirmação de pagamento e comprovante</span></button>
+      </div>
+      <p class="aviso-valores">As telas funcionam de verdade nos celulares a seguir. Os valores que aparecem nelas (R$ 255, R$ 252,06 etc.) são ilustrativos.</p>
+    </div>
+  </section>
+
+  <!-- ------------------------------ US01 ------------------------------ -->
+  <section class="secao secao--suave secao-us" id="us01" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us01-titulo">
+    <div class="miolo us">
+      <div class="us-info">
+        <p class="us-autor">Samuel Pascini</p>
+        <h3 id="us01-titulo">US01 · Prévia da 1ª fatura</h3>
+        <p class="us-historia">Como cliente prestes a pagar o primeiro mês, quero uma explicação prévia e didática dos valores, para reconhecer a cobrança como legítima e não cancelar o serviço.</p>
+        <dl class="us-dados">
+          <div><dt>Dado da dor</dt><dd>32,4% de inadimplência na 1ª fatura (set/2025 a jul/2026, dado da Bulbe).</dd></div>
+          <div><dt>Persona</dt><dd>Marlene, 58, quer entender o produto antes da primeira cobrança.</dd></div>
+          <div><dt>Entrada no app</dt><dd>Aviso “Entender agora” e sino da tela inicial; aba Consumo abre Sua economia.</dd></div>
+          <div class="prova"><dt>Prova no fim</dt><dd>Fatura explicada e pronta para pagar por PIX.</dd></div>
+          <div><dt>Regra central</dt><dd>A Bulbe apresenta uma fatura unificada (R$ 300 sem Bulbe → R$ 255 com Bulbe, economia de R$ 45 ou 15%, valores ilustrativos), nunca duas faturas.</dd></div>
+        </dl>
+      </div>
+      <div class="us-celular">
+        <div class="celular" data-celular="us01" data-inicio="pages/Wireframe%2001/index.html" data-reserva="120">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe%2001/index.html" title="Telas da US01 funcionando: prévia da 1ª fatura" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="passos">
+        <h4 id="us01-passos">Passos do fluxo</h4>
+        <ol class="passos-lista" aria-labelledby="us01-passos">
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/index.html">Tela inicial com o aviso</button></li>
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/notificacao.html">Notificação</button></li>
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/comparacao.html">Antes x agora</button></li>
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/fatura-unificada.html">Fatura unificada</button></li>
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/economia.html">Sua economia</button></li>
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/pagamento.html">Pagamento</button></li>
+        </ol>
+        <h4 id="us01-apoio">Tela de apoio</h4>
+        <ul class="passos-lista passos-lista--extra" aria-labelledby="us01-apoio">
+          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/ajuda.html">Ajuda</button></li>
+        </ul>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="us01"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
+          <a class="botao botao--leve" data-nova-aba="us01" href="pages/Wireframe%2001/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------ US02 ------------------------------ -->
+  <section class="secao secao-us" id="us02" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us02-titulo">
+    <div class="miolo us">
+      <div class="us-info">
+        <p class="us-autor">André Coelho</p>
+        <h3 id="us02-titulo">US02 · Correção do canal de contato</h3>
+        <p class="us-historia">Como usuário, quero corrigir meu canal de contato (telefone/WhatsApp ou e-mail) quando necessário, para que as comunicações e faturas cheguem no meu dispositivo atual.</p>
+        <dl class="us-dados">
+          <div><dt>Dado da dor</dt><dd>~20% das mensagens de WhatsApp da Bulbe não chegam ao destino.</dd></div>
+          <div><dt>Persona</dt><dd>Rogério, 52, cadastrou um número que não tem WhatsApp.</dd></div>
+          <div><dt>Entrada no app</dt><dd>Foto de perfil (avatar) no cabeçalho da tela inicial.</dd></div>
+          <div class="prova"><dt>Prova no fim</dt><dd>Número confirmado por código.</dd></div>
+        </dl>
+        <p class="us-nota">O código de teste fictício aparece na própria tela.</p>
+      </div>
+      <div class="us-celular">
+        <div class="celular" data-celular="us02" data-inicio="pages/Wireframe02/contato.html" data-reserva="120">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe02/contato.html" title="Telas da US02 funcionando: correção do canal de contato" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="passos">
+        <h4 id="us02-passos">Passos do fluxo</h4>
+        <ol class="passos-lista" aria-labelledby="us02-passos">
+          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html">Dados de contato</button></li>
+          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?editar=1">Corrigir número</button></li>
+          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/confirmar-numero.html?tel=31987654321">Código de 6 dígitos</button></li>
+          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?confirmado=1&amp;tel=31987654321">Número confirmado</button></li>
+        </ol>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="us02"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
+          <a class="botao botao--leve" data-nova-aba="us02" href="pages/Wireframe02/contato.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------ US03 ------------------------------ -->
+  <section class="secao secao--suave secao-us" id="us03" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us03-titulo">
+    <div class="miolo us">
+      <div class="us-info">
+        <p class="us-autor">João Victor</p>
+        <h3 id="us03-titulo">US03 · Reenvio da fatura pelo Assistente Bulbe</h3>
+        <p class="us-historia">Como usuário, quero pedir o reenvio da fatura de forma automatizada, para recuperar o recebimento sem abrir um chamado genérico nem esperar atendimento sem previsão.</p>
+        <p class="us-nota">Ajustada na Sprint II: saiu o agendamento de ligação, porque exigiria uma equipe de atendentes.</p>
+        <dl class="us-dados">
+          <div><dt>Dado da dor</dt><dd>8 dias e 16 horas de tempo médio de resposta do suporte no Reclame Aqui.</dd></div>
+          <div><dt>Persona</dt><dd>Rogério, 52, a fatura não chega e ele não pode ficar parado esperando.</dd></div>
+          <div><dt>Entrada no app</dt><dd>Botão flutuante Ajuda, link “Não recebi minha fatura” e “Fale conosco” no menu lateral.</dd></div>
+          <div class="prova"><dt>Prova no fim</dt><dd>Fatura enviada, com protocolo 20261021-0042 e código PIX.</dd></div>
+        </dl>
+      </div>
+      <div class="us-celular">
+        <div class="celular" data-celular="us03" data-inicio="pages/Wireframe03/us03-assistente.html" data-reserva="120">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe03/us03-assistente.html" title="Telas da US03 funcionando: reenvio da fatura pelo Assistente Bulbe" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="passos">
+        <h4 id="us03-passos">Passos do fluxo</h4>
+        <ol class="passos-lista" aria-labelledby="us03-passos">
+          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-assistente.html">Assistente Bulbe</button></li>
+          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-reenviar.html">Reenviar fatura</button></li>
+          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-enviado.html">Fatura enviada</button></li>
+          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-atendimentos.html">Meus atendimentos</button></li>
+        </ol>
+        <h4 id="us03-apoio">Tela de apoio</h4>
+        <ul class="passos-lista passos-lista--extra" aria-labelledby="us03-apoio">
+          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-faturas.html">Faturas, na versão da US03</button></li>
+        </ul>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="us03"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
+          <a class="botao botao--leve" data-nova-aba="us03" href="pages/Wireframe03/us03-assistente.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------ US04 ------------------------------ -->
+  <section class="secao secao-us" id="us04" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us04-titulo">
+    <div class="miolo us">
+      <div class="us-info">
+        <p class="us-autor">Miguel Fernando Rocha</p>
+        <h3 id="us04-titulo">US04 · Mudança de endereço</h3>
+        <p class="us-historia">Como cliente que está mudando de endereço, quero verificar se posso continuar com o serviço na nova casa e transferir de forma simples, para não precisar cancelar.</p>
+        <dl class="us-dados">
+          <div><dt>Dado da dor</dt><dd>A mudança de endereço é a 3ª maior causa de churn da Bulbe.</dd></div>
+          <div><dt>Persona</dt><dd>Lucas, 31, está de mudança e hoje só consegue cancelar pelo WhatsApp.</dd></div>
+          <div><dt>Entrada no app</dt><dd>“Mudança de endereço” no menu lateral.</dd></div>
+          <div class="prova"><dt>Prova no fim</dt><dd>Transferência solicitada, com protocolo.</dd></div>
+        </dl>
+      </div>
+      <div class="us-celular">
+        <div class="celular" data-celular="us04" data-inicio="pages/Wireframe04/index.html" data-reserva="120">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe04/index.html" title="Telas da US04 funcionando: mudança de endereço" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="passos">
+        <h4 id="us04-passos">Passos do fluxo</h4>
+        <ol class="passos-lista" aria-labelledby="us04-passos">
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/index.html" data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html">Vai se mudar?</button></li>
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/2-informar-endereco.html">CEP do novo endereço</button></li>
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/3-verificando-disponibilidade.html">Verificando disponibilidade</button></li>
+        </ol>
+        <h4 id="us04-a">Cenário A · endereço atendido</h4>
+        <ol class="passos-lista passos-lista--de-4" aria-labelledby="us04-a">
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/4a-continuidade-disponivel.html">Continuidade disponível</button></li>
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/5a-confirmar-transferencia.html">Confirmar e transferir</button></li>
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/6a-solicitacao-realizada.html">Transferência solicitada</button></li>
+        </ol>
+        <h4 id="us04-b">Cenário B · endereço não atendido</h4>
+        <ol class="passos-lista passos-lista--de-4" aria-labelledby="us04-b">
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/4b-indisponibilidade.html">Lista de interesse</button></li>
+          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/5b-motivo-da-desistencia.html">Motivo da desistência</button></li>
+        </ol>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="us04"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
+          <a class="botao botao--leve" data-nova-aba="us04" href="pages/Wireframe04/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------ US05 ------------------------------ -->
+  <section class="secao secao--suave secao-us" id="us05" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us05-titulo">
+    <div class="miolo us">
+      <div class="us-info">
+        <p class="us-autor">MariB</p>
+        <h3 id="us05-titulo">US05 · Confirmação de pagamento e comprovante</h3>
+        <p class="us-historia">Como cliente que acabou de pagar a fatura, quero verificar se o pagamento foi reconhecido e consultar o comprovante, para ter segurança de que não existe dívida pendente.</p>
+        <p class="us-nota">Redefinida na Sprint II.</p>
+        <dl class="us-dados">
+          <div><dt>Dado da dor</dt><dd>Até 3 dias úteis de compensação em que o cliente fica sem saber se o pagamento entrou.</dd></div>
+          <div><dt>Origem</dt><dd>Reclamação de 11/09/2026 no Reclame Aqui, cobranças mesmo após boletos pagos.</dd></div>
+          <div><dt>Persona</dt><dd>Ricardo, 45, ex-cliente cobrado quase três anos depois de cancelar. Precisa provar o que pagou e saber o que ainda deve.</dd></div>
+          <div><dt>Entrada no app</dt><dd>“Meus pagamentos” no menu lateral.</dd></div>
+          <div class="prova"><dt>Prova no fim</dt><dd>Comprovante do pagamento.</dd></div>
+        </dl>
+      </div>
+      <div class="us-celular">
+        <div class="celular" data-celular="us05" data-inicio="pages/pagamentos.html" data-reserva="120">
+          <div class="celular-tela">
+            <iframe src="pages/pagamentos.html" title="Telas da US05 funcionando: confirmação de pagamento e comprovante" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="passos">
+        <h4 id="us05-passos">Passos do fluxo</h4>
+        <ol class="passos-lista" aria-labelledby="us05-passos">
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos.html">Meus pagamentos</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-aguardando.html">Detalhe: aguardando</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-atraso.html">Detalhe: em atraso</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-pago.html">Detalhe: pago</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/comprovante.html">Comprovante</button></li>
+        </ol>
+        <h4 id="us05-estados">Estados de demonstração</h4>
+        <ul class="passos-lista passos-lista--extra" aria-labelledby="us05-estados">
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-carregando.html">Lista carregando</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-vazio.html">Lista vazia</button></li>
+          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-em-dia.html">Pagamentos em dia</button></li>
+        </ul>
+        <p class="passos-nota">Os estados ficam fora da navegação do app.</p>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="us05"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
+          <a class="botao botao--leve" data-nova-aba="us05" href="pages/pagamentos.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 5. O app completo ============================== -->
+  <section class="secao" id="app" data-parada data-indice tabindex="-1" aria-labelledby="app-titulo">
+    <div class="miolo app">
+      <div class="app-celular">
+        <div class="celular" data-celular="app" data-inicio="pages/index.html" data-reserva="110">
+          <div class="celular-tela">
+            <iframe src="pages/index.html" title="App da Bulbe completo: todos os fluxos a partir da tela inicial" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="app-mapa">
+        <h2 id="app-titulo">O app completo</h2>
+        <p class="lide">Da tela inicial, o cliente chega a todos os fluxos em até dois toques.</p>
+
+        <div class="mapa-colunas">
+        <div>
+        <h3 id="mapa-1">Um toque</h3>
+        <ul class="mapa" aria-labelledby="mapa-1">
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe02/contato.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-perfil"></use></svg>
+            <span class="mapa-toque">Foto de perfil</span><span class="mapa-abre">Dados de contato</span><span class="selo">US02</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-fone"></use></svg>
+            <span class="mapa-toque">Botão Ajuda</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-duvida"></use></svg>
+            <span class="mapa-toque">Não recebi minha fatura</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/notificacao.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-sino"></use></svg>
+            <span class="mapa-toque">Sino e aviso da fatura</span><span class="mapa-abre">Notificação</span><span class="selo">US01</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/economia.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-raio"></use></svg>
+            <span class="mapa-toque">Aba Consumo</span><span class="mapa-abre">Sua economia</span><span class="selo">US01</span></button></li>
+        </ul>
+
+        </div>
+        <div>
+        <h3 id="mapa-2">Dois toques, pelo menu lateral</h3>
+        <ul class="mapa" aria-labelledby="mapa-2">
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/pagamentos.html">
+            <img class="icone" src="pages/templates/assets/Icon-Pagamentos.svg" alt="" width="22" height="22">
+            <span class="mapa-toque">Meus pagamentos</span><span class="mapa-abre">Meus pagamentos</span><span class="selo">US05</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe04/index.html" data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html">
+            <img class="icone" src="pages/templates/assets/Icon-Endere%C3%A7o.svg" alt="" width="22" height="22">
+            <span class="mapa-toque">Mudança de endereço</span><span class="mapa-abre">Vai se mudar?</span><span class="selo">US04</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
+            <img class="icone" src="pages/templates/assets/Icon-FaleConosco.svg" alt="" width="22" height="22">
+            <span class="mapa-toque">Fale conosco</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/ajuda.html">
+            <img class="icone" src="pages/templates/assets/Icon-Perguntas.svg" alt="" width="22" height="20">
+            <span class="mapa-toque">Perguntas frequentes</span><span class="mapa-abre">Ajuda</span><span class="selo">US01</span></button></li>
+        </ul>
+
+        </div>
+        </div>
+        <p class="mapa-nota">Links entre fluxos: o “Fale conosco” da US04 e da US05 e o botão “Falar com um atendente” da Ajuda da US01 abrem o Assistente da US03; “Dúvidas frequentes” da US03 abre a Ajuda da US01. Como funciona?, Indique e ganhe, Termos e a aba Indicações ainda não têm tela.</p>
+        <div class="passos-acoes">
+          <button class="botao botao--leve" type="button" data-reiniciar="app"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Voltar à tela inicial</button>
+          <a class="botao botao--leve" data-nova-aba="app" href="pages/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 6. Como chegamos lá ============================== -->
+  <section class="secao secao--suave" id="ideacao" data-parada data-indice tabindex="-1" aria-labelledby="ideacao-titulo">
+    <div class="miolo">
+      <h2 id="ideacao-titulo">Como chegamos lá</h2>
+      <h3>Brainstorming: 36 oportunidades nos mapas de jornada, 5 viraram user stories</h3>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead><tr><th scope="col">Jornada</th><th scope="col">Oportunidades</th><th scope="col">Exemplos que não seguiram</th><th scope="col">Escolhida</th><th scope="col">Virou</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Marlene</th><td class="num">7</td><td>Simulador com o total das duas contas; guia de boas-vindas no WhatsApp</td><td>Prévia da primeira conta Bulbe, enviada antes da emissão</td><td><span class="selo">US01</span></td></tr>
+            <tr><th scope="row">Rogério</th><td class="num">7</td><td>Calendário com a data prevista da fatura; aviso de atraso na emissão</td><td>Confirmar o contato com um código; autoatendimento “Minha fatura não chegou”</td><td><span class="selo">US02</span> <span class="selo">US03</span></td></tr>
+            <tr><th scope="row">Lucas</th><td class="num">7</td><td>Rastreador da desvinculação na distribuidora; extrato do saldo residual</td><td>Central de contrato com transferência para o novo endereço</td><td><span class="selo">US04</span></td></tr>
+            <tr><th scope="row">Ricardo</th><td class="num">7</td><td>Declaração final de encerramento; memória de cálculo de cada cobrança</td><td>Histórico de faturas, pagamentos e protocolos</td><td><span class="selo">US05</span></td></tr>
+            <tr><th scope="row">Tatiane</th><td class="num">8</td><td>Simulação com o desconto real; cancelamento com protocolo</td><td>Painel de fatura única com o status do pagamento (reforçou)</td><td><span class="selo">US01</span> <span class="selo">US05</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="scamper" data-parada data-grupo="ideacao" tabindex="-1" aria-labelledby="scamper-titulo">
+    <div class="miolo duas-colunas">
+      <figure class="foto">
+        <button class="ampliar" type="button" data-ampliar aria-label="Ampliar a foto das notas do SCAMPER">
+          <img src="assets/img/apresentacao/scamper.jpg" alt="Notas adesivas do SCAMPER escritas à mão pelo grupo" width="1800" height="1085" loading="lazy">
+          <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+        </button>
+        <figcaption>As 17 notas adesivas do SCAMPER.</figcaption>
+      </figure>
+      <div>
+        <h3 id="scamper-titulo">SCAMPER: 17 notas sobre o app atual da Bulbe</h3>
+        <dl class="letras">
+          <div><dt>Substituir</dt><dd>Telas de contrato e de acompanhamento por textos claros sobre como o serviço funciona.</dd></div>
+          <div><dt>Adaptar</dt><dd>Deixar a espera pela conexão mais visual, com widgets, temporizador e notificações como no Duolingo.</dd></div>
+          <div><dt>Modificar</dt><dd>Juntar “Primeiro acesso” e “Quero economizar”, que levam ao mesmo lugar, e destacar a segurança.</dd></div>
+          <div><dt>Eliminar</dt><dd>“Baixe o novo app”, os grandes parceiros e o Indique e ganhe antes da 1ª conta paga.</dd></div>
+          <div><dt>Reorganizar</dt><dd>Abrir o app explicando como o serviço funciona e fazer todo o processo dentro dele.</dd></div>
+        </dl>
+        <p class="destaque">A nota “Assistente de IA embutido no app” deu origem ao chatbot da US03.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao--suave" id="crazy8" data-parada data-grupo="ideacao" tabindex="-1" aria-labelledby="crazy8-titulo">
+    <div class="miolo">
+      <h3 id="crazy8-titulo">Crazy 8's: quatro folhas desenhadas à mão</h3>
+      <ul class="galeria">
+        <li>
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="crazy8" aria-label="Ampliar o Crazy 8's do Samuel">
+              <img src="assets/img/apresentacao/crazy8-samuel.jpg" alt="Crazy 8's do Samuel com oito esboços de telas de economia" width="1600" height="1200" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption>
+              <strong>Samuel Pascini <span class="selo">US01</span></strong>
+              <span>Oito jeitos de mostrar a economia: dias até a 1ª fatura, gráfico mês a mês e Cemig x Bulbe.</span>
+              <span class="galeria-gerou">Gerou a ideia do histórico de economia (tela Sua economia).</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="crazy8" aria-label="Ampliar o Crazy 8's do André">
+              <img src="assets/img/apresentacao/crazy8-andre.jpg" alt="Crazy 8's do André com esboços de calculadora e comparativo de economia" width="1280" height="887" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption>
+              <strong>André Coelho <span class="selo">US01</span></strong>
+              <span>Calculadora de economia, progresso até a 1ª fatura e o comparativo “com a Bulbe x só com a Cemig”.</span>
+              <span class="galeria-gerou">Apoiou as telas da US01, como o Antes x agora.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="crazy8" aria-label="Ampliar o Crazy 8's do João">
+              <img src="assets/img/apresentacao/crazy8-joao.jpg" alt="Crazy 8's do João com o balão “Reenvie sua fatura”" width="1600" height="900" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption>
+              <strong>João Victor <span class="selo">US03</span></strong>
+              <span>Cartão de desconto, Cemig x Bulbe e um balão com “Reenvie sua fatura” e “Outro assunto”.</span>
+              <span class="galeria-gerou">Feito antes de fechar a US; o balão virou os atalhos do Assistente Bulbe.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="crazy8" aria-label="Ampliar o Crazy 8's do Miguel">
+              <img src="assets/img/apresentacao/crazy8-miguel.jpg" alt="Crazy 8's do Miguel com progresso circular e contagem de dias" width="1386" height="1000" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption>
+              <strong>Miguel Fernando Rocha <span class="selo">US04</span></strong>
+              <span>Linha de etapas, progresso circular e contagem de dias até começar a economizar.</span>
+              <span class="galeria-gerou">O progresso circular virou a tela “Verificando disponibilidade”.</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="melhores-telas" data-parada data-grupo="ideacao" tabindex="-1" aria-labelledby="melhores-titulo">
+    <div class="miolo">
+      <h3 id="melhores-titulo">Definição das melhores telas</h3>
+      <ul class="criterios" aria-label="Critérios de escolha">
+        <li>Ataca a desistência medida</li>
+        <li>Resolve sem atendente</li>
+        <li>Segue o app da Bulbe (parece uma função nativa)</li>
+        <li>Termina com uma prova</li>
+      </ul>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead><tr><th scope="col">US</th><th scope="col">Tela escolhida</th><th scope="col">Por que venceu</th><th scope="col">O que ficou de fora</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="selo">US01</span></th><td>Prévia com “antes x agora” e fatura unificada</td><td>Explica a cobrança antes de ela chegar</td><td>“Seu total vem em duas faturas”, da 1ª versão</td></tr>
+            <tr><th scope="row"><span class="selo">US02</span></th><td>Central de dados de contato, com código</td><td>Mostra o status de cada canal e confirma o número</td><td>As outras 4 das 5 alternativas exploradas (A a E)</td></tr>
+            <tr><th scope="row"><span class="selo">US03</span></th><td>Assistente que reenvia a fatura na hora</td><td>Resolve sem fila e já entrega o código PIX</td><td>Agendamento de ligação: exigiria uma equipe de atendentes</td></tr>
+            <tr><th scope="row"><span class="selo">US04</span></th><td>Verificação por CEP e transferência</td><td>Troca o cancelamento pela transferência</td><td>Cabeçalho próprio e cartões coloridos da 1ª versão</td></tr>
+            <tr><th scope="row"><span class="selo">US05</span></th><td>Meus pagamentos com status e comprovante</td><td>Prova o pagamento sem perguntar ao suporte</td><td>Status só por cor: cada estado vem escrito</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 7. Como usamos IA ============================== -->
+  <section class="secao secao--suave" id="ia" data-parada data-indice tabindex="-1" aria-labelledby="ia-titulo">
+    <div class="miolo">
+      <h2 id="ia-titulo">Como usamos IA</h2>
+      <p class="lide">Os prompts que funcionaram traziam contexto, regras da marca e o que a IA não podia fazer.</p>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead><tr><th scope="col">US</th><th scope="col">O que o prompt pedia</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="selo">US01</span></th><td>Storyboard de 6 telas de 390×844, sem landing page, com a regra central da fatura unificada e o exemplo R$ 300 → R$ 255</td><td>As 6 telas do fluxo; a regra corrigiu a 1ª versão, que falava em duas faturas</td></tr>
+            <tr><th scope="row"><span class="selo">US02</span></th><td>Como product designer sênior, 5 alternativas independentes (A a E) para a mesma US, com validação, privacidade e acessibilidade</td><td>Cinco abordagens comparadas; venceu a central de dados de contato</td></tr>
+            <tr><th scope="row"><span class="selo">US03</span></th><td>Cinco prompts em sequência no Google Stitch</td><td>5 telas na identidade oficial, sem o agendamento de ligação</td></tr>
+            <tr><th scope="row"><span class="selo">US04</span></th><td>Fluxo completo com cenário A (atendido) e B (não atendido), azul #08068D e reaproveitamento dos dados já cadastrados</td><td>8 telas, depois adaptadas ao template do squad</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">Na integração, o Claude Code ligou as telas dos cinco integrantes numa branch separada (PR #46).</p>
+    </div>
+  </section>
+
+  <section class="secao" id="ia-us03" data-parada data-grupo="ia" tabindex="-1" aria-labelledby="ia-us03-titulo">
+    <div class="miolo">
+      <h3 id="ia-us03-titulo">US03: cinco prompts em sequência no Google Stitch</h3>
+      <div class="stitch">
+        <ol class="sequencia">
+          <li><h4>Registrar a identidade e uma página de referência</h4><p>Azul #1A0D87, que não é o oficial.</p></li>
+          <li><h4>Criar o fluxo de 7 telas</h4><p>Logo quebrado, selos em pílula e agendamento de ligação.</p></li>
+          <li><h4>Aplicar o design system anexo e tirar a ligação</h4><p>Cores certas e 5 telas, mas visual ainda diferente do app.</p></li>
+          <li><h4>Copiar o app oficial a partir de imagens e dos logos em PNG</h4><p>Telas iguais ao app; o botão Ajuda sumiu.</p></li>
+          <li><h4>Recolocar só o botão Ajuda e manter o resto</h4><p>Corrigido sem mexer nas outras telas.</p></li>
+        </ol>
+        <div class="stitch-imagens">
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="stitch" aria-label="Ampliar o rascunho da US03 no Stitch">
+              <img src="assets/img/apresentacao/us03-rascunho-stitch.jpg" alt="Rascunho da US03 com sete telas e agendamento de ligação" width="1735" height="679" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption><strong>Antes</strong><span>Rascunho de 7 telas gerado no Stitch.</span></figcaption>
+          </figure>
+          <figure class="foto">
+            <button class="ampliar" type="button" data-ampliar="stitch" aria-label="Ampliar a versão final da US03 no Stitch">
+              <img src="assets/img/apresentacao/us03-final-stitch.jpg" alt="Cinco telas finais da US03 na identidade da Bulbe" width="1800" height="767" loading="lazy">
+              <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+            </button>
+            <figcaption><strong>Depois</strong><span>Versão final no Stitch, com 5 telas.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="nota">O rascunho de 7 telas saiu de uma versão em um prompt só dos passos 1 e 2. O Stitch não aceitou PDF como anexo, só imagens.</p>
+    </div>
+  </section>
+
+  <section class="secao secao--suave" id="ia-prompts" data-parada data-grupo="ia" tabindex="-1" aria-labelledby="ia-prompts-titulo">
+    <div class="miolo">
+      <h3 id="ia-prompts-titulo">Os prompts completos</h3>
+      <p class="lide lide--larga">Textos copiados do Figma do squad (US01, US02 e US04) e da conversa de criação da US03 no Google Stitch.</p>
+      <div class="prompts">
+        <details class="prompt">
+          <summary><span>US01 · Prévia da 1ª fatura</span><span class="prompt-autor">Samuel Pascini</span></summary>
+          <div class="prompt-corpo"><p>Resultado: as telas Faturas, Notificação, Antes x agora, Fatura unificada, Sua economia e Pagamento. A regra central (fatura unificada) corrigiu a 1ª versão, que mostrava "Seu total vem em duas faturas".</p><pre>Crie um fluxo UX/UI mobile para a Bulbe Energia, inspirado nas telas do aplicativo e na referência visual anexada. Entregue 6 TELAS MOBILE (390x844), lado a lado, conectadas por setas, como um storyboard profissional. NÃO crie landing page. Preserve o cabeçalho, a navegação inferior e a aparência do app Bulbe. US01 — Prévia Didática da Primeira Fatura. Objetivo: reduzir inadimplência e cancelamentos por falta de compreensão da primeira cobrança, após 60 a 90 dias da adesão. REGRA CENTRAL: a Bulbe apresenta uma FATURA UNIFICADA, com valor total consolidado e detalhamento interno dos componentes. NÃO apresente duas faturas independentes nem descreva isso como mudança no modelo de cobrança. Crie as telas: Faturas: tela inicial do app com alerta proativo "Sua primeira fatura está chegando. Veja como funciona sua economia". Notificação: aviso antecipado à emissão, explicando a cobrança e botão "Entender minha fatura". Antes x Agora: comparação visual do custo sem e com Bulbe. Exemplo fictício: R$ 300 → R$ 255. Economia de R$ 45 (15%). Fatura unificada: cartão com valor total R$ 255, detalhamento expansível de energia, encargos e descontos. Explicar a composição sem apresentar cobranças separadas. Sua economia: cálculo transparente mostrando R$ 300 - R$ 255 = R$ 45. Incluir gráfico e dados de consumo. Na versão real, usar cálculos do sistema e períodos comparáveis. Pagamento: explicar por que a cobrança é legítima, mostrar vencimento, botão "Ver minha fatura", opção "Pagar com Pix" e acesso ao suporte. IDENTIDADE VISUAL: Logo oficial anexo. Azul #1A0D87; textos #2B3240 e #5B6472; fundos branco e #F4F5FB; bordas #E4E5E9. Sucesso #1E8A50 sobre #E9F8F0; avisos #B4530E sobre #FFF6EC. Fonte Poppins. Botões de 52px, raio 10px; cartões raio 16px. Ícones lineares. Sem emojis, neon ou sombras fortes. Crie navegação interativa, notificações e detalhes expansíveis. Valores ilustrativos. Priorize transparência, confiança e acessibilidade WCAG AA.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US02 · Correção do canal de contato</span><span class="prompt-autor">André Coelho</span></summary>
+          <div class="prompt-corpo"><p>Resultado: cinco alternativas comparadas (A a E). A versão final segue a alternativa B, central de dados de contato, com status por canal e confirmação por código.</p><pre>US02: Correção de Canal de Contato | Bulbe Energia 1. Contexto e objetivo Atue como um **Product Designer Sênior especializado em UX/UI Design para aplicativos mobile**, com experiência em arquitetura da informação, usabilidade, design systems, acessibilidade e otimização de fluxos digitais. Estou desenvolvendo soluções de interface para o aplicativo da **Bulbe Energia**, com base na seguinte User Story: **US02 — Correção de Canal de Contato** **Descrição:** Como usuário, quero corrigir meu canal de contato (telefone/WhatsApp ou e-mail) quando necessário, para garantir que as comunicações e faturas cheguem corretamente ao meu dispositivo atual. **Contexto do problema:** A análise de reclamações no Reclame Aqui identificou dificuldades relacionadas à atualização cadastral como possíveis causas de problemas de cobrança e comunicação. Também foi mapeada no projeto a dor de que aproximadamente 20% das mensagens de WhatsApp da empresa não chegam ao destino. **Objetivo da solução:** Facilitar a identificação, a edição e a confirmação dos dados de contato do cliente, reduzindo erros cadastrais, dificuldades de comunicação e problemas no recebimento de faturas e notificações. 2. Materiais de referência Vou anexar imagens de telas reais e protótipos do aplicativo da Bulbe, além do ícone/logo da marca. Antes de criar as interfaces: Analise todas as imagens anexadas para compreender a identidade visual, a estrutura de navegação e os componentes já existentes no aplicativo. Utilize as telas de referência como base para manter a coerência com o produto atual, principalmente em elementos como cabeçalho, logotipo, navegação inferior, botões, cartões, campos de formulário e ícones. Observe cuidadosamente as telas de **Minha conta**, especialmente os campos de e-mail e telefone, que já apresentam informações cadastrais e ícones de edição. Considere essa interface como um possível ponto de partida para algumas das propostas. Utilize o logo ou ícone da Bulbe que será anexado. Não redesenhe, distorça ou substitua o símbolo por uma versão inventada. Identifique, pelas referências, as cores, a tipografia, os espaçamentos, os estilos de borda e os padrões visuais predominantes. Reproduza-os com a maior fidelidade possível. A interface precisa parecer uma funcionalidade legítima do aplicativo existente, e não um aplicativo novo criado do zero. 3. Direção visual Mantenha a identidade visual da Bulbe, priorizando: O azul-escuro/índigo predominante nas áreas principais e nos elementos de ação, conforme as referências. O fundo branco e as superfícies claras utilizadas no aplicativo. Os tons de verde e os detalhes coloridos da marca para elementos de destaque, estados e ações secundárias, respeitando os usos observados nas referências. A tipografia identificada nas imagens, com hierarquia clara entre títulos, descrições, informações cadastrais e ações. Botões, campos, cartões, ícones e componentes com proporções compatíveis com o aplicativo original. Uma aparência moderna, organizada, confiável e funcional, sem excesso de elementos decorativos. Não invente uma nova paleta de cores nem utilize uma identidade genérica de fintech. A prioridade é preservar a personalidade visual da Bulbe. 4. O que você deve produzir Crie **5 alternativas de interface para solucionar a mesma User Story**, apresentadas lado a lado em uma página de exploração de design no Figma. Cada alternativa deve representar uma abordagem de UX/UI diferente para permitir uma comparação real entre as propostas. **Importante: não quero uma jornada do usuário, um fluxo de navegação ou uma sequência de telas.** Não conecte as propostas com setas, não numere as interfaces como etapas de um processo e não desenvolva um mapa de jornada. Cada alternativa deve ser uma solução independente para o mesmo problema, que eu possa avaliar e escolher. Explore estas cinco abordagens: Alternativa A — Edição diretamente em Minha conta Aproveite a estrutura de Minha conta já existente no aplicativo. Explore como tornar a edição de telefone/WhatsApp e e-mail mais evidente, intuitiva e acessível, sem sobrecarregar a tela atual. Avalie a hierarquia das informações, a visibilidade das ações de edição e a maneira de informar se os dados estão atualizados, pendentes de confirmação ou precisam de correção. Alternativa B — Central de dados de contato. Crie uma interface dedicada à gestão dos canais de contato do cliente. Explore uma organização visual na qual telefone/WhatsApp e e-mail tenham áreas bem definidas, com informações sobre a situação de cada canal e ações claras para corrigir os dados. A tela deve facilitar a identificação do dado que precisa ser atualizado, sem exigir que o usuário procure essa informação entre diversas configurações da conta. Alternativa C — Edição simplificada em contexto. Explore uma abordagem com edição rápida por meio de um modal, painel ou formulário contextual, acionado a partir dos dados cadastrais. Priorize uma intervenção curta, com poucos elementos, sem retirar desnecessariamente o usuário do contexto da tela original. O formulário deve deixar evidente qual informação está sendo alterada, oferecer uma ação principal clara e apresentar mensagens de validação úteis. Alternativa D — Contato e recebimento de comunicações. Explore uma solução orientada à finalidade dos dados de contato: garantir que faturas, notificações e comunicações da Bulbe cheguem ao cliente. A interface pode destacar os canais cadastrados e suas respectivas situações, deixando claro quando uma informação precisa de atualização ou confirmação. Não utilize avisos alarmistas ou estados negativos sem justificativa. A proposta deve transmitir controle e segurança ao usuário, sem criar preocupação desnecessária. Alternativa E — Formulário unificado de atualização cadastral. Explore uma interface na qual o cliente consiga revisar e corrigir telefone/WhatsApp e e-mail em um único local. Avalie como organizar os campos, indicar quais são obrigatórios, orientar o preenchimento correto e permitir que o usuário identifique exatamente o que será atualizado. Busque um equilíbrio entre conveniência e simplicidade, sem transformar uma correção cadastral em um formulário longo ou burocrático.
+
+5. Requisitos funcionais e de UX Todas as alternativas devem atender à necessidade central da US02 e considerar os seguintes aspectos. **Identificação do dado:** o usuário precisa identificar facilmente seu telefone e seu e-mail cadastrados. **Edição intuitiva:** a ação para corrigir os dados deve ser visível, compreensível e fácil de acessar. **Preenchimento adequado:** utilize máscaras e exemplos de preenchimento quando apropriados, especialmente para números de telefone brasileiros e endereços de e-mail. **Validação:** considere como informar erros de formato, campos incompletos e dados inválidos sem depender exclusivamente de cores para transmitir a mensagem. **Confirmação da alteração:** deixe claro quando a informação foi salva e, quando necessário, quando ainda precisa ser confirmada. Não apresente como verificado um contato que ainda não passou pela confirmação correspondente. **Prevenção de erros:** evite alterações acidentais, mensagens ambíguas e situações em que o usuário não saiba se a mudança foi concluída. **Privacidade:** apresente apenas as informações pessoais necessárias à tarefa e evite expor dados excessivamente. **Acessibilidade:** considere legibilidade, contraste adequado, áreas de toque confortáveis, textos objetivos e rótulos explícitos nas ações. **Consistência:** preserve os padrões de navegação e os componentes existentes da Bulbe sempre que fizer sentido. Não é obrigatório incorporar todos esses elementos em todas as telas. Aplique-os conforme a abordagem de cada alternativa, sem comprometer a simplicidade da interface. 6. Critérios de qualidade visual Quero propostas com qualidade de um produto digital real, e não apenas wireframes ou telas genéricas. Cada alternativa deve: Apresentar uma hierarquia visual bem definida. Ter alinhamento, espaçamento e proporções consistentes. Utilizar componentes de interface plausíveis e compatíveis com as referências anexadas. Ter textos em português brasileiro, com linguagem simples e adequada ao público do aplicativo. Conter dados fictícios realistas quando necessários para demonstrar o layout, sem inserir informações pessoais reais das referências sem necessidade. Ter dimensões e proporções de smartphone compatíveis com as telas de referência. Apresentar uma solução visual suficientemente desenvolvida para permitir uma comparação entre as alternativas. Evite excesso de cartões, sombras, gradientes, ilustrações decorativas, cores aleatórias, emojis ou elementos visuais que não façam parte da identidade da marca. Não faça as cinco telas parecerem variações superficiais do mesmo layout: explore diferenças reais na organização da informação e na interação, mantendo a identidade visual da Bulbe. 7. Organização no Figma Organize as cinco propostas em uma página chamada **“US02 — Exploração de soluções”**. Crie cinco frames independentes, identificados como: A — Edição em Minha conta B — Central de dados de contato C — Edição contextual D — Recebimento de comunicações E — Atualização unificada Apresente os frames lado a lado, com títulos discretos e espaço suficiente para inspecionar cada interface. Utilize componentes reutilizáveis quando isso contribuir para a consistência. Se possível, mantenha campos, botões, cartões e estados visuais organizados de maneira que possam ser refinados posteriormente. Inclua uma breve anotação fora de cada tela explicando a principal decisão de UX daquela proposta e qual problema ela pretende resolver. Essas anotações não devem aparecer dentro da interface do aplicativo. 8. Como avaliar o resultado Priorize, nesta ordem: Facilidade para encontrar e corrigir um canal de contato. Clareza sobre o que está cadastrado e o que precisa ser atualizado. Segurança e compreensão na confirmação da alteração. Coerência com o aplicativo e a identidade visual da Bulbe. Simplicidade, acessibilidade e qualidade visual. Não presuma que a alternativa mais sofisticada é necessariamente a melhor. Explore soluções simples e eficientes, além de opções com organização mais estruturada. **Entregável esperado:** cinco alternativas visuais independentes, de alta fidelidade, prontas para serem comparadas em uma revisão de produto. O objetivo é explorar diferentes soluções para a US02 antes de escolher qual será aprofundada, e não definir antecipadamente uma única solução ou construir uma jornada completa.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 1. Identidade e página de referência</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Anexei o logo da Bulbe (branco e azul) e telas do app. Registre esta identidade e crie uma página de referência com cores, tipos, botões, campos, cartões e cabeçalhos para as próximas telas.
+
+MARCA: Bulbe Energia, energia limpa em MG, com desconto na conta de luz da Cemig. Assinatura "sua próxima energia". Tom confiável, próximo e simples.
+
+LOGO: "bulbe" em minúsculas arredondadas, com três traços (verde, azul e laranja) à direita. Branco sobre azul; azul-marinho sobre fundo claro. Use o arquivo: não redesenhe nem recolora.
+
+CORES
+- Principal #1A0D87 (botões, títulos, links)
+- Gradiente #3D5FBE → #1B1089 (só em heros)
+- Texto #2B3240; secundário #5B6472
+- Bordas #8A93A3 (campos) e #E4E5E9 (divisórias)
+- Fundo #F4F5FB; cartões brancos
+- Verde #24CF7E, azul #0363C9 e laranja #FD9F20: só no logo e em detalhes pequenos
+- Sucesso #1E8A50 sobre #E9F8F0; erro #B42318; WhatsApp #315C54; promoção #B4530E sobre #FFF6EC
+
+TIPOGRAFIA: Poppins. Destaque 30/38 e título 24/32 em 600; corpo 15/22; apoio 13/18; botões 16 em 600. Só a primeira letra maiúscula.
+
+FORMA: 360×812, margens 24, grade 8. Raio 10 em botões e campos, 16 em cartões, 24 em painéis. Botões de 52 px: principal cheio em azul-marinho, secundário contornado. Cartões planos, sem sombra pesada. Ícones de contorno, 2 px.
+
+COMPONENTES DO APP
+- Home: cabeçalho azul-marinho com menu, logo, notificações e avatar; seletor de instalação; barra inferior Faturas, Consumo e Indicações.
+- Fluxos: cabeçalho branco com voltar, logo no centro e "Ajuda"; barra "Etapa X de 3".
+- Cartão de fatura: mês, vencimento, selo de status (em aberto, paga, em atraso), valor, "Desconto Bulbe", "Pagar com PIX" e "Ver detalhes".
+
+VOZ: português do Brasil, "você", frases curtas, verbos nos botões, sem jargão do setor elétrico.
+
+ACESSIBILIDADE: contraste AA, toque ≥44 px, label visível, status nunca só pela cor.
+
+EVITE: neon, efeito de vidro, emojis, sombras fortes, barra colorida lateral em cartões, botão cinza desabilitado.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 2. Fluxo de 7 telas</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Com essa identidade, crie o fluxo "US03 · Reenvio da fatura e agendamento": um assistente virtual no app para o cliente recuperar a fatura sozinho ou agendar uma ligação, sem fila e sem prazo incerto. Seções numeradas, com título, frase curta e rótulos de estado.
+
+01 FATURAS: home com o cartão "Outubro/26 · Venceu dia 15/10/26 · em atraso · R$ 252,06", "Pagar com PIX", "Ver detalhes" e o link "Não recebi minha fatura". Botão flutuante "Ajuda" com ícone de chat. Esses dois e "Precisa de ajuda?" no menu lateral abrem o chat; pelo link, ele já começa no reenvio.
+
+02 CHAT · INÍCIO: cabeçalho com voltar, "Assistente Bulbe", "Responde na hora" e ícone de Meus atendimentos. "Oi, Ana! Como posso ajudar?" e o aviso "Sou um assistente automático". Atalhos: Reenviar minha fatura, Agendar uma ligação, Pagar fatura em atraso, Outro assunto. Campo de mensagem. Estado extra: "Não entendi" com os atalhos de novo.
+
+03 REENVIO: o assistente mostra a fatura em cartão e pergunta "Para onde envio?": WhatsApp (31) •••••-0000, e-mail a•••@email.com ou "Baixar PDF aqui". Link "Atualizar meus contatos".
+
+04 REENVIO FEITO: "Pronto! Enviei a fatura de outubro para seu WhatsApp às 14:32." Cartão com "Copiar código PIX" (principal), "Ver PDF" e o protocolo 20261021-0042. Depois: "Não chegou em 10 minutos?", com Reenviar e Agendar ligação.
+
+05 AGENDAR LIGAÇÃO: painel inferior sobre o chat com o motivo já preenchido ("Reenvio da fatura de outubro"), dias (Hoje, Amanhã, Qui 23/10), horários de 30 min (o indisponível escrito, não só cinza), telefone com "Alterar" e "Confirmar horário".
+
+06 LIGAÇÃO AGENDADA: cartão no chat com dia, horário, telefone, motivo e protocolo; "Avisamos 30 min antes pelo WhatsApp"; ações Adicionar à agenda, Reagendar e Cancelar.
+
+07 MEUS ATENDIMENTOS: lista com status escrito (Concluído, Agendado), data e protocolo.
+
+Mensagens do assistente à esquerda em branco; do cliente à direita em azul-marinho; atalhos em pílulas contornadas; toque ≥44 px.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 2b. Versão em um prompt só (a que gerou o rascunho)</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Crie 7 telas mobile (360×812) para o app Bulbe Energia. Dor: a fatura não chegou e o suporte demora 8 dias. Solução: assistente virtual que reenvia a fatura na hora ou agenda uma ligação.
+
+IDENTIDADE
+- Logo: use os anexos sem redesenhar; branco sobre azul-marinho, azul sobre fundo claro.
+- Cores: azul-marinho #1A0D87 (cabeçalho e botões), texto #2B3240, secundário #5B6472, borda #8A93A3, fundo #F4F5FB, sucesso #1E8A50 sobre #E9F8F0.
+- Poppins. Raio 10 nos botões e 16 nos cartões; botões de 52 px; ícones de contorno; sem gradiente, sombra forte ou emoji.
+- Siga a estrutura das telas anexas.
+
+TELAS
+1. Faturas: cabeçalho azul-marinho (menu, logo, sino, avatar); seletor de instalação; cartão "Outubro/26 · Vence 25/10/26 · em aberto · R$ 252,06" com Pagar com PIX e Ver detalhes; link "Não recebi minha fatura"; botão flutuante "Ajuda"; barra inferior Faturas, Consumo, Indicações.
+2. Chat: cabeçalho com voltar, "Assistente Bulbe" e "Responde na hora". "Oi, Ana! Como posso ajudar?", aviso "Sou um assistente automático", atalhos (Reenviar minha fatura, Agendar uma ligação, Outro assunto) e campo de mensagem.
+3. Reenvio: cartão da fatura e "Para onde envio?": WhatsApp (31) •••••-0000, e-mail a•••@email.com ou Baixar PDF.
+4. Enviado: "Pronto! Enviei a fatura de outubro para seu WhatsApp às 14:32." Copiar código PIX, Ver PDF, protocolo 20261021-0042 e "Não chegou em 10 minutos?" com Reenviar e Agendar ligação.
+5. Agendar: painel inferior com motivo "Reenvio da fatura", dias (Hoje, Amanhã, Qui 23/10), horários (09:00, 09:30 indisponível, 10:00, 14:00), telefone com "Alterar" e "Confirmar horário".
+6. Agendado: cartão "Ligação agendada · Qui 23/10, 10:00 · protocolo 20261021-0043", lembrete 30 min antes, Reagendar e Cancelar.
+7. Meus atendimentos: Fatura reenviada (Concluído, 21/10) e Ligação agendada (Agendado, 23/10).
+
+Balões: assistente à esquerda em branco, cliente à direita em azul-marinho. Contraste AA, toque ≥44 px, status sempre escrito. Textos exatamente como acima.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 3. Design system e fim do agendamento de ligação (anexo: design-system.md)</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Atualize as telas deste projeto do app Bulbe Energia seguindo o arquivo design-system.md anexo. Ele define cores, fontes, cantos e componentes: não use nenhum valor fora dele. Mantenha a estrutura, os textos e o fluxo atuais, exceto o que está abaixo.
+
+1. CORES E FONTES
+Troque as cores antigas pelas do arquivo:
+- Azul-marinho #1A0D87 → #08068D (cabeçalho da home, botões principais, títulos, balão do cliente). Pressionado: #060462.
+- Texto #2B3240 → #3E4D5B; valores e destaques em #29333D.
+- Secundário #5B6472 → #536679.
+- Borda de campo #8A93A3 → #678098; divisórias e contorno de cartões em #D1D9E0.
+- Fundo #F4F5FB → #F6F9F9; cartões e campos em #FFFFFF.
+- Sucesso #1E8A50 sobre #E9F8F0 → #027A48 sobre #ECFDF3.
+- Selo "em aberto": #08068D sobre #E7E7FE. Foco: anel de 4 px #CFCEFD.
+Poppins em tudo: título de tela 24/32 Semibold #08068D; corpo 16/24 Regular; label 14/20 Medium; apoio 14/20 #536679; botões 16/24 Semibold; legendas 12/18.
+Cantos: 8 px em botões e campos, 12 px em cartões, 24 px no topo de painéis inferiores. Botões com altura mínima de 44 px.
+
+2. REMOVA O AGENDAMENTO DE LIGAÇÃO
+Apague as telas "Agendar" e "Agendado" e toda menção a ligação:
+- Chat: tire o atalho "Agendar uma ligação"; ficam "Reenviar minha fatura" e "Outro assunto".
+- Enviado: em "Não chegou em 10 minutos?", troque "Agendar ligação" por "Enviar por e-mail" e mantenha "Reenviar".
+- Meus atendimentos: tire o item "Ligação agendada"; fica só "Fatura reenviada · Concluído · 21/10".
+O fluxo final tem 5 telas: Faturas, Chat, Reenvio, Enviado e Meus atendimentos.
+
+Mantenha o logo dos anexos sem redesenhar, ícones de contorno, nada de gradiente, sombra forte ou emoji, contraste AA, toque ≥ 44 px e status sempre escrito.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 4. Visual igual ao app oficial (anexos: 4 imagens PNG)</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Refaça o visual das 5 telas deste projeto para ficar igual ao app oficial da Bulbe mostrado nas imagens anexas (bulbe-referencia-telas e bulbe-referencia-componentes). Copie delas o cabeçalho, os cartões, os selos, os botões, as listas e a barra inferior. Mantenha o fluxo e os textos; mude só o visual.
+
+LOGO
+Use as imagens anexas, nunca texto: bulbe-logo-branco.png no cabeçalho azul e bulbe-logo-azul.png em fundo branco. Corrija as telas de reenvio e de fatura enviada, onde o logo aparece quebrado.
+
+ESTILO
+- Poppins. Azul #08068D no cabeçalho da home, botões, títulos e valores; texto #3E4D5B; apoio #536679; divisórias #D1D9E0; fundo branco; faixas destacadas em #F6F9F9.
+- Cantos pequenos: botões e campos 6 px, cartões 8 px, selos 4 px. Nada de pílulas nem sombras.
+- Botão principal: #08068D, 44 px de altura, texto branco Semibold e ícone à direita. Secundário: branco, borda 1 px #D1D9E0, texto #536679. Link: #08068D sublinhado.
+- Selos retangulares: em aberto #054894 sobre #E6F1FE; paga e concluído com ✓ #18814D sobre #E9FBF2; em atraso com relógio #B42318 sobre #FEF3F2; em análise #B54708 sobre #FFFAEB.
+- Cartão de fatura: branco, borda de 4 px #E6F1FE; "De R$ 306,73 por" com o valor riscado; "R$" pequeno e valor grande em #08068D Semibold; "Desconto Bulbe: R$ 46,01" em #08068D.
+- Histórico e atendimentos em lista com divisórias, não em cartões soltos.
+
+TELA FATURAS
+Cabeçalho igual à referência: fundo #08068D com menu, logo branco no centro, sino e avatar; faixa "Indique e ganhe · R$ 50 na próxima fatura ›"; "Instalação:" com seletor de borda em gradiente #0762C7 → #26D07C; folha branca com topo arredondado de 16 px. Barra inferior só com Faturas, Consumo e Indicações: aba ativa #08068D com traço de 2 px acima, inativas #C2CCD6. Tire a aba Perfil e o botão flutuante Ajuda; "Não recebi minha fatura" vira uma linha com ícone de ajuda logo abaixo do cartão.
+
+DEMAIS TELAS
+Cabeçalho branco igual ao de Ver detalhes: seta de voltar curva #536679 à esquerda e logo azul à direita. Abaixo, o título da tela em 20 px Semibold #29333D, só com a primeira letra maiúscula ("Assistente Bulbe", "Meus atendimentos"). Sem barra inferior.
+- Chat: balão do assistente #F6F9F9 com texto #3E4D5B; do cliente #08068D com texto branco; cantos de 8 px; atalhos como botões secundários.
+- Meus atendimentos: abas sublinhadas como em Notificações (Todos, Em andamento, Concluídos), com contador em #E7E7FE.
+- Fatura enviada: aviso de sucesso em #E9FBF2 com texto #18814D.</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US03 · 5. Botão Ajuda de volta (só a tela Faturas selecionada)</span><span class="prompt-autor">João Victor</span></summary>
+          <div class="prompt-corpo"><pre>Edite somente a tela Faturas. Não mude mais nada nela nem nas outras telas: cabeçalho, cartão da fatura, histórico, barra inferior, cores, fontes e textos ficam exatamente como estão.
+
+Adicione de volta o botão flutuante "Ajuda", como na versão anterior desta tela:
+- Posição: fixo no canto inferior direito, 16 px da borda direita e 16 px acima da barra inferior. Fica parado quando a tela rola.
+- Visual: fundo #08068D, ícone de fone de ouvido em contorno branco à esquerda e o texto "Ajuda" em branco, Poppins Semibold 16 px.
+- Formato: 48 px de altura, cantos totalmente arredondados (formato de pílula) e sombra suave para destacar do conteúdo. Esta é a única exceção à regra de cantos pequenos e sem sombra.
+- Ao tocar, abre a tela do chat "Assistente Bulbe".
+- Aumente o espaço no fim da lista do histórico de faturas, para que o botão não cubra o último mês (Junho).</pre></div>
+        </details>
+        <details class="prompt">
+          <summary><span>US04 · Mudança de endereço</span><span class="prompt-autor">Miguel Fernando Rocha</span></summary>
+          <div class="prompt-corpo"><p>Resultado: 8 telas, de "Vai se mudar?" ao motivo da desistência (cenário A, endereço atendido, e B, não atendido). Depois foram adaptadas ao template do squad: saiu o cabeçalho "Solicitar Serviço" e entrou o padrão com voltar e logo.</p><pre>Crie um fluxo completo para o aplicativo da Bulbe referente à User Story "[US04] Mudança de Endereço e Continuidade do Serviço". CONTEXTO A mudança de endereço foi identificada como a terceira maior causa de churn da Bulbe. As hipóteses levantadas indicam que os cancelamentos ocorrem principalmente por dois fatores: 1. Falta de valor percebido para continuar utilizando a Bulbe na nova residência. 2. Fricção operacional durante o processo de mudança de endereço. O objetivo do fluxo é facilitar a continuidade do serviço, reduzir cancelamentos evitáveis e reforçar os benefícios de permanecer com a Bulbe após a mudança. IDENTIDADE VISUAL IMPORTANTE: Utilize como referência principal todas as telas, componentes, fluxos, estilos, design system e materiais visuais anexados ao contexto. A interface deve manter total consistência com o aplicativo atual da Bulbe, respeitando: - Hierarquia visual existente - Componentes já utilizados pela plataforma - Estilo dos botões - Campos de formulário - Espaçamentos - Tipografia - Navegação - Cards - Mensagens de feedback - Ícones e ilustrações Utilizar a cor principal da marca #08068D para CTAs, destaques e elementos de navegação. Não criar uma nova identidade visual. O resultado deve parecer uma funcionalidade nativa já existente dentro do aplicativo da Bulbe. OBJETIVO DO FLUXO Permitir que o cliente: - Informe seu novo endereço. - Verifique a disponibilidade do serviço. - Entenda os benefícios da continuidade. - Visualize estimativas de economia quando disponíveis. - Solicite a transferência do serviço. - Receba orientações claras sobre os próximos passos. - Informe os motivos caso desista da continuidade. TELA 1 – MUDANÇA DE ENDEREÇO Título: "Vai se mudar?" Descrição: "Verifique se a Bulbe está disponível no seu novo endereço e continue aproveitando seus benefícios." Elementos: - Ilustração seguindo o padrão visual do aplicativo. - CTA principal: "Verificar disponibilidade" TELA 2 – INFORMAR NOVO ENDEREÇO Campos: - CEP - Rua - Número - Complemento - Bairro - Cidade Com preenchimento automático sempre que possível. CTA: "Verificar disponibilidade" TELA 3 – CONSULTA DE DISPONIBILIDADE Estado de carregamento. Mensagem: "Estamos verificando a disponibilidade da Bulbe para seu novo endereço." Utilizar componentes de loading compatíveis com o padrão já utilizado no produto. CENÁRIO A – SERVIÇO DISPONÍVEL TELA 4A – CONTINUIDADE DISPONÍVEL Título: "Ótima notícia! Você pode continuar com a Bulbe." Exibir: - Disponibilidade confirmada. - Benefícios da continuidade. - Informações que reforcem conveniência e economia. Caso haja dados suficientes, apresentar estimativa personalizada de economia. Exemplo: "Você pode continuar economizando aproximadamente R$ XX por mês." Benefícios em cards: - Sem necessidade de novo cadastro. - Continuidade da experiência. - Histórico preservado. - Economia mantida. CTA: "Solicitar transferência" TELA 5A – CONFIRMAR TRANSFERÊNCIA Exibir resumo: - Endereço atual - Novo endereço - Dados já existentes no cadastro - Data prevista para transferência Evitar solicitar informações que já existam no sistema. CTA: "Confirmar solicitação" TELA 6A – SOLICITAÇÃO REALIZADA Mensagem de sucesso. Título: "Transferência solicitada com sucesso" Exibir próximos passos: 1. Validação do endereço. 2. Processamento da transferência. 3. Confirmação da continuidade do serviço. Botão: "Voltar para início" CENÁRIO B – SERVIÇO INDISPONÍVEL TELA 4B – INDISPONIBILIDADE Título: "Infelizmente ainda não atendemos esse endereço." Apresentar a informação de forma clara e empática. Elementos: - Explicação simples. - Possibilidade de demonstrar interesse futuro. CTA principal: "Entrar na lista de interesse" CTA secundário: "Falar com atendimento" TELA 5B – MOTIVO DA DESISTÊNCIA Pergunta: "Você poderia nos ajudar a entender o motivo?" Opções: - Serviço indisponível no novo endereço. - Processo muito complexo. - Não vejo vantagens em continuar. - Vou contratar outra solução. - Outro. Campo opcional para comentário. CTA: "Enviar" EXPERIÊNCIA DE USUÁRIO - Reduzir o número de etapas. - Priorizar reutilização de dados já cadastrados. - Reforçar continuamente o valor da permanência. - Comunicar benefícios de forma clara. - Dar transparência ao processo. - Reduzir qualquer sensação de burocracia. - Priorizar retenção sem gerar pressão excessiva ao usuário. RESULTADO ESPERADO Gerar telas de alta fidelidade totalmente alinhadas ao padrão visual dos anexos e ao design atual da Bulbe, criando uma experiência simples, confiável e orientada à continuidade do serviço durante a mudança de endereço.</pre></div>
+        </details>
+      </div>
+      <p class="licao"><span>Lição aprendida</span>Hex, px e imagens de referência funcionam; “deixe parecido com a Bulbe” não.</p>
+    </div>
+  </section>
+
+  <!-- ============================== 8. Evolução ============================== -->
+  <section class="secao" id="evolucao" data-parada data-indice tabindex="-1" aria-labelledby="evolucao-titulo">
+    <div class="miolo">
+      <h2 id="evolucao-titulo">Evolução</h2>
+      <p class="lide">12 pull requests em duas semanas, de 23/10 a 05/11/2026.</p>
+      <ol class="linha-do-tempo">
+        <li><time datetime="2026-10-23">23/10</time><h3>Wireframe da US04</h3><p>Miguel · PR #29</p></li>
+        <li><time datetime="2026-10-26">26/10</time><h3>Wireframe da US02 revisado</h3><p>André · PR #30</p></li>
+        <li><time datetime="2026-10-29">29/10</time><h3>Templates do app: template 1 e 2</h3><p>Miguel · PRs #32 e #39</p></li>
+        <li><time datetime="2026-11-02">02/11</time><h3>Telas da US05 em código</h3><p>MariB · PR #31</p></li>
+        <li><time datetime="2026-11-03">03/11</time><h3>Telas da US02, US03 e US04 em código</h3><p>PRs #40, #43 e #44</p></li>
+        <li><time datetime="2026-11-04">04/11</time><h3>Telas da US01 em código</h3><p>Samuel · PR #45</p></li>
+        <li><time datetime="2026-11-05">05/11</time><h3>Navegação integrada na main</h3><p>João Victor · PR #46</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="secao secao--suave" id="evolucao-us01" data-parada data-grupo="evolucao" tabindex="-1" aria-labelledby="evo-us01-titulo">
+    <div class="miolo antes-depois">
+      <figure class="foto antes">
+        <button class="ampliar" type="button" data-ampliar aria-label="Ampliar a primeira versão da US01">
+          <img src="assets/img/apresentacao/us01-primeira-versao.png" alt="Primeira versão da US01 com simulador e duas faturas" width="361" height="781" loading="lazy">
+          <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+        </button>
+        <figcaption><strong>Antes</strong><span>1ª versão: simulador com “duas faturas”.</span></figcaption>
+      </figure>
+      <div class="depois">
+        <div class="celular" data-celular="evo-us01" data-inicio="pages/Wireframe%2001/pages/comparacao.html" data-reserva="230" data-escala-max="0.72">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe%2001/pages/comparacao.html" title="Tela final da US01 funcionando: Antes x agora" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="depois-legenda"><strong>Depois</strong> A tela final, funcionando.</p>
+        <div class="alternar" role="group" aria-label="Tela final da US01">
+          <button class="passo passo--curto" type="button" data-para="evo-us01" data-tela="pages/Wireframe%2001/pages/comparacao.html">Antes x agora</button>
+          <button class="passo passo--curto" type="button" data-para="evo-us01" data-tela="pages/Wireframe%2001/pages/fatura-unificada.html">Fatura unificada</button>
+        </div>
+      </div>
+      <div class="mudancas">
+        <h3 id="evo-us01-titulo">Antes e depois da US01</h3>
+        <dl>
+          <div><dt>Tipografia</dt><dd>Valor em destaque (R$ 255,00) e um rótulo curto em caixa alta acima de cada título.</dd></div>
+          <div><dt>Cor</dt><dd>Sai o topo em degradê; entra o cabeçalho branco com a faixa azul da unidade consumidora. Verde só na economia.</dd></div>
+          <div><dt>Imagens</dt><dd>O gráfico de rosca decorativo virou barras simples, sem Bulbe x com Bulbe.</dd></div>
+          <div><dt>Organização</dt><dd>Um simulador longo virou telas em sequência; “duas faturas” virou “uma cobrança, tudo explicado”.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="evolucao-us03" data-parada data-grupo="evolucao" tabindex="-1" aria-labelledby="evo-us03-titulo">
+    <div class="miolo antes-depois antes-depois--largo">
+      <div class="antes antes--pilha">
+        <figure class="foto">
+          <button class="ampliar" type="button" data-ampliar="evo-us03" aria-label="Ampliar o rascunho da US03">
+            <img src="assets/img/apresentacao/us03-rascunho-stitch.jpg" alt="Rascunho da US03 com sete telas e agendamento de ligação" width="1735" height="679" loading="lazy">
+            <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+          </button>
+          <figcaption><strong>Antes</strong><span>Rascunho com 7 telas, gerado no Stitch.</span></figcaption>
+        </figure>
+        <figure class="foto">
+          <button class="ampliar" type="button" data-ampliar="evo-us03" aria-label="Ampliar a versão final da US03 no Stitch">
+            <img src="assets/img/apresentacao/us03-final-stitch.jpg" alt="Cinco telas finais da US03 na identidade da Bulbe" width="1800" height="767" loading="lazy">
+            <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+          </button>
+          <figcaption><strong>Versão final no Stitch</strong><span>5 telas.</span></figcaption>
+        </figure>
+      </div>
+      <div class="depois">
+        <div class="celular" data-celular="evo-us03" data-inicio="pages/Wireframe03/us03-assistente.html" data-reserva="230" data-escala-max="0.72">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe03/us03-assistente.html" title="Tela final da US03 funcionando: Assistente Bulbe" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="depois-legenda"><strong>Depois</strong> As telas em HTML, funcionando.</p>
+        <div class="alternar" role="group" aria-label="Tela final da US03">
+          <button class="passo passo--curto" type="button" data-para="evo-us03" data-tela="pages/Wireframe03/us03-assistente.html">Assistente Bulbe</button>
+          <button class="passo passo--curto" type="button" data-para="evo-us03" data-tela="pages/Wireframe03/us03-enviado.html">Fatura enviada</button>
+        </div>
+      </div>
+      <div class="mudancas">
+        <h3 id="evo-us03-titulo">Antes e depois da US03</h3>
+        <dl>
+          <div><dt>Rascunho</dt><dd>7 telas, azul #1A0D87, logo quebrado (texto no lugar da imagem), selos em pílula e agendamento de ligação.</dd></div>
+          <div><dt>Versão final</dt><dd>5 telas com o cabeçalho, os cartões e os selos do app oficial.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao--suave" id="evolucao-us04" data-parada data-grupo="evolucao" tabindex="-1" aria-labelledby="evo-us04-titulo">
+    <div class="miolo antes-depois">
+      <figure class="foto antes">
+        <button class="ampliar" type="button" data-ampliar="evo-us04" aria-label="Ampliar a primeira versão da tela Vai se mudar?">
+          <img src="assets/img/apresentacao/us04-primeira-versao-tela1.png" alt="Primeira versão da US04 com cabeçalho “Solicitar Serviço”" width="406" height="1035" loading="lazy">
+          <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+        </button>
+        <figcaption><strong>Antes</strong><span>1ª versão da tela “Vai se mudar?”.</span></figcaption>
+      </figure>
+      <div class="depois">
+        <div class="celular" data-celular="evo-us04" data-inicio="pages/Wireframe04/1-mudanca-de-endereco.html" data-reserva="230" data-escala-max="0.72">
+          <div class="celular-tela">
+            <iframe src="pages/Wireframe04/1-mudanca-de-endereco.html" title="Tela final da US04 funcionando: Vai se mudar?" width="390" height="844" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="depois-legenda"><strong>Depois</strong> A tela final, funcionando.</p>
+        <div class="alternar" role="group" aria-label="Tela final da US04">
+          <button class="passo passo--curto" type="button" data-para="evo-us04" data-tela="pages/Wireframe04/1-mudanca-de-endereco.html" data-tambem="pages/Wireframe04/index.html">Vai se mudar?</button>
+          <button class="passo passo--curto" type="button" data-para="evo-us04" data-tela="pages/Wireframe04/3-verificando-disponibilidade.html">Verificando disponibilidade</button>
+        </div>
+      </div>
+      <div class="mudancas">
+        <h3 id="evo-us04-titulo">Antes e depois da US04</h3>
+        <dl>
+          <div><dt>Tipografia</dt><dd>Títulos e textos no mesmo tamanho e peso dos outros fluxos.</dd></div>
+          <div><dt>Cor</dt><dd>Sai o cabeçalho “Solicitar Serviço” com sino e foto; entra o branco do template, com voltar e logo.</dd></div>
+          <div><dt>Imagens</dt><dd>A ilustração genérica de casa virou uma foto, com o selo de desconto e a instalação atual.</dd></div>
+          <div><dt>Organização</dt><dd>Indicador “Passo 1 de 3” no topo e benefícios agrupados num cartão só.</dd></div>
+        </dl>
+        <figure class="foto foto--apoio">
+          <button class="ampliar" type="button" data-ampliar="evo-us04" aria-label="Ampliar a primeira versão do fluxo da US04">
+            <img src="assets/img/apresentacao/us04-primeira-versao-fluxo.jpg" alt="Primeira versão do fluxo de mudança de endereço" width="2400" height="1160" loading="lazy">
+            <span class="ampliar-marca" aria-hidden="true"><svg class="icone"><use href="#i-ampliar"></use></svg></span>
+          </button>
+          <figcaption><span>As 7 telas da 1ª versão da US04.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="evolucao-estilo" data-parada data-grupo="evolucao" tabindex="-1" aria-labelledby="estilo-titulo">
+    <div class="miolo">
+      <h3 id="estilo-titulo">Tipografia, cores, imagens e organização</h3>
+      <div class="estilo">
+        <div>
+          <h4>Tipografia (Poppins)</h4>
+          <ul class="tipos">
+            <li><span class="tipo-amostra" style="font-size:40px;font-weight:600;line-height:1.1">R$ 255,00</span><span class="tipo-uso">Valor da fatura · 40 px</span></li>
+            <li><span class="tipo-amostra" style="font-size:24px;font-weight:600;line-height:32px">Sua economia</span><span class="tipo-uso">Título da tela · 24 px Semibold</span></li>
+            <li><span class="tipo-amostra" style="font-size:20px;font-weight:600;line-height:30px">Outubro/26</span><span class="tipo-uso">Mês da fatura e título de detalhe · 20 px Semibold</span></li>
+            <li><span class="tipo-amostra tipo-amostra--texto" style="font-size:16px;line-height:24px">Veja como funciona sua economia. <span class="tipo-botao">Pagar com PIX</span></span><span class="tipo-uso">Texto e botões · 16 px; botões em Semibold</span></li>
+            <li><span class="tipo-amostra tipo-amostra--apoio" style="font-size:14px;line-height:20px">Vence dia 25/10/26</span><span class="tipo-uso">Apoio, datas e selos · 14 px</span></li>
+            <li><span class="tipo-amostra tipo-amostra--apoio" style="font-size:12px;line-height:18px;font-weight:500">Faturas &nbsp; Consumo &nbsp; Indicações</span><span class="tipo-uso">Abas e legendas · 12 px</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cor: antes (rascunho da IA) e depois (app)</h4>
+          <div class="tabela-rolagem">
+            <table class="tabela tabela--cores">
+              <thead><tr><th scope="col">Papel</th><th scope="col">Antes</th><th scope="col">Depois</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Principal: cabeçalho, botões, títulos, valores</th>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#1A0D87" aria-hidden="true"></span>#1A0D87</span></td>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#08068D" aria-hidden="true"></span>#08068D</span></td></tr>
+                <tr><th scope="row">Texto</th>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#2B3240" aria-hidden="true"></span>#2B3240</span></td>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#3E4D5B" aria-hidden="true"></span>#3E4D5B</span></td></tr>
+                <tr><th scope="row">Apoio</th>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#5B6472" aria-hidden="true"></span>#5B6472</span></td>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#536679" aria-hidden="true"></span>#536679</span></td></tr>
+                <tr><th scope="row">Fundo</th>
+                  <td><span class="cor"><span class="cor-amostra" style="background:#F4F5FB" aria-hidden="true"></span>#F4F5FB</span></td>
+                  <td><span class="cor"><span class="cor-amostra cor-amostra--dupla" style="background:linear-gradient(90deg,#FFFFFF 50%,#F6F9F9 50%)" aria-hidden="true"></span>Branco, com faixas em #F6F9F9</span></td></tr>
+                <tr><th scope="row">Sucesso</th>
+                  <td><span class="cor"><span class="amostra" style="color:#1E8A50;background:#E9F8F0" aria-hidden="true">paga</span>#1E8A50 sobre #E9F8F0</span></td>
+                  <td><span class="cor"><span class="amostra" style="color:#18814D;background:#E9FBF2" aria-hidden="true">paga</span>#18814D sobre #E9FBF2</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="nota nota--logo">
+            <span class="cor-amostra cor-amostra--mini" style="background:#26D07C" aria-hidden="true"></span><span class="cor-amostra cor-amostra--mini" style="background:#FF9E1B" aria-hidden="true"></span>
+            O verde #26D07C e o laranja #FF9E1B do logo ficam só em detalhes: no logo, na marca do cartão e na borda do seletor de instalação. Nunca em texto.
+          </p>
+        </div>
+        <div class="estilo-largo">
+          <h4>Imagens e organização</h4>
+          <ul class="lista-marcada lista-marcada--colunas">
+            <li>Logo oficial em arquivo, nunca redesenhado: branco no cabeçalho azul e azul no fundo branco. O rascunho da IA trocava o logo por texto.</li>
+            <li>Ícones de contorno em SVG, os mesmos dos templates.</li>
+            <li>Foto só onde ajuda a decidir, como a casa da US04. Nada de emoji nem ilustração genérica.</li>
+            <li>Formato de app de celular: coluna de 430 px, centralizada; no celular, a tela ocupa tudo.</li>
+            <li>Dois templates (template 1 na tela inicial, template 2 nas internas) e um arquivo app.css comum a todas as telas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 9. Acessibilidade ============================== -->
+  <section class="secao secao--suave" id="acessibilidade" data-parada data-indice tabindex="-1" aria-labelledby="acessibilidade-titulo">
+    <div class="miolo">
+      <h2 id="acessibilidade-titulo">Acessibilidade</h2>
+      <p class="lide lide--larga">Contraste medido pela WCAG 2.1 AA. O texto principal passa com folga. Oito elementos ficaram abaixo do mínimo de 4,5:1; a correção usa cores que o app já tem.</p>
+      <ul class="aprovados" aria-label="Cores de texto que passam">
+        <li><span class="cor-amostra" style="background:#08068D" aria-hidden="true"></span><span><strong>14,78:1</strong> Azul #08068D</span></li>
+        <li><span class="cor-amostra" style="background:#3E4D5B" aria-hidden="true"></span><span><strong>8,69:1</strong> Texto #3E4D5B</span></li>
+        <li><span class="cor-amostra" style="background:#536679" aria-hidden="true"></span><span><strong>5,92:1</strong> Apoio #536679</span></li>
+      </ul>
+      <div class="tabela-rolagem">
+        <table class="tabela tabela--wcag">
+          <thead><tr><th scope="col">Elemento</th><th scope="col">Onde</th><th scope="col">Antes e contraste</th><th scope="col">Depois e contraste</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Rótulo das abas inativas</th><td>Template, todas</td>
+              <td><span class="cor"><span class="amostra" style="color:#C2CCD6;background:#FFFFFF" aria-hidden="true">Consumo</span>#C2CCD6 sobre branco <strong class="razao">1,63:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#536679;background:#FFFFFF" aria-hidden="true">Consumo</span>#536679 <strong class="razao">5,92:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo “endereço localizado”</th><td>US04</td>
+              <td><span class="cor"><span class="amostra" style="color:#26D07C;background:#EFECF7" aria-hidden="true">endereço localizado</span>#26D07C sobre #EFECF7 <strong class="razao">1,73:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#18814D;background:#E9FBF2" aria-hidden="true">endereço localizado</span>#18814D sobre #E9FBF2 <strong class="razao">4,56:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo da etapa atual</th><td>US04</td>
+              <td><span class="cor"><span class="amostra" style="color:#FF9E1B;background:rgba(255,158,27,.15)" aria-hidden="true">etapa atual</span>#FF9E1B sobre laranja a 15% <strong class="razao">1,85:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#B54708;background:#FFFAEB" aria-hidden="true">etapa atual</span>#B54708 sobre #FFFAEB <strong class="razao">5,20:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo “confirmado”</th><td>US04</td>
+              <td><span class="cor"><span class="amostra" style="color:#00A45E;background:#F5F2FC" aria-hidden="true">confirmado</span>#00A45E sobre #F5F2FC <strong class="razao">2,93:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#18814D;background:#E9FBF2" aria-hidden="true">confirmado</span>#18814D sobre #E9FBF2 <strong class="razao">4,56:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo “em revisão”</th><td>US02</td>
+              <td><span class="cor"><span class="amostra" style="color:#B97822;background:#FFF2DF" aria-hidden="true">em revisão</span>#B97822 sobre #FFF2DF <strong class="razao">3,29:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#B54708;background:#FFFAEB" aria-hidden="true">em revisão</span>#B54708 sobre #FFFAEB <strong class="razao">5,20:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo “confirmado”</th><td>US02</td>
+              <td><span class="cor"><span class="amostra" style="color:#3B9075;background:#E5F6EF" aria-hidden="true">confirmado</span>#3B9075 sobre #E5F6EF <strong class="razao">3,45:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#18814D;background:#E9FBF2" aria-hidden="true">confirmado</span>#18814D sobre #E9FBF2 <strong class="razao">4,56:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Erro do campo e do código</th><td>US02</td>
+              <td><span class="cor"><span class="amostra" style="color:#D9534F;background:#FFFFFF" aria-hidden="true">Número incompleto</span>#D9534F sobre branco <strong class="razao">3,96:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#B42318;background:#FFFFFF" aria-hidden="true">Número incompleto</span>#B42318 <strong class="razao">6,57:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Etiquetas de economia (9 e 10 px)</th><td>US01</td>
+              <td><span class="cor"><span class="amostra" style="color:#128858;background:#FFFFFF;font-size:10px" aria-hidden="true">Economia de R$ 45</span>#128858 sobre branco <strong class="razao">4,48:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#027A48;background:#FFFFFF;font-size:12px" aria-hidden="true">Economia de R$ 45</span>#027A48 e mínimo de 12 px <strong class="razao">5,41:1</strong></span></td>
+              <td><span class="status status--fazer">A fazer</span></td></tr>
+            <tr><th scope="row">Selo “paga” e “concluído”</th><td>US03</td>
+              <td><span class="cor"><span class="amostra" style="color:#1E8A50;background:#E9F8F0" aria-hidden="true">paga</span>#1E8A50 sobre #E9F8F0 <strong class="razao">3,98:1</strong></span></td>
+              <td><span class="cor"><span class="amostra" style="color:#18814D;background:#E9FBF2" aria-hidden="true">paga</span>#18814D sobre #E9FBF2 <strong class="razao">4,56:1</strong></span></td>
+              <td><span class="status status--feito">Feito</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">O status vem sempre escrito, nunca só pela cor. Medição pela fórmula de contraste da WCAG 2.1 sobre o CSS do repositório, em 09/11/2026.</p>
+    </div>
+  </section>
+
+  <!-- ============================== 10. Equipe e conclusão ============================== -->
+  <section class="secao" id="conclusao" data-parada data-indice tabindex="-1" aria-labelledby="conclusao-titulo">
+    <div class="miolo">
+      <h2 id="conclusao-titulo">Equipe e conclusão</h2>
+      <div class="fecho">
+        <div class="fecho-equipe">
+          <h3>Equipe</h3>
+          <div class="tabela-rolagem">
+            <table class="tabela tabela--equipe">
+              <thead><tr><th scope="col">Integrante</th><th scope="col">User story</th><th scope="col">Telas</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Samuel Pascini</th><td>US01 · Prévia da 1ª fatura</td><td>7</td></tr>
+                <tr><th scope="row">André Coelho</th><td>US02 · Correção do canal de contato</td><td>2 telas, com 4 estados</td></tr>
+                <tr><th scope="row">João Victor Cândido Lopes Silva</th><td>US03 · Reenvio da fatura pelo Assistente Bulbe</td><td>5</td></tr>
+                <tr><th scope="row">Miguel Fernando Rocha</th><td>US04 · Mudança de endereço</td><td>9</td></tr>
+                <tr><th scope="row">MariB</th><td>US05 · Confirmação de pagamento e comprovante</td><td>8, 3 delas estados de demonstração</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="fecho-conclusoes">
+          <h3>O que concluímos</h3>
+          <ol class="conclusoes">
+            <li><h4>Partir da dor medida manteve cada fluxo curto.</h4><p>Cada US ataca um número: 32,4%, ~20%, 8 dias e 16 h, a 3ª causa de churn.</p></li>
+            <li><h4>A IA acelera, mas a marca vem de regras exatas.</h4><p>Os prompts que deram certo traziam hex, tamanhos, imagens de referência e o que evitar.</p></li>
+            <li><h4>Um padrão comum juntou cinco trabalhos num app.</h4><p>Templates, app.css e navegação integrada ligam todas as telas à tela inicial.</p></li>
+          </ol>
+        </div>
+        <div class="fecho-proximos">
+          <h3>Próximas sprints</h3>
+          <ul class="lista-marcada">
+            <li>Aplicar as 8 correções de contraste da tabela de WCAG.</li>
+            <li>Usar no mínimo 12 px em todo texto; a US01 ainda tem 9 e 10 px e a US02, 11 px.</li>
+            <li>Testar o app com usuários de fora do grupo.</li>
+            <li>Ligar as telas aos dados fictícios em JSON.</li>
+            <li>Criar as telas Como funciona?, Indique e ganhe e Termos.</li>
+            <li>Registrar no Figma os prompts e versões de todas as US.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="rodape">
+      <div class="miolo rodape-corpo">
+        <img src="pages/templates/assets/logo-bulbe.svg" alt="Bulbe Energia" width="100" height="29">
+        <p>Squad 10 · Turma A · Ibmec BH · Projeto em Ciência de Dados I e Design Gráfico e UX · 2º semestre de 2026</p>
+        <ul class="rodape-links">
+          <li><a href="https://github.com/joaocandd/202602-projeto1-a-10" target="_blank" rel="noopener">Repositório no GitHub<span class="so-leitor"> (abre em nova aba)</span></a></li>
+          <li><a href="https://www.figma.com/design/6ruqxEURW9tMveAf7caSpO" target="_blank" rel="noopener">Figma do squad<span class="so-leitor"> (abre em nova aba)</span></a></li>
+          <li><a href="docs/apresentacao-final/Bulbe_Squad10_Design_UX.pdf" download>Slides em PDF</a></li>
+        </ul>
+      </div>
+    </footer>
+  </section>
+
+</main>
+
+<!-- Ampliação das fotos -->
+<dialog class="ampliacao" id="ampliacao" aria-label="Imagem ampliada">
+  <button class="ampliacao-botao ampliacao-fechar" type="button" data-ampliacao-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-fechar"></use></svg></button>
+  <button class="ampliacao-botao ampliacao-anterior" type="button" data-ampliacao-passo="-1" aria-label="Imagem anterior"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-anterior"></use></svg></button>
+  <figure>
+    <img alt="" id="ampliacao-imagem">
+    <figcaption id="ampliacao-legenda"></figcaption>
+  </figure>
+  <button class="ampliacao-botao ampliacao-proxima" type="button" data-ampliacao-passo="1" aria-label="Próxima imagem"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-proxima"></use></svg></button>
+</dialog>
+
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
