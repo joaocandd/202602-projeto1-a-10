@@ -32,7 +32,7 @@ Números do processo:
 | André Coelho | US02 · Correção do canal de contato | 2 telas, com 4 estados |
 | João Victor Cândido Lopes Silva | US03 · Reenvio da fatura pelo Assistente Bulbe | 5 |
 | Miguel Fernando Rocha | US04 · Mudança de endereço | 9 |
-| MariB | US05 · Confirmação de pagamento e comprovante | 8, 3 delas estados de demonstração |
+| Mariana Vieira Barreto | US05 · Confirmação de pagamento e comprovante | 8, 3 delas estados de demonstração |
 
 ## 3. Problema mapeado
 
@@ -99,7 +99,7 @@ Cada US tem: a frase da user story, o dado da dor, a persona, o fluxo, por onde 
 - **Prova no fim:** transferência solicitada, com protocolo.
 - **Arquivo inicial:** `pages/Wireframe04/index.html`. Telas: 1-mudanca-de-endereco, 2-informar-endereco, 3-verificando-disponibilidade, 4a-continuidade-disponivel, 4b-indisponibilidade, 5a-confirmar-transferencia, 5b-motivo-da-desistencia, 6a-solicitacao-realizada.
 
-### US05 · Confirmação de pagamento e comprovante · MariB
+### US05 · Confirmação de pagamento e comprovante · Mariana Vieira Barreto
 - **User story:** Como cliente que acabou de pagar a fatura, quero verificar se o pagamento foi reconhecido e consultar o comprovante, para ter segurança de que não existe dívida pendente. (Redefinida na Sprint II.)
 - **Dado:** até 3 dias úteis de compensação em que o cliente fica sem saber se o pagamento entrou.
 - **Origem:** reclamação de 11/09/2026 no Reclame Aqui, cobranças mesmo após boletos pagos.
@@ -184,7 +184,7 @@ Lição: hex, px e imagens de referência funcionam; "deixe parecido com a Bulbe
 | 23/10 | Wireframe da US04 | Miguel · PR #29 |
 | 26/10 | Wireframe da US02 revisado | André · PR #30 |
 | 29/10 | Templates do app: template 1 e 2 | Miguel · PRs #32 e #39 |
-| 02/11 | Telas da US05 em código | MariB · PR #31 |
+| 02/11 | Telas da US05 em código | Mariana Vieira Barreto · PR #31 |
 | 03/11 | Telas da US02, US03 e US04 em código | PRs #40, #43 e #44 |
 | 04/11 | Telas da US01 em código | Samuel · PR #45 |
 | 05/11 | Navegação integrada na main | João Victor · PR #46 |
