@@ -410,6 +410,102 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
   margin-top: 1.25rem;
 }
 
+/* ------------------------------------ Capa ------------------------------------ */
+
+.secao.capa {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  padding-block: 0;
+  background: #060557;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.capa-brilho {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 55% at 15% 105%, rgba(38, 208, 124, 0.38), transparent 70%),
+    radial-gradient(55% 50% at 90% -5%, rgba(255, 158, 27, 0.30), transparent 70%),
+    radial-gradient(70% 60% at 50% 40%, #0B0AA8, transparent 75%);
+  pointer-events: none;
+}
+
+.capa-logo {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  width: auto;
+  height: 2.25rem;
+  transform: translateX(-50%);
+}
+
+.capa-centro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem var(--margem, 24px) 6rem;
+}
+
+.capa h1 {
+  max-width: 16ch;
+  font-size: clamp(2.75rem, 8.5vw, 7rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.capa-barra {
+  display: block;
+  width: 5rem;
+  height: 0.375rem;
+  margin-top: 2.25rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #26D07C 0 50%, #FF9E1B 50% 100%);
+}
+
+.capa-squad {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.capa-seta {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-left: -1.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  animation: capa-pulo 1.8s ease-in-out infinite;
+}
+
+.capa-seta:hover { background: rgba(255, 255, 255, 0.16); border-color: #FFFFFF; }
+.capa-seta .icone { width: 1.75rem; height: 1.75rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.capa :focus-visible { outline: 3px solid #FFFFFF; outline-offset: 4px; }
+
+@keyframes capa-pulo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capa-seta { animation: none; }
+}
 /* ---------------------------------- Abertura ---------------------------------- */
 
 .secao.abertura {
