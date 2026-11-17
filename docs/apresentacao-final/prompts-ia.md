@@ -2,7 +2,7 @@
 
 Textos copiados do Figma do squad (US01, US02 e US04) e da conversa de criação da US03 no Google Stitch. São a fonte para a seção "Como usamos IA" do site. Os prompts da US01 e da US04 ainda usam cores antigas (#1A0D87); as telas finais seguem o azul oficial #08068D.
 
-A US05 (MariB) não tem prompt registrado no Figma.
+A US05 (Mariana Vieira Barreto) não tem prompt registrado no Figma.
 
 ## US01 · Prévia da 1ª fatura · Samuel Pascini
 
