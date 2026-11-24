@@ -69,8 +69,9 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
 
 h2 {
   color: var(--primary);
-  font-size: clamp(1.875rem, 3vw, 2.75rem);
-  line-height: 1.2;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -83,21 +84,6 @@ h4 {
   color: var(--text);
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.lide {
-  max-width: 44rem;
-  margin-top: 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
-
-.lide--larga { max-width: 62rem; }
-
-.nota {
-  margin-top: 1rem;
-  color: var(--text-muted);
-  font-size: 0.9375rem;
 }
 
 .so-leitor {
@@ -159,12 +145,6 @@ main:focus { outline: none; box-shadow: none; }
   text-decoration: none;
   cursor: pointer;
 }
-
-.botao--claro { background: #FFFFFF; color: var(--primary); }
-.botao--claro:hover { background: var(--primary-subtle); }
-
-.botao--contorno-claro { border-color: #FFFFFF; background: transparent; color: #FFFFFF; }
-.botao--contorno-claro:hover { background: rgba(255, 255, 255, 0.14); }
 
 .botao--leve {
   min-height: 44px;
@@ -333,82 +313,66 @@ main:focus { outline: none; box-shadow: none; }
   transform-origin: 0 0;
 }
 
+
+/* ---------------------------------- Sobretítulo ---------------------------------- */
+
+/* Rótulo curto acima do título: diz em que parte da história a seção está */
+.sobretitulo {
+  margin-bottom: 0.75rem;
+  color: var(--azul-ceu);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 /* ---------------------------------- Passos do fluxo ---------------------------------- */
 
-.passos h4 {
-  margin-top: 1rem;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+/* Um círculo numerado por tela; o nome da tela fica no title e no aria-label */
+.passos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 2.5rem;
 }
-.passos h4:first-child { margin-top: 0; }
 
-.passos-lista {
-  display: grid;
-  gap: 6px;
-  margin-top: 0.5rem;
-  counter-reset: passo;
-}
-.passos-lista--de-4 { counter-reset: passo 3; }
-.passos-lista > li { counter-increment: passo; }
+.passos-lista { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
 .passo {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  width: 100%;
-  min-height: 44px;
-  padding: 0.375rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
   background: #FFFFFF;
-  color: var(--text);
+  color: var(--primary);
   font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  text-align: left;
+  font-weight: 600;
   cursor: pointer;
 }
 
-ol.passos-lista .passo::before {
-  content: counter(passo);
-  flex: none;
+.passo:hover { border-color: var(--primary); }
+.passo[aria-current] { border-color: var(--primary); background: var(--primary); color: #FFFFFF; }
+
+.passos-acoes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.botao-icone {
   display: grid;
   place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: var(--primary-subtle);
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--raio);
+  background: #FFFFFF;
   color: var(--primary);
-  font-size: 0.75rem;
-  font-weight: 600;
+  cursor: pointer;
 }
 
-.passo:hover { border-color: var(--primary); }
-
-.passo[aria-current] {
-  border-color: var(--primary);
-  background: var(--primary-subtle);
-  color: var(--primary);
-  font-weight: 600;
-}
-
-ol.passos-lista .passo[aria-current]::before { background: var(--primary); color: #FFFFFF; }
-
-.passo--curto { width: auto; }
-
-.passos-nota {
-  margin-top: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-}
-
-.passos-acoes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
+.botao-icone:hover { background: var(--primary-subtle); }
 
 /* ------------------------------------ Capa ------------------------------------ */
 
@@ -567,10 +531,6 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
 /* ---------------------------------- Abertura ---------------------------------- */
 
 .secao.abertura {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  justify-content: stretch;
   padding-block: 0;
   background: var(--g2);
   color: #FFFFFF;
@@ -583,732 +543,208 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
   padding-block: 2.5rem;
 }
 
-.abertura-logo { display: block; width: auto; height: 2.75rem; }
+.abertura h2 {
+  color: #FFFFFF;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
 
-.abertura-squad { margin-top: 1.5rem; font-weight: 500; }
+/* O mesmo detalhe verde e laranja da capa */
+.abertura h2::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.375rem;
+  margin-top: 2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #26D07C 0 50%, #FF9E1B 50% 100%);
+}
 
-.abertura h1 {
-  max-width: 16ch;
-  margin-top: 0.5rem;
-  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+.abertura .celular { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 16px 40px rgba(3, 2, 49, 0.35); }
+
+/* ---------------------------------- O problema ---------------------------------- */
+
+.dores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.dor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 3px solid var(--primary);
+}
+
+.dor-numero {
+  display: flex;
+  align-items: flex-end;
+  color: var(--primary);
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.dor-texto { font-size: 1.125rem; line-height: 1.625rem; }
+.dor .selo { align-self: flex-start; margin-top: auto; }
+
+.fonte { margin-top: 2rem; color: var(--text-muted); font-size: 0.875rem; }
+
+/* ---------------------------------- Personas ---------------------------------- */
+
+.personas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.persona {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+  background: #FFFFFF;
+}
+
+.persona-fala {
+  flex: 1;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  text-wrap: balance;
+}
+
+.persona-nome { font-weight: 600; }
+.persona-quem { color: var(--text-muted); font-size: 0.875rem; }
+.persona-us { margin-top: 0.75rem; }
+
+/* ---------------------------------- Soluções e conclusão ---------------------------------- */
+
+.principios,
+.conclusoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem 2rem;
+  margin-top: 2.5rem;
+  counter-reset: marco;
+}
+
+.principios li,
+.conclusoes li {
+  padding-top: 1.25rem;
+  border-top: 3px solid var(--primary);
+  counter-increment: marco;
+}
+
+.principios li::before,
+.conclusoes li::before {
+  content: counter(marco, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--azul-ceu);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* A prova no fim do fluxo: único uso do verde do logo nesta parte */
+.principios li:last-child { border-top-color: var(--verde); }
+
+.principios h3,
+.conclusoes li {
+  color: var(--primary);
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.conclusoes { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+
+/* ---------------------------------- Cada user story ---------------------------------- */
+
+.us {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.us-info h3 {
+  font-size: clamp(1.875rem, 3.2vw, 3rem);
   line-height: 1.12;
   letter-spacing: -0.01em;
 }
 
-.abertura-sub {
+/* A dor medida e o que muda com a tela */
+.virada {
+  display: grid;
+  gap: 1.5rem;
   max-width: 34rem;
-  margin-top: 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
-
-.abertura-acoes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
   margin-top: 2rem;
 }
 
-.abertura-dica { display: none; margin-top: 1.5rem; font-size: 0.875rem; }
+.virada-antes { color: var(--text-muted); font-size: 1.125rem; line-height: 1.625rem; }
 
-.abertura .celular { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 16px 40px rgba(3, 2, 49, 0.35); }
-
-.faixa-numeros {
-  border-top: 1px solid rgba(255, 255, 255, 0.24);
-  background: var(--primary);
-}
-
-.faixa-numeros ul {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 1.5rem;
-  padding-block: 1.25rem;
-}
-
-.faixa-numeros strong {
-  display: block;
-  font-size: 2.5rem;
-  line-height: 1.1;
-}
-
-.faixa-numeros span {
-  display: block;
-  max-width: 14rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-/* ---------------------------------- O problema ---------------------------------- */
-
-.dores { margin-top: 1.5rem; }
-
-.dor {
-  display: grid;
-  gap: 0.5rem 2rem;
-  align-items: center;
-  padding-block: 0.75rem;
-  border-top: 1px solid var(--border);
-}
-.dor:last-child { border-bottom: 1px solid var(--border); }
-
-.dor-numero {
-  color: var(--primary);
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-.dor-texto h3 { color: var(--text); font-size: 1.125rem; line-height: 1.75rem; }
-.dor-fonte { color: var(--text-muted); font-size: 0.875rem; }
-.dor .botao { justify-self: start; }
-
-/* ---------------------------------- Personas ---------------------------------- */
-
-.cartao {
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-}
-
-.personas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.persona { display: flex; flex-direction: column; gap: 0.75rem; }
-.persona h3 { font-size: 1.125rem; line-height: 1.625rem; }
-.persona-quem { font-size: 0.9375rem; }
-.persona-precisa { font-weight: 500; }
-.persona-precisa span {
-  display: block;
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  font-weight: 500;
-}
-.persona-us { margin-top: auto; color: var(--text-muted); font-size: 0.8125rem; }
-
-/* ---------------------------------- As soluções ---------------------------------- */
-
-.principios {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1.5rem 2rem;
-  margin-top: 2rem;
-  counter-reset: principio;
-}
-
-.principios li {
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  counter-increment: principio;
-}
-
-.principios li::before {
-  content: counter(principio);
+.virada-antes strong {
   display: block;
   color: var(--primary);
-  font-size: 2rem;
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  line-height: 1.05;
+}
+
+.virada-depois {
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--verde);
+  color: var(--text);
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
   font-weight: 600;
-  line-height: 1.2;
-}
-
-.principios h3 { margin-top: 0.25rem; color: var(--text); font-size: 1.125rem; line-height: 1.625rem; }
-.principios p { margin-top: 0.25rem; font-size: 0.9375rem; }
-
-.atalhos-us {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.atalho-us {
-  display: block;
-  min-height: 44px;
-  padding: 0.875rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-  text-align: left;
-  cursor: pointer;
-}
-.atalho-us:hover { border-color: var(--primary); }
-.atalho-us strong { display: block; color: var(--primary); }
-.atalho-us span { display: block; font-size: 0.9375rem; line-height: 1.375rem; }
-
-.aviso-valores {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--raio);
-  background: var(--azul-ceu-50);
-  font-size: 0.9375rem;
-}
-
-/* Cada user story */
-.us {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-.us-autor { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; }
-.us-info h3 { font-size: 1.75rem; line-height: 2.25rem; }
-
-.us-historia {
-  margin-top: 0.75rem;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.75rem;
-}
-
-.us-nota { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.875rem; }
-
-.us-dados { margin-top: 1.25rem; }
-.us-dados + .us-nota { margin-top: 0.75rem; }
-
-.us-dados > div,
-.mudancas dl > div,
-.letras > div {
-  display: grid;
-  grid-template-columns: 8.5rem minmax(0, 1fr);
-  gap: 0.25rem 1rem;
-  padding-block: 0.625rem;
-  border-top: 1px solid var(--border);
-}
-
-.us-dados dt,
-.mudancas dt,
-.letras dt { color: var(--primary); font-size: 0.875rem; font-weight: 600; line-height: 1.5rem; }
-
-.us-dados dd,
-.mudancas dd,
-.letras dd { font-size: 0.9375rem; }
-
-/* A prova que o cliente leva: único uso do verde do logo nesta seção */
-.prova dt::after {
-  content: "";
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-left: 0.375rem;
-  border-radius: 50%;
-  background: var(--verde);
+  line-height: 1.4;
 }
 
 /* ---------------------------------- O app completo ---------------------------------- */
 
 .app {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
-.mapa-colunas {
-  display: grid;
-  gap: 1rem 1.5rem;
-  margin-top: 1.25rem;
-}
-
-.app-mapa h3 {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.mapa { display: grid; gap: 6px; margin-top: 0.5rem; }
+.mapa { display: grid; gap: 0.5rem; max-width: 30rem; margin-top: 2rem; }
 
 .mapa-item {
-  display: grid;
-  grid-template-columns: 1.5rem minmax(0, 1fr) auto;
-  grid-template-areas: "icone toque selo" "icone abre selo";
-  gap: 0 0.75rem;
+  display: flex;
   align-items: center;
+  gap: 0.75rem;
   width: 100%;
   min-height: 52px;
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--raio);
   background: #FFFFFF;
   color: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 500;
   text-align: left;
   cursor: pointer;
 }
-
-.mapa-item .icone { grid-area: icone; width: 1.375rem; height: 1.375rem; color: var(--text-muted); }
-.mapa-toque { grid-area: toque; font-size: 0.9375rem; font-weight: 500; line-height: 1.25rem; }
-.mapa-abre { grid-area: abre; color: var(--text-muted); font-size: 0.8125rem; line-height: 1.125rem; }
-.mapa-abre::before { content: "abre "; }
-.mapa-item .selo { grid-area: selo; }
 
 .mapa-item:hover { border-color: var(--primary); }
-.mapa-item[aria-current] { border-color: var(--primary); background: var(--primary-subtle); }
-.mapa-item[aria-current] .mapa-toque { color: var(--primary); font-weight: 600; }
+.mapa-item[aria-current] { border-color: var(--primary); background: var(--primary-subtle); color: var(--primary); font-weight: 600; }
 .mapa-item[aria-current] .selo { background: #FFFFFF; }
 
-.mapa-nota { margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem; }
+.app-mapa .passos-acoes { margin-top: 1.5rem; }
 
-/* ---------------------------------- Tabelas ---------------------------------- */
-
-.tabela-rolagem {
-  margin-top: 1.25rem;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-}
-
-.tabela {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
-  line-height: 1.375rem;
-}
-
-.tabela th,
-.tabela td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border);
-  text-align: left;
-  vertical-align: top;
-}
-
-.tabela tbody tr:last-child th,
-.tabela tbody tr:last-child td { border-bottom: 0; }
-
-.tabela thead th {
-  background: var(--surface-subtle);
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  font-weight: 600;
-}
-
-.tabela tbody th { font-weight: 600; }
-.tabela .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-.tabela--wcag th,
-.tabela--wcag td,
-.tabela--cores th,
-.tabela--cores td { padding: 0.5rem 0.75rem; vertical-align: middle; }
-.tabela--wcag th,
-.tabela--wcag td { padding-block: 0.375rem; }
-
-.razao { font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-/* Em telas estreitas, cada linha vira um bloco com o nome da coluna acima do valor */
-@media (max-width: 47.99rem) {
-  .tabela thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-  }
-  .tabela tr { display: block; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
-  .tabela tbody tr:last-child { border-bottom: 0; }
-  .tabela th,
-  .tabela td,
-  .tabela--wcag th,
-  .tabela--wcag td,
-  .tabela--cores th,
-  .tabela--cores td { display: block; padding: 0.25rem 0; border: 0; }
-  .tabela td[data-rotulo]::before {
-    content: attr(data-rotulo);
-    display: block;
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-  .tabela tbody th { color: var(--primary); font-size: 1rem; }
-}
-
-/* ---------------------------------- Fotos e galeria ---------------------------------- */
-
-.foto figcaption {
-  display: grid;
-  gap: 0.125rem;
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-}
-
-.foto figcaption strong { color: var(--primary); }
-
-.ampliar {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-  cursor: zoom-in;
-}
-
-.ampliar img { display: block; width: 100%; }
-
-.ampliar-marca {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-  color: var(--primary);
-}
-
-.ampliar:hover { border-color: var(--primary); }
-
-.duas-colunas {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-.letras { margin-top: 1rem; }
-.letras > div:last-child { border-bottom: 1px solid var(--border); }
-.letras dt::first-letter { font-size: 1.25rem; }
-
-.destaque {
-  margin-top: 1rem;
-  padding: 0.875rem 1rem;
-  border-radius: var(--raio);
-  background: var(--primary-subtle);
-  color: var(--primary);
-  font-weight: 500;
-}
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.galeria .ampliar img { aspect-ratio: 4 / 3; object-fit: contain; }
-.galeria-gerou { color: var(--text-muted); }
-
-.criterios {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.criterios li {
-  padding: 0.5rem 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: var(--surface-subtle);
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-
-/* ---------------------------------- Como usamos IA ---------------------------------- */
-
-.stitch {
-  display: grid;
-  gap: 2rem;
-  align-items: start;
-  margin-top: 1rem;
-}
-
-.sequencia { counter-reset: seq; }
-
-.sequencia li {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0 0.75rem;
-  padding-block: 0.75rem;
-  border-top: 1px solid var(--border);
-  counter-increment: seq;
-}
-.sequencia li:last-child { border-bottom: 1px solid var(--border); }
-
-.sequencia li::before {
-  content: counter(seq);
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.sequencia h4 { font-size: 1rem; line-height: 1.5rem; }
-.sequencia p { color: var(--text-muted); font-size: 0.9375rem; }
-
-.stitch-imagens { display: grid; gap: 1rem; }
-
-.prompts { display: grid; gap: 0.5rem; margin-top: 1.5rem; }
-
-.prompt {
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-}
-
-.prompt summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 44px;
-  padding: 0.5rem 1rem;
-  border-radius: var(--raio);
-  color: var(--primary);
-  font-weight: 600;
-  list-style: none;
-  cursor: pointer;
-}
-.prompt summary::-webkit-details-marker { display: none; }
-
-.prompt summary::after {
-  content: "";
-  flex: none;
-  width: 0.625rem;
-  height: 0.625rem;
-  margin-right: 0.25rem;
-  border-right: 2px solid var(--primary);
-  border-bottom: 2px solid var(--primary);
-  transform: translateY(-25%) rotate(45deg);
-}
-.prompt[open] summary::after { transform: translateY(25%) rotate(-135deg); }
-
-.prompt-autor { margin-left: auto; color: var(--text-muted); font-size: 0.875rem; font-weight: 500; }
-
-.prompt-corpo { padding: 0 1rem 1rem; }
-.prompt-corpo p { max-width: 60rem; font-size: 0.9375rem; }
-
-.prompt-corpo pre {
-  margin: 0.75rem 0 0;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--raio);
-  background: var(--surface-subtle);
-  font-family: var(--font);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.licao {
-  margin-top: 1.5rem;
-  padding: 1.25rem 1.5rem;
-  border-radius: var(--raio);
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.875rem;
-}
-.licao span { display: block; font-size: 0.875rem; line-height: 1.25rem; }
-
-/* ---------------------------------- Evolução ---------------------------------- */
-
-.linha-do-tempo {
-  display: grid;
-  margin-top: 2rem;
-  margin-left: 6px;
-  border-left: 2px solid var(--border);
-}
-
-.linha-do-tempo li { position: relative; padding: 0 0 1.5rem 1.5rem; }
-.linha-do-tempo li:last-child { padding-bottom: 0; }
-
-.linha-do-tempo li::before {
-  content: "";
-  position: absolute;
-  top: 0.5rem;
-  left: -8px;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  background: #FFFFFF;
-}
-
-/* A integração fecha a linha: detalhe no verde do logo */
-.linha-do-tempo li:last-child::before { background: var(--verde); }
-
-.linha-do-tempo time { display: block; color: var(--primary); font-size: 1.25rem; font-weight: 600; line-height: 1.875rem; }
-.linha-do-tempo h3 { color: var(--text); font-size: 1rem; line-height: 1.5rem; }
-.linha-do-tempo p { color: var(--text-muted); font-size: 0.875rem; }
-
-.antes-depois {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-.antes .ampliar { width: auto; max-width: 100%; }
-.antes .ampliar img { width: auto; max-width: 100%; max-height: min(66vh, 40rem); }
-.antes--pilha { display: grid; gap: 1rem; }
-.antes--pilha .ampliar { width: 100%; }
-.antes--pilha .ampliar img { width: 100%; max-height: none; }
-
-.depois { display: grid; justify-items: center; gap: 0.625rem; }
-.depois-legenda { font-size: 0.875rem; }
-.depois-legenda strong { color: var(--primary); }
-
-.alternar { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
-
-.mudancas dl { margin-top: 1rem; }
-.mudancas dl > div { grid-template-columns: 7rem minmax(0, 1fr); }
-.foto--apoio { margin-top: 1rem; }
-
-.estilo {
-  display: grid;
-  gap: 2rem 3rem;
-  margin-top: 1.5rem;
-}
-
-.tipos { margin-top: 0.5rem; }
-
-.tipos li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.25rem 1.5rem;
-  padding-block: 0.625rem;
-  border-top: 1px solid var(--border);
-}
-.tipos li:last-child { border-bottom: 1px solid var(--border); }
-
-.tipo-amostra { color: var(--primary); }
-.tipo-amostra--texto { color: var(--text); }
-.tipo-amostra--apoio { color: var(--text-muted); }
-.tipo-uso { color: var(--text-muted); font-size: 0.8125rem; }
-
-.tipo-botao {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  margin-left: 0.5rem;
-  padding: 0 1rem;
-  border-radius: var(--raio);
-  background: var(--primary);
-  color: #FFFFFF;
-  font-weight: 600;
-}
-
-.cor {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 0.5rem;
-}
-
-.cor-amostra {
-  flex: none;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-}
-.cor-amostra--mini { width: 0.75rem; height: 0.75rem; margin-right: 0.25rem; border: 0; border-radius: 50%; }
-
-/* Amostras reais de cor: o texto da amostra é ilustrativo, o valor vem escrito ao lado */
-.amostra {
-  display: inline-block;
-  padding: 2px 8px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
-.nota--logo { max-width: 40rem; }
-
-.lista-marcada { display: grid; gap: 0.5rem; margin-top: 0.75rem; }
-
-.lista-marcada li { position: relative; padding-left: 1.25rem; font-size: 0.9375rem; }
-
-.lista-marcada li::before {
-  content: "";
-  position: absolute;
-  top: 0.55rem;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--primary);
-}
-
-/* ---------------------------------- Acessibilidade ---------------------------------- */
-
-.aprovados {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 2rem;
-  margin-top: 1.25rem;
-}
-
-.aprovados li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; }
-.aprovados strong { color: var(--primary); font-size: 1.125rem; }
-
-.status {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.125rem;
-  white-space: nowrap;
-}
-.status--fazer { background: var(--warning-bg); color: var(--warning); }
-.status--feito { background: var(--success-bg); color: var(--success); }
-
-/* ---------------------------------- Equipe, conclusão e rodapé ---------------------------------- */
-
-.fecho {
-  display: grid;
-  gap: 2rem 3rem;
-  margin-top: 1.5rem;
-}
-
-.fecho h3 { font-size: 1.25rem; line-height: 1.75rem; }
-.fecho .tabela-rolagem { margin-top: 0.75rem; }
-
-.conclusoes { margin-top: 0.75rem; counter-reset: conclusao; }
-
-.conclusoes li {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0 0.75rem;
-  padding-block: 0.875rem;
-  border-top: 1px solid var(--border);
-  counter-increment: conclusao;
-}
-
-.conclusoes li::before {
-  content: counter(conclusao);
-  grid-row: span 2;
-  color: var(--primary);
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.75rem;
-}
-
-.conclusoes h4 { color: var(--primary); }
-.conclusoes p { font-size: 0.9375rem; }
+/* ---------------------------------- Rodapé ---------------------------------- */
 
 .rodape {
   margin-top: 3rem;
@@ -1341,113 +777,17 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
 
 #conclusao { padding-bottom: 0; }
 
-/* ---------------------------------- Ampliação das fotos ---------------------------------- */
-
-.ampliacao {
-  width: 100vw;
-  max-width: none;
-  height: 100vh;
-  height: 100dvh;
-  max-height: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-
-.ampliacao[open] { display: grid; place-items: center; }
-.ampliacao::backdrop { background: rgba(3, 2, 49, 0.94); }
-
-.ampliacao figure {
-  display: grid;
-  justify-items: center;
-  gap: 0.75rem;
-  max-width: 100%;
-  padding: 4.25rem 1rem 1rem;
-}
-
-.ampliacao img {
-  display: block;
-  max-width: 100%;
-  max-height: calc(100vh - 10rem);
-  border-radius: var(--raio);
-  background: #FFFFFF;
-  object-fit: contain;
-}
-
-.ampliacao figcaption {
-  max-width: 44rem;
-  color: #FFFFFF;
-  font-size: 0.9375rem;
-  text-align: center;
-}
-
-.ampliacao-botao {
-  position: fixed;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: var(--raio);
-  background: #FFFFFF;
-  color: var(--primary);
-  cursor: pointer;
-}
-
-.ampliacao-botao[hidden] { display: none; }
-.ampliacao-fechar { top: 12px; right: 12px; }
-.ampliacao-anterior { top: 12px; left: 12px; }
-.ampliacao-proxima { top: 12px; left: 64px; }
-
-.ampliacao :focus-visible { outline-color: #FFFFFF; box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4); }
-
-/* Enquanto a barra do topo aparece (abaixo de 1100 px) ela já mostra o logo: o da abertura sai */
-@media (max-width: 68.74rem) {
-  .abertura-logo { display: none; }
-  .abertura-squad { margin-top: 0; }
-}
-
 /* ==========================================================================
-   A partir de 700 px: celular e passos lado a lado
+   A partir de 700 px
    ========================================================================== */
 
 @media (min-width: 43.75rem) {
   :root { --margem: 32px; }
 
-  .faixa-numeros ul { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-
-  .dor { grid-template-columns: 14rem minmax(0, 1fr) auto; }
-  .dor .botao { justify-self: end; }
-
-  .us {
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-areas: "info info" "celular passos";
-  }
-  .us-info { grid-area: info; }
-  .us-celular { grid-area: celular; }
-  .us .passos { grid-area: passos; }
-
   .app { grid-template-columns: auto minmax(0, 1fr); }
 
-  .linha-do-tempo {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    margin-left: 0;
-    border-left: 0;
-  }
-
-  .linha-do-tempo li {
-    padding: 1.5rem 1rem 0 0;
-    border-top: 2px solid var(--border);
-  }
-  .linha-do-tempo li:last-child { padding-bottom: 0; }
-  .linha-do-tempo li::before { top: -8px; left: 0; }
-
-  .ampliacao figure { padding: 4.25rem 4.5rem 1.5rem; }
-  .ampliacao-anterior { top: 50%; left: 12px; transform: translateY(-50%); }
-  .ampliacao-proxima { top: 50%; right: 12px; left: auto; transform: translateY(-50%); }
-
-  .lista-marcada--colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 3rem; }
+  /* Divisória entre os passos e os botões, quando cabem na mesma linha */
+  .passos .passos-acoes { padding-left: 1.25rem; border-left: 1px solid var(--border); }
 }
 
 /* ==========================================================================
@@ -1466,8 +806,8 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
     min-height: 100vh;
   }
 
-  .abertura-corpo { grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; }
-  .abertura-dica { display: block; }
+  /* Texto e celular formam um par centralizado, sem vão no meio da tela */
+  .abertura-corpo { grid-template-columns: minmax(0, 44rem) auto; justify-content: center; column-gap: clamp(3rem, 7vw, 8rem); }
 
   /* Índice discreto na lateral: um ponto por seção, nomes ao passar o mouse ou focar */
   .indice {
@@ -1538,36 +878,10 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
 
   .indice-lista button[aria-current="true"] .indice-rotulo { border-color: var(--primary); color: var(--primary); }
 
-  .us {
-    grid-template-columns: minmax(0, 1fr) auto minmax(14rem, 17rem);
-    grid-template-areas: "info celular passos";
-    gap: 2.5rem;
-  }
+  .dor-numero { min-height: 2.2em; }
 
-  .app { gap: 3.5rem; }
-  .mapa-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-  .duas-colunas { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 3rem; }
-  .stitch { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 3rem; }
-
-  .antes-depois { grid-template-columns: minmax(0, 0.8fr) auto minmax(0, 1.2fr); gap: 2.5rem; }
-  .antes-depois--largo { grid-template-columns: minmax(0, 1.25fr) auto minmax(0, 1fr); }
-  .antes { justify-self: end; }
-  .antes--pilha { justify-self: stretch; }
-
-  .estilo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .estilo-largo { grid-column: 1 / -1; }
-
-  .fecho {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    grid-template-areas: "equipe conclusoes" "proximos proximos";
-    align-items: start;
-  }
-  .fecho-equipe { grid-area: equipe; }
-  .fecho-conclusoes { grid-area: conclusoes; }
-  .fecho-proximos { grid-area: proximos; }
-  .fecho-proximos .lista-marcada { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem 2.5rem; }
-  .tabela--equipe tbody th { white-space: nowrap; }
+  .us { grid-template-columns: minmax(0, 40rem) auto; justify-content: center; column-gap: clamp(3rem, 8vw, 9rem); }
+  .app { grid-template-columns: auto minmax(0, 40rem); justify-content: center; column-gap: clamp(3rem, 8vw, 9rem); }
 
   #conclusao > .miolo { margin-block: auto; }
   .rodape { margin-top: 2rem; }
@@ -1585,10 +899,9 @@ ol.passos-lista .passo[aria-current]::before { background: var(--primary); color
   html { scroll-behavior: smooth; }
 
   .botao,
+  .botao-icone,
   .passo,
-  .mapa-item,
-  .atalho-us,
-  .ampliar { transition: background-color 0.15s ease, border-color 0.15s ease; }
+  .mapa-item { transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
 
   .pular { transition: transform 0.15s ease; }
   .indice-ponto { transition: width 0.15s ease, height 0.15s ease; }
