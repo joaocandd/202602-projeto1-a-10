@@ -137,12 +137,6 @@
     // evento nem chega aqui, porque o foco está no documento do iframe.
     if (evento.target.closest && evento.target.closest(CAMPOS)) return;
 
-    if (ampliacao && ampliacao.open) {
-      if (evento.key === 'ArrowRight') { evento.preventDefault(); passarAmpliacao(1); }
-      if (evento.key === 'ArrowLeft') { evento.preventDefault(); passarAmpliacao(-1); }
-      return;
-    }
-
     switch (evento.key) {
       case 'ArrowRight':
       case 'PageDown':
@@ -340,75 +334,6 @@
   ajustarCelulares();
   window.addEventListener('resize', ajustarCelulares);
   document.addEventListener('fullscreenchange', ajustarCelulares);
-
-  /* ------------------------------------------------------------------ */
-  /* Tabelas: nome da coluna em cada célula, para o layout de celular    */
-  /* ------------------------------------------------------------------ */
-
-  todos('.tabela').forEach(function (tabela) {
-    var titulos = todos('thead th', tabela).map(function (th) { return th.textContent.trim(); });
-    todos('tbody tr', tabela).forEach(function (linha) {
-      todos('th, td', linha).forEach(function (celula, i) {
-        if (celula.tagName === 'TD' && titulos[i]) celula.setAttribute('data-rotulo', titulos[i]);
-      });
-    });
-  });
-
-  /* ------------------------------------------------------------------ */
-  /* Ampliação das fotos                                                 */
-  /* ------------------------------------------------------------------ */
-
-  var ampliacao = document.getElementById('ampliacao');
-  var imagemAmpliada = document.getElementById('ampliacao-imagem');
-  var legendaAmpliada = document.getElementById('ampliacao-legenda');
-  var botoesPasso = todos('[data-ampliacao-passo]');
-  var grupoAberto = [];
-  var posicaoAberta = 0;
-  var origemDoFoco = null;
-
-  function mostrarAmpliada() {
-    var botao = grupoAberto[posicaoAberta];
-    var imagem = botao.querySelector('img');
-    var legenda = botao.parentElement.querySelector('figcaption');
-    imagemAmpliada.src = imagem.currentSrc || imagem.src;
-    imagemAmpliada.alt = imagem.alt;
-    legendaAmpliada.textContent = legenda ? legenda.textContent.replace(/\s+/g, ' ').trim() : '';
-    botoesPasso.forEach(function (b) { b.hidden = grupoAberto.length < 2; });
-  }
-
-  function passarAmpliacao(direcao) {
-    if (grupoAberto.length < 2) return;
-    posicaoAberta = (posicaoAberta + direcao + grupoAberto.length) % grupoAberto.length;
-    mostrarAmpliada();
-  }
-
-  if (ampliacao && typeof ampliacao.showModal === 'function') {
-    todos('[data-ampliar]').forEach(function (botao) {
-      botao.addEventListener('click', function () {
-        var grupo = botao.getAttribute('data-ampliar');
-        grupoAberto = grupo ? todos('[data-ampliar="' + grupo + '"]') : [botao];
-        posicaoAberta = grupoAberto.indexOf(botao);
-        origemDoFoco = botao;
-        mostrarAmpliada();
-        ampliacao.showModal();
-      });
-    });
-
-    botoesPasso.forEach(function (botao) {
-      botao.addEventListener('click', function () {
-        passarAmpliacao(Number(botao.getAttribute('data-ampliacao-passo')));
-      });
-    });
-
-    ampliacao.addEventListener('click', function (evento) {
-      // Clique no fundo escuro ou no botão de fechar
-      if (evento.target === ampliacao || evento.target.closest('[data-ampliacao-fechar]')) ampliacao.close();
-    });
-
-    ampliacao.addEventListener('close', function () {
-      if (origemDoFoco) origemDoFoco.focus({ preventScroll: true });
-    });
-  }
 
   // Endereço com #secao: rola até ela depois de ajustar os celulares
   var secaoInicial = location.hash ? document.getElementById(location.hash.slice(1)) : null;
