@@ -18,17 +18,7 @@
 <svg class="so-leitor" aria-hidden="true" focusable="false" width="0" height="0">
   <symbol id="i-reiniciar" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></symbol>
   <symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
-  <symbol id="i-baixar" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></symbol>
-  <symbol id="i-ampliar" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></symbol>
   <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></symbol>
-  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></symbol>
-  <symbol id="i-anterior" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
-  <symbol id="i-proxima" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
-  <symbol id="i-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></symbol>
-  <symbol id="i-fone" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/></symbol>
-  <symbol id="i-duvida" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.2a3 3 0 0 1 5.7 1c0 2-2.9 2.6-2.9 4"/><path d="M12 17.5h.01"/></symbol>
-  <symbol id="i-sino" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4l2-2Z"/><path d="M10 21h4"/></symbol>
-  <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7Z"/></symbol>
 </svg>
 
 <button class="pular" type="button" data-ir="conteudo">Pular para o conteúdo</button>
@@ -48,7 +38,7 @@
     <li class="indice-sub"><button type="button" data-ir="us04"><span class="indice-ponto"></span><span class="indice-rotulo">US04 · Mudança de endereço</span></button></li>
     <li class="indice-sub"><button type="button" data-ir="us05"><span class="indice-ponto"></span><span class="indice-rotulo">US05 · Pagamento e comprovante</span></button></li>
     <li><button type="button" data-ir="app"><span class="indice-ponto"></span><span class="indice-rotulo">O app completo</span></button></li>
-    <li><button type="button" data-ir="conclusao"><span class="indice-ponto"></span><span class="indice-rotulo">Equipe e conclusão</span></button></li>
+    <li><button type="button" data-ir="conclusao"><span class="indice-ponto"></span><span class="indice-rotulo">Conclusão</span></button></li>
   </ol>
 </nav>
 
@@ -81,128 +71,68 @@
   <!-- ============================== 1. Abertura ============================== -->
   <section class="secao abertura" id="abertura" data-parada data-indice tabindex="-1" aria-labelledby="abertura-titulo">
     <div class="abertura-corpo miolo">
-      <div class="abertura-texto">
-        <img class="abertura-logo" src="pages/templates/assets/logo-bulbe-branca.svg" alt="Bulbe Energia" width="100" height="29">
-        <p class="abertura-squad">Squad 10 · Turma A · Ibmec BH</p>
-        <h1 id="abertura-titulo">Da dor do cliente ao app da Bulbe</h1>
-        <p class="abertura-sub">Cinco dores medidas viraram cinco user stories, 31 telas em HTML e CSS e um app único, navegável a partir da tela inicial.</p>
-        <div class="abertura-acoes">
-          <button class="botao botao--claro" type="button" data-ir="app">Ver o app funcionando</button>
-          <a class="botao botao--contorno-claro" href="docs/apresentacao-final/Bulbe_Squad10_Design_UX.pdf" download>
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-baixar"></use></svg>Baixar os slides (PDF)
-          </a>
-        </div>
-        <p class="abertura-dica">No computador, as setas do teclado mudam de seção e a tecla F liga a tela cheia.</p>
-      </div>
+      <h2 id="abertura-titulo">Cinco dores.<br>Cinco soluções.<br><span>Um só app.</span></h2>
       <div class="abertura-celular">
-        <div class="celular" data-celular="abertura" data-inicio="pages/index.html" data-reserva="215">
+        <div class="celular" data-celular="abertura" data-inicio="pages/index.html" data-reserva="110">
           <div class="celular-tela">
             <iframe src="pages/index.html" title="App da Bulbe completo, a partir da tela inicial" width="390" height="844"></iframe>
           </div>
         </div>
       </div>
     </div>
-    <div class="faixa-numeros">
-      <ul class="miolo" aria-label="Números do processo">
-        <li><strong>36</strong><span>oportunidades levantadas nos mapas de jornada</span></li>
-        <li><strong>17</strong><span>notas no SCAMPER sobre o app atual</span></li>
-        <li><strong>4</strong><span>Crazy 8's desenhados à mão</span></li>
-        <li><strong>31</strong><span>telas finais em HTML e CSS</span></li>
-        <li><strong>12</strong><span>pull requests em duas semanas</span></li>
-      </ul>
-    </div>
   </section>
 
   <!-- ============================== 2. O problema ============================== -->
   <section class="secao" id="problema" data-parada data-indice tabindex="-1" aria-labelledby="problema-titulo">
     <div class="miolo">
-      <h2 id="problema-titulo">O problema</h2>
-      <p class="lide">A Bulbe dá desconto na conta de luz com energia solar, mas a comunicação de fatura e pagamento falha nos primeiros meses, e o cliente desiste ou deixa de pagar.</p>
+      <p class="sobretitulo">O problema</p>
+      <h2 id="problema-titulo">O desconto chega.<br>A explicação, não.</h2>
       <ul class="dores">
-        <li class="dor">
-          <p class="dor-numero">32,4%</p>
-          <div class="dor-texto">
-            <h3>A 1ª fatura não é reconhecida e parece golpe</h3>
-            <p>32,4% de inadimplência na 1ª fatura, de set/2025 a jul/2026.</p>
-            <p class="dor-fonte">Fonte: dado da Bulbe</p>
-          </div>
-          <button class="botao botao--leve" type="button" data-ir="us01">Ver a US01</button>
-        </li>
-        <li class="dor">
-          <p class="dor-numero">~20%</p>
-          <div class="dor-texto">
-            <h3>As mensagens vão para o número errado</h3>
-            <p>~20% das mensagens de WhatsApp não chegam ao destino.</p>
-            <p class="dor-fonte">Fonte: dado da Bulbe</p>
-          </div>
-          <button class="botao botao--leve" type="button" data-ir="us02">Ver a US02</button>
-        </li>
-        <li class="dor">
-          <p class="dor-numero">8 dias e 16 h</p>
-          <div class="dor-texto">
-            <h3>A fatura não chega e o suporte demora</h3>
-            <p>8 dias e 16 horas de tempo médio de resposta do suporte.</p>
-            <p class="dor-fonte">Fonte: Reclame Aqui</p>
-          </div>
-          <button class="botao botao--leve" type="button" data-ir="us03">Ver a US03</button>
-        </li>
-        <li class="dor">
-          <p class="dor-numero">3ª causa</p>
-          <div class="dor-texto">
-            <h3>Quem muda de casa cancela o serviço</h3>
-            <p>A mudança de endereço é a 3ª maior causa de churn.</p>
-            <p class="dor-fonte">Fonte: dado da Bulbe</p>
-          </div>
-          <button class="botao botao--leve" type="button" data-ir="us04">Ver a US04</button>
-        </li>
-        <li class="dor">
-          <p class="dor-numero">3 dias úteis</p>
-          <div class="dor-texto">
-            <h3>O cliente paga e não sabe se o pagamento entrou</h3>
-            <p>Até 3 dias úteis de compensação sem saber se o pagamento entrou.</p>
-            <p class="dor-fonte">Fonte: reclamação de 11/09/2026 no Reclame Aqui</p>
-          </div>
-          <button class="botao botao--leve" type="button" data-ir="us05">Ver a US05</button>
-        </li>
+        <li class="dor"><p class="dor-numero">32,4%</p><p class="dor-texto">de inadimplência na 1ª fatura</p><span class="selo">US01</span></li>
+        <li class="dor"><p class="dor-numero">~20%</p><p class="dor-texto">das mensagens não chegam ao cliente</p><span class="selo">US02</span></li>
+        <li class="dor"><p class="dor-numero">8 dias e 16 h</p><p class="dor-texto">de espera pela resposta do suporte</p><span class="selo">US03</span></li>
+        <li class="dor"><p class="dor-numero">3ª causa</p><p class="dor-texto">de cancelamento é a mudança de casa</p><span class="selo">US04</span></li>
+        <li class="dor"><p class="dor-numero">3 dias úteis</p><p class="dor-texto">sem saber se o pagamento entrou</p><span class="selo">US05</span></li>
       </ul>
+      <p class="fonte">Fontes: dados da Bulbe e Reclame Aqui.</p>
     </div>
   </section>
 
   <!-- ============================== 3. As personas ============================== -->
   <section class="secao secao--suave" id="personas" data-parada data-indice tabindex="-1" aria-labelledby="personas-titulo">
     <div class="miolo">
-      <h2 id="personas-titulo">As personas</h2>
-      <p class="lide">Nome e idade são ilustrativos; as dores vêm de reclamações públicas e de dados da Bulbe.</p>
+      <p class="sobretitulo">As personas</p>
+      <h2 id="personas-titulo">Quem sente essas dores</h2>
       <ul class="personas">
-        <li class="cartao persona">
-          <h3>Marlene Aparecida, 58</h3>
-          <p class="persona-quem">Costureira em Contagem, paga cerca de R$ 250 de luz por mês.</p>
-          <p class="persona-precisa"><span>O que precisa</span>Entender a 1ª cobrança antes de pagar.</p>
+        <li class="persona">
+          <p class="persona-fala">“Quero entender a 1ª cobrança antes de pagar.”</p>
+          <p class="persona-nome">Marlene Aparecida, 58</p>
+          <p class="persona-quem">Costureira · Contagem</p>
           <p class="persona-us"><span class="selo">US01</span></p>
         </li>
-        <li class="cartao persona">
-          <h3>Rogério Alves, 52</h3>
-          <p class="persona-quem">Motorista de aplicativo em BH, dois chips e WhatsApp em só um.</p>
-          <p class="persona-precisa"><span>O que precisa</span>Receber a fatura no número certo e pagar por PIX entre corridas.</p>
+        <li class="persona">
+          <p class="persona-fala">“Quero receber a fatura no número certo.”</p>
+          <p class="persona-nome">Rogério Alves, 52</p>
+          <p class="persona-quem">Motorista de aplicativo · BH</p>
           <p class="persona-us"><span class="selo">US02</span> <span class="selo">US03</span></p>
         </li>
-        <li class="cartao persona">
-          <h3>Lucas Mendes, 31</h3>
-          <p class="persona-quem">Analista de suporte em BH, vai entregar o apartamento alugado.</p>
-          <p class="persona-precisa"><span>O que precisa</span>Resolver a mudança sozinho, sem fila no WhatsApp.</p>
+        <li class="persona">
+          <p class="persona-fala">“Quero resolver a mudança sozinho.”</p>
+          <p class="persona-nome">Lucas Mendes, 31</p>
+          <p class="persona-quem">Analista de suporte · BH</p>
           <p class="persona-us"><span class="selo">US04</span></p>
         </li>
-        <li class="cartao persona">
-          <h3>Ricardo Nogueira, 45</h3>
-          <p class="persona-quem">Ex-cliente cobrado quase três anos depois de cancelar.</p>
-          <p class="persona-precisa"><span>O que precisa</span>Provar o que pagou e saber o que ainda deve.</p>
+        <li class="persona">
+          <p class="persona-fala">“Quero provar o que já paguei.”</p>
+          <p class="persona-nome">Ricardo Nogueira, 45</p>
+          <p class="persona-quem">Ex-cliente</p>
           <p class="persona-us"><span class="selo">US05</span></p>
         </li>
-        <li class="cartao persona">
-          <h3>Tatiane Ferreira, 37</h3>
-          <p class="persona-quem">Diarista em Betim, controla os gastos pelo celular.</p>
-          <p class="persona-precisa"><span>O que precisa</span>Saber quanto pagar, qual desconto recebeu e se o valor foi repassado.</p>
-          <p class="persona-us"><span class="selo">Pesquisa base</span> 34 reclamações de 2026</p>
+        <li class="persona">
+          <p class="persona-fala">“Quero saber quanto pago e quanto economizo.”</p>
+          <p class="persona-nome">Tatiane Ferreira, 37</p>
+          <p class="persona-quem">Diarista · Betim</p>
+          <p class="persona-us"><span class="selo">Pesquisa base</span></p>
         </li>
       </ul>
     </div>
@@ -211,22 +141,14 @@
   <!-- ============================== 4. As soluções ============================== -->
   <section class="secao" id="solucoes" data-parada data-indice tabindex="-1" aria-labelledby="solucoes-titulo">
     <div class="miolo">
-      <h2 id="solucoes-titulo">As soluções</h2>
-      <p class="lide">Cada tela entra onde o cliente já toca e termina com uma prova do que foi resolvido.</p>
+      <p class="sobretitulo">As soluções</p>
+      <h2 id="solucoes-titulo">Quatro regras guiaram cada tela</h2>
       <ol class="principios">
-        <li><h3>Começar pela dor, não pela tela</h3><p>Cada fluxo responde ao momento da jornada em que a persona desiste.</p></li>
-        <li><h3>Entrar pelo que o cliente já conhece</h3><p>Fatura, foto de perfil, menu lateral ou botão Ajuda; nada de menu novo.</p></li>
-        <li><h3>Uma decisão por tela</h3><p>Telas curtas, um botão principal e o status sempre escrito.</p></li>
-        <li><h3>Terminar com uma prova</h3><p>Protocolo, código confirmado, transferência solicitada ou comprovante.</p></li>
+        <li><h3>Começar pela dor, não pela tela</h3></li>
+        <li><h3>Entrar pelo que o cliente já conhece</h3></li>
+        <li><h3>Uma decisão por tela</h3></li>
+        <li><h3>Terminar com uma prova</h3></li>
       </ol>
-      <div class="atalhos-us">
-        <button class="atalho-us" type="button" data-ir="us01"><strong>US01</strong><span>Prévia da 1ª fatura</span></button>
-        <button class="atalho-us" type="button" data-ir="us02"><strong>US02</strong><span>Correção do canal de contato</span></button>
-        <button class="atalho-us" type="button" data-ir="us03"><strong>US03</strong><span>Reenvio da fatura pelo Assistente Bulbe</span></button>
-        <button class="atalho-us" type="button" data-ir="us04"><strong>US04</strong><span>Mudança de endereço</span></button>
-        <button class="atalho-us" type="button" data-ir="us05"><strong>US05</strong><span>Confirmação de pagamento e comprovante</span></button>
-      </div>
-      <p class="aviso-valores">As telas funcionam de verdade nos celulares a seguir. Os valores que aparecem nelas (R$ 255, R$ 252,06 etc.) são ilustrativos.</p>
     </div>
   </section>
 
@@ -234,41 +156,32 @@
   <section class="secao secao--suave secao-us" id="us01" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us01-titulo">
     <div class="miolo us">
       <div class="us-info">
-        <p class="us-autor">Samuel Pascini</p>
-        <h3 id="us01-titulo">US01 · Prévia da 1ª fatura</h3>
-        <p class="us-historia">Como cliente prestes a pagar o primeiro mês, quero uma explicação prévia e didática dos valores, para reconhecer a cobrança como legítima e não cancelar o serviço.</p>
-        <dl class="us-dados">
-          <div><dt>Dado da dor</dt><dd>32,4% de inadimplência na 1ª fatura (set/2025 a jul/2026, dado da Bulbe).</dd></div>
-          <div><dt>Persona</dt><dd>Marlene, 58, quer entender o produto antes da primeira cobrança.</dd></div>
-          <div><dt>Entrada no app</dt><dd>Aviso “Entender agora” e sino da tela inicial; aba Consumo abre Sua economia.</dd></div>
-          <div class="prova"><dt>Prova no fim</dt><dd>Fatura explicada e pronta para pagar por PIX.</dd></div>
-          <div><dt>Regra central</dt><dd>A Bulbe apresenta uma fatura unificada (R$ 300 sem Bulbe → R$ 255 com Bulbe, economia de R$ 45 ou 15%, valores ilustrativos), nunca duas faturas.</dd></div>
-        </dl>
+        <p class="sobretitulo">US01 · Samuel Pascini</p>
+        <h3 id="us01-titulo">Prévia da 1ª fatura</h3>
+        <div class="virada">
+          <p class="virada-antes"><strong>32,4%</strong> de inadimplência na 1ª fatura</p>
+          <p class="virada-depois">A 1ª fatura chega explicada, antes de pagar.</p>
+        </div>
+        <div class="passos">
+          <ol class="passos-lista" aria-label="Telas do fluxo da US01">
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/index.html" aria-label="1. Tela inicial com o aviso" title="Tela inicial com o aviso">1</button></li>
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/notificacao.html" aria-label="2. Notificação" title="Notificação">2</button></li>
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/comparacao.html" aria-label="3. Antes x agora" title="Antes x agora">3</button></li>
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/fatura-unificada.html" aria-label="4. Fatura unificada" title="Fatura unificada">4</button></li>
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/economia.html" aria-label="5. Sua economia" title="Sua economia">5</button></li>
+            <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/pagamento.html" aria-label="6. Pagamento" title="Pagamento">6</button></li>
+          </ol>
+          <div class="passos-acoes">
+            <button class="botao-icone" type="button" data-reiniciar="us01" aria-label="Reiniciar o fluxo" title="Reiniciar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg></button>
+            <a class="botao-icone" data-nova-aba="us01" href="pages/Wireframe%2001/index.html" target="_blank" rel="noopener" aria-label="Abrir em tela cheia (abre em nova aba)" title="Abrir em tela cheia"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg></a>
+          </div>
+        </div>
       </div>
       <div class="us-celular">
         <div class="celular" data-celular="us01" data-inicio="pages/Wireframe%2001/index.html" data-reserva="120">
           <div class="celular-tela">
             <iframe src="pages/Wireframe%2001/index.html" title="Telas da US01 funcionando: prévia da 1ª fatura" width="390" height="844" loading="lazy"></iframe>
           </div>
-        </div>
-      </div>
-      <div class="passos">
-        <h4 id="us01-passos">Passos do fluxo</h4>
-        <ol class="passos-lista" aria-labelledby="us01-passos">
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/index.html">Tela inicial com o aviso</button></li>
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/notificacao.html">Notificação</button></li>
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/comparacao.html">Antes x agora</button></li>
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/fatura-unificada.html">Fatura unificada</button></li>
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/economia.html">Sua economia</button></li>
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/pagamento.html">Pagamento</button></li>
-        </ol>
-        <h4 id="us01-apoio">Tela de apoio</h4>
-        <ul class="passos-lista passos-lista--extra" aria-labelledby="us01-apoio">
-          <li><button class="passo" type="button" data-para="us01" data-tela="pages/Wireframe%2001/pages/ajuda.html">Ajuda</button></li>
-        </ul>
-        <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="us01"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
-          <a class="botao botao--leve" data-nova-aba="us01" href="pages/Wireframe%2001/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
@@ -278,35 +191,30 @@
   <section class="secao secao-us" id="us02" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us02-titulo">
     <div class="miolo us">
       <div class="us-info">
-        <p class="us-autor">André Coelho</p>
-        <h3 id="us02-titulo">US02 · Correção do canal de contato</h3>
-        <p class="us-historia">Como usuário, quero corrigir meu canal de contato (telefone/WhatsApp ou e-mail) quando necessário, para que as comunicações e faturas cheguem no meu dispositivo atual.</p>
-        <dl class="us-dados">
-          <div><dt>Dado da dor</dt><dd>~20% das mensagens de WhatsApp da Bulbe não chegam ao destino.</dd></div>
-          <div><dt>Persona</dt><dd>Rogério, 52, cadastrou um número que não tem WhatsApp.</dd></div>
-          <div><dt>Entrada no app</dt><dd>Foto de perfil (avatar) no cabeçalho da tela inicial.</dd></div>
-          <div class="prova"><dt>Prova no fim</dt><dd>Número confirmado por código.</dd></div>
-        </dl>
-        <p class="us-nota">O código de teste fictício aparece na própria tela.</p>
+        <p class="sobretitulo">US02 · André Coelho</p>
+        <h3 id="us02-titulo">Correção do canal de contato</h3>
+        <div class="virada">
+          <p class="virada-antes"><strong>~20%</strong> das mensagens não chegam ao cliente</p>
+          <p class="virada-depois">O cliente corrige o número e confirma por código.</p>
+        </div>
+        <div class="passos">
+          <ol class="passos-lista" aria-label="Telas do fluxo da US02">
+            <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html" aria-label="1. Dados de contato" title="Dados de contato">1</button></li>
+            <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?editar=1" aria-label="2. Corrigir número" title="Corrigir número">2</button></li>
+            <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/confirmar-numero.html?tel=31987654321" aria-label="3. Código de 6 dígitos" title="Código de 6 dígitos">3</button></li>
+            <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?confirmado=1&amp;tel=31987654321" aria-label="4. Número confirmado" title="Número confirmado">4</button></li>
+          </ol>
+          <div class="passos-acoes">
+            <button class="botao-icone" type="button" data-reiniciar="us02" aria-label="Reiniciar o fluxo" title="Reiniciar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg></button>
+            <a class="botao-icone" data-nova-aba="us02" href="pages/Wireframe02/contato.html" target="_blank" rel="noopener" aria-label="Abrir em tela cheia (abre em nova aba)" title="Abrir em tela cheia"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg></a>
+          </div>
+        </div>
       </div>
       <div class="us-celular">
         <div class="celular" data-celular="us02" data-inicio="pages/Wireframe02/contato.html" data-reserva="120">
           <div class="celular-tela">
             <iframe src="pages/Wireframe02/contato.html" title="Telas da US02 funcionando: correção do canal de contato" width="390" height="844" loading="lazy"></iframe>
           </div>
-        </div>
-      </div>
-      <div class="passos">
-        <h4 id="us02-passos">Passos do fluxo</h4>
-        <ol class="passos-lista" aria-labelledby="us02-passos">
-          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html">Dados de contato</button></li>
-          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?editar=1">Corrigir número</button></li>
-          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/confirmar-numero.html?tel=31987654321">Código de 6 dígitos</button></li>
-          <li><button class="passo" type="button" data-para="us02" data-tela="pages/Wireframe02/contato.html?confirmado=1&amp;tel=31987654321">Número confirmado</button></li>
-        </ol>
-        <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="us02"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
-          <a class="botao botao--leve" data-nova-aba="us02" href="pages/Wireframe02/contato.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
@@ -316,39 +224,30 @@
   <section class="secao secao--suave secao-us" id="us03" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us03-titulo">
     <div class="miolo us">
       <div class="us-info">
-        <p class="us-autor">João Victor</p>
-        <h3 id="us03-titulo">US03 · Reenvio da fatura pelo Assistente Bulbe</h3>
-        <p class="us-historia">Como usuário, quero pedir o reenvio da fatura de forma automatizada, para recuperar o recebimento sem abrir um chamado genérico nem esperar atendimento sem previsão.</p>
-        <p class="us-nota">Ajustada na Sprint II: saiu o agendamento de ligação, porque exigiria uma equipe de atendentes.</p>
-        <dl class="us-dados">
-          <div><dt>Dado da dor</dt><dd>8 dias e 16 horas de tempo médio de resposta do suporte no Reclame Aqui.</dd></div>
-          <div><dt>Persona</dt><dd>Rogério, 52, a fatura não chega e ele não pode ficar parado esperando.</dd></div>
-          <div><dt>Entrada no app</dt><dd>Botão flutuante Ajuda, link “Não recebi minha fatura” e “Fale conosco” no menu lateral.</dd></div>
-          <div class="prova"><dt>Prova no fim</dt><dd>Fatura enviada, com protocolo 20261021-0042 e código PIX.</dd></div>
-        </dl>
+        <p class="sobretitulo">US03 · João Victor</p>
+        <h3 id="us03-titulo">Reenvio da fatura pelo Assistente Bulbe</h3>
+        <div class="virada">
+          <p class="virada-antes"><strong>8 dias e 16 h</strong> de espera pela resposta do suporte</p>
+          <p class="virada-depois">A fatura é reenviada na hora, com protocolo.</p>
+        </div>
+        <div class="passos">
+          <ol class="passos-lista" aria-label="Telas do fluxo da US03">
+            <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-assistente.html" aria-label="1. Assistente Bulbe" title="Assistente Bulbe">1</button></li>
+            <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-reenviar.html" aria-label="2. Reenviar fatura" title="Reenviar fatura">2</button></li>
+            <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-enviado.html" aria-label="3. Fatura enviada" title="Fatura enviada">3</button></li>
+            <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-atendimentos.html" aria-label="4. Meus atendimentos" title="Meus atendimentos">4</button></li>
+          </ol>
+          <div class="passos-acoes">
+            <button class="botao-icone" type="button" data-reiniciar="us03" aria-label="Reiniciar o fluxo" title="Reiniciar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg></button>
+            <a class="botao-icone" data-nova-aba="us03" href="pages/Wireframe03/us03-assistente.html" target="_blank" rel="noopener" aria-label="Abrir em tela cheia (abre em nova aba)" title="Abrir em tela cheia"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg></a>
+          </div>
+        </div>
       </div>
       <div class="us-celular">
         <div class="celular" data-celular="us03" data-inicio="pages/Wireframe03/us03-assistente.html" data-reserva="120">
           <div class="celular-tela">
             <iframe src="pages/Wireframe03/us03-assistente.html" title="Telas da US03 funcionando: reenvio da fatura pelo Assistente Bulbe" width="390" height="844" loading="lazy"></iframe>
           </div>
-        </div>
-      </div>
-      <div class="passos">
-        <h4 id="us03-passos">Passos do fluxo</h4>
-        <ol class="passos-lista" aria-labelledby="us03-passos">
-          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-assistente.html">Assistente Bulbe</button></li>
-          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-reenviar.html">Reenviar fatura</button></li>
-          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-enviado.html">Fatura enviada</button></li>
-          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-atendimentos.html">Meus atendimentos</button></li>
-        </ol>
-        <h4 id="us03-apoio">Tela de apoio</h4>
-        <ul class="passos-lista passos-lista--extra" aria-labelledby="us03-apoio">
-          <li><button class="passo" type="button" data-para="us03" data-tela="pages/Wireframe03/us03-faturas.html">Faturas, na versão da US03</button></li>
-        </ul>
-        <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="us03"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
-          <a class="botao botao--leve" data-nova-aba="us03" href="pages/Wireframe03/us03-assistente.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
@@ -358,44 +257,32 @@
   <section class="secao secao-us" id="us04" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us04-titulo">
     <div class="miolo us">
       <div class="us-info">
-        <p class="us-autor">Miguel Fernando Rocha</p>
-        <h3 id="us04-titulo">US04 · Mudança de endereço</h3>
-        <p class="us-historia">Como cliente que está mudando de endereço, quero verificar se posso continuar com o serviço na nova casa e transferir de forma simples, para não precisar cancelar.</p>
-        <dl class="us-dados">
-          <div><dt>Dado da dor</dt><dd>A mudança de endereço é a 3ª maior causa de churn da Bulbe.</dd></div>
-          <div><dt>Persona</dt><dd>Lucas, 31, está de mudança e hoje só consegue cancelar pelo WhatsApp.</dd></div>
-          <div><dt>Entrada no app</dt><dd>“Mudança de endereço” no menu lateral.</dd></div>
-          <div class="prova"><dt>Prova no fim</dt><dd>Transferência solicitada, com protocolo.</dd></div>
-        </dl>
+        <p class="sobretitulo">US04 · Miguel Fernando Rocha</p>
+        <h3 id="us04-titulo">Mudança de endereço</h3>
+        <div class="virada">
+          <p class="virada-antes"><strong>3ª causa</strong> de cancelamento é a mudança de casa</p>
+          <p class="virada-depois">O cliente leva o serviço para a casa nova, sem cancelar.</p>
+        </div>
+        <div class="passos">
+          <ol class="passos-lista" aria-label="Telas do fluxo da US04">
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/index.html" data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html" aria-label="1. Vai se mudar?" title="Vai se mudar?">1</button></li>
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/2-informar-endereco.html" aria-label="2. CEP do novo endereço" title="CEP do novo endereço">2</button></li>
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/3-verificando-disponibilidade.html" aria-label="3. Verificando disponibilidade" title="Verificando disponibilidade">3</button></li>
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/4a-continuidade-disponivel.html" aria-label="4. Continuidade disponível" title="Continuidade disponível">4</button></li>
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/5a-confirmar-transferencia.html" aria-label="5. Confirmar e transferir" title="Confirmar e transferir">5</button></li>
+            <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/6a-solicitacao-realizada.html" aria-label="6. Transferência solicitada" title="Transferência solicitada">6</button></li>
+          </ol>
+          <div class="passos-acoes">
+            <button class="botao-icone" type="button" data-reiniciar="us04" aria-label="Reiniciar o fluxo" title="Reiniciar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg></button>
+            <a class="botao-icone" data-nova-aba="us04" href="pages/Wireframe04/index.html" target="_blank" rel="noopener" aria-label="Abrir em tela cheia (abre em nova aba)" title="Abrir em tela cheia"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg></a>
+          </div>
+        </div>
       </div>
       <div class="us-celular">
         <div class="celular" data-celular="us04" data-inicio="pages/Wireframe04/index.html" data-reserva="120">
           <div class="celular-tela">
             <iframe src="pages/Wireframe04/index.html" title="Telas da US04 funcionando: mudança de endereço" width="390" height="844" loading="lazy"></iframe>
           </div>
-        </div>
-      </div>
-      <div class="passos">
-        <h4 id="us04-passos">Passos do fluxo</h4>
-        <ol class="passos-lista" aria-labelledby="us04-passos">
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/index.html" data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html">Vai se mudar?</button></li>
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/2-informar-endereco.html">CEP do novo endereço</button></li>
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/3-verificando-disponibilidade.html">Verificando disponibilidade</button></li>
-        </ol>
-        <h4 id="us04-a">Cenário A · endereço atendido</h4>
-        <ol class="passos-lista passos-lista--de-4" aria-labelledby="us04-a">
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/4a-continuidade-disponivel.html">Continuidade disponível</button></li>
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/5a-confirmar-transferencia.html">Confirmar e transferir</button></li>
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/6a-solicitacao-realizada.html">Transferência solicitada</button></li>
-        </ol>
-        <h4 id="us04-b">Cenário B · endereço não atendido</h4>
-        <ol class="passos-lista passos-lista--de-4" aria-labelledby="us04-b">
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/4b-indisponibilidade.html">Lista de interesse</button></li>
-          <li><button class="passo" type="button" data-para="us04" data-tela="pages/Wireframe04/5b-motivo-da-desistencia.html">Motivo da desistência</button></li>
-        </ol>
-        <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="us04"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
-          <a class="botao botao--leve" data-nova-aba="us04" href="pages/Wireframe04/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
@@ -405,44 +292,31 @@
   <section class="secao secao--suave secao-us" id="us05" data-parada data-indice data-grupo="solucoes" tabindex="-1" aria-labelledby="us05-titulo">
     <div class="miolo us">
       <div class="us-info">
-        <p class="us-autor">Mariana Vieira Barreto</p>
-        <h3 id="us05-titulo">US05 · Confirmação de pagamento e comprovante</h3>
-        <p class="us-historia">Como cliente que acabou de pagar a fatura, quero verificar se o pagamento foi reconhecido e consultar o comprovante, para ter segurança de que não existe dívida pendente.</p>
-        <p class="us-nota">Redefinida na Sprint II.</p>
-        <dl class="us-dados">
-          <div><dt>Dado da dor</dt><dd>Até 3 dias úteis de compensação em que o cliente fica sem saber se o pagamento entrou.</dd></div>
-          <div><dt>Origem</dt><dd>Reclamação de 11/09/2026 no Reclame Aqui, cobranças mesmo após boletos pagos.</dd></div>
-          <div><dt>Persona</dt><dd>Ricardo, 45, ex-cliente cobrado quase três anos depois de cancelar. Precisa provar o que pagou e saber o que ainda deve.</dd></div>
-          <div><dt>Entrada no app</dt><dd>“Meus pagamentos” no menu lateral.</dd></div>
-          <div class="prova"><dt>Prova no fim</dt><dd>Comprovante do pagamento.</dd></div>
-        </dl>
+        <p class="sobretitulo">US05 · Mariana Vieira Barreto</p>
+        <h3 id="us05-titulo">Confirmação de pagamento e comprovante</h3>
+        <div class="virada">
+          <p class="virada-antes"><strong>3 dias úteis</strong> sem saber se o pagamento entrou</p>
+          <p class="virada-depois">O status aparece no app, com o comprovante.</p>
+        </div>
+        <div class="passos">
+          <ol class="passos-lista" aria-label="Telas do fluxo da US05">
+            <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos.html" aria-label="1. Meus pagamentos" title="Meus pagamentos">1</button></li>
+            <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-aguardando.html" aria-label="2. Detalhe: aguardando" title="Detalhe: aguardando">2</button></li>
+            <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-atraso.html" aria-label="3. Detalhe: em atraso" title="Detalhe: em atraso">3</button></li>
+            <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-pago.html" aria-label="4. Detalhe: pago" title="Detalhe: pago">4</button></li>
+            <li><button class="passo" type="button" data-para="us05" data-tela="pages/comprovante.html" aria-label="5. Comprovante" title="Comprovante">5</button></li>
+          </ol>
+          <div class="passos-acoes">
+            <button class="botao-icone" type="button" data-reiniciar="us05" aria-label="Reiniciar o fluxo" title="Reiniciar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg></button>
+            <a class="botao-icone" data-nova-aba="us05" href="pages/pagamentos.html" target="_blank" rel="noopener" aria-label="Abrir em tela cheia (abre em nova aba)" title="Abrir em tela cheia"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg></a>
+          </div>
+        </div>
       </div>
       <div class="us-celular">
         <div class="celular" data-celular="us05" data-inicio="pages/pagamentos.html" data-reserva="120">
           <div class="celular-tela">
             <iframe src="pages/pagamentos.html" title="Telas da US05 funcionando: confirmação de pagamento e comprovante" width="390" height="844" loading="lazy"></iframe>
           </div>
-        </div>
-      </div>
-      <div class="passos">
-        <h4 id="us05-passos">Passos do fluxo</h4>
-        <ol class="passos-lista" aria-labelledby="us05-passos">
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos.html">Meus pagamentos</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-aguardando.html">Detalhe: aguardando</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-atraso.html">Detalhe: em atraso</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/detalhe-pago.html">Detalhe: pago</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/comprovante.html">Comprovante</button></li>
-        </ol>
-        <h4 id="us05-estados">Estados de demonstração</h4>
-        <ul class="passos-lista passos-lista--extra" aria-labelledby="us05-estados">
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-carregando.html">Lista carregando</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-vazio.html">Lista vazia</button></li>
-          <li><button class="passo" type="button" data-para="us05" data-tela="pages/pagamentos-em-dia.html">Pagamentos em dia</button></li>
-        </ul>
-        <p class="passos-nota">Os estados ficam fora da navegação do app.</p>
-        <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="us05"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Reiniciar</button>
-          <a class="botao botao--leve" data-nova-aba="us05" href="pages/pagamentos.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
@@ -459,114 +333,51 @@
         </div>
       </div>
       <div class="app-mapa">
-        <h2 id="app-titulo">O app completo</h2>
-        <p class="lide">Da tela inicial, o cliente chega a todos os fluxos em até dois toques.</p>
-
-        <div class="mapa-colunas">
-        <div>
-        <h3 id="mapa-1">Um toque</h3>
-        <ul class="mapa" aria-labelledby="mapa-1">
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe02/contato.html">
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-perfil"></use></svg>
-            <span class="mapa-toque">Foto de perfil</span><span class="mapa-abre">Dados de contato</span><span class="selo">US02</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-fone"></use></svg>
-            <span class="mapa-toque">Botão Ajuda</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-duvida"></use></svg>
-            <span class="mapa-toque">Não recebi minha fatura</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/notificacao.html">
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-sino"></use></svg>
-            <span class="mapa-toque">Sino e aviso da fatura</span><span class="mapa-abre">Notificação</span><span class="selo">US01</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/economia.html">
-            <svg class="icone" aria-hidden="true" focusable="false"><use href="#i-raio"></use></svg>
-            <span class="mapa-toque">Aba Consumo</span><span class="mapa-abre">Sua economia</span><span class="selo">US01</span></button></li>
+        <p class="sobretitulo">O app completo</p>
+        <h2 id="app-titulo">Tudo a até dois toques da tela inicial</h2>
+        <ul class="mapa" aria-label="Abrir um fluxo no celular">
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/notificacao.html"
+            data-tambem="pages/Wireframe%2001/pages/comparacao.html pages/Wireframe%2001/pages/fatura-unificada.html pages/Wireframe%2001/pages/economia.html pages/Wireframe%2001/pages/pagamento.html pages/Wireframe%2001/pages/ajuda.html"><span class="selo">US01</span>Prévia da 1ª fatura</button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe02/contato.html"
+            data-tambem="pages/Wireframe02/confirmar-numero.html"><span class="selo">US02</span>Canal de contato</button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html"
+            data-tambem="pages/Wireframe03/us03-reenviar.html pages/Wireframe03/us03-enviado.html pages/Wireframe03/us03-atendimentos.html pages/Wireframe03/us03-faturas.html"><span class="selo">US03</span>Assistente Bulbe</button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe04/index.html"
+            data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html pages/Wireframe04/2-informar-endereco.html pages/Wireframe04/3-verificando-disponibilidade.html pages/Wireframe04/4a-continuidade-disponivel.html pages/Wireframe04/5a-confirmar-transferencia.html pages/Wireframe04/6a-solicitacao-realizada.html pages/Wireframe04/4b-indisponibilidade.html pages/Wireframe04/5b-motivo-da-desistencia.html"><span class="selo">US04</span>Mudança de endereço</button></li>
+          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/pagamentos.html"
+            data-tambem="pages/detalhe-aguardando.html pages/detalhe-atraso.html pages/detalhe-pago.html pages/comprovante.html"><span class="selo">US05</span>Meus pagamentos</button></li>
         </ul>
-
-        </div>
-        <div>
-        <h3 id="mapa-2">Dois toques, pelo menu lateral</h3>
-        <ul class="mapa" aria-labelledby="mapa-2">
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/pagamentos.html">
-            <img class="icone" src="pages/templates/assets/Icon-Pagamentos.svg" alt="" width="22" height="22">
-            <span class="mapa-toque">Meus pagamentos</span><span class="mapa-abre">Meus pagamentos</span><span class="selo">US05</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe04/index.html" data-tambem="pages/Wireframe04/1-mudanca-de-endereco.html">
-            <img class="icone" src="pages/templates/assets/Icon-Endere%C3%A7o.svg" alt="" width="22" height="22">
-            <span class="mapa-toque">Mudança de endereço</span><span class="mapa-abre">Vai se mudar?</span><span class="selo">US04</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe03/us03-assistente.html">
-            <img class="icone" src="pages/templates/assets/Icon-FaleConosco.svg" alt="" width="22" height="22">
-            <span class="mapa-toque">Fale conosco</span><span class="mapa-abre">Assistente Bulbe</span><span class="selo">US03</span></button></li>
-          <li><button class="mapa-item" type="button" data-para="app" data-tela="pages/Wireframe%2001/pages/ajuda.html">
-            <img class="icone" src="pages/templates/assets/Icon-Perguntas.svg" alt="" width="22" height="20">
-            <span class="mapa-toque">Perguntas frequentes</span><span class="mapa-abre">Ajuda</span><span class="selo">US01</span></button></li>
-        </ul>
-
-        </div>
-        </div>
-        <p class="mapa-nota">Links entre fluxos: o “Fale conosco” da US04 e da US05 e o botão “Falar com um atendente” da Ajuda da US01 abrem o Assistente da US03; “Dúvidas frequentes” da US03 abre a Ajuda da US01.</p>
         <div class="passos-acoes">
-          <button class="botao botao--leve" type="button" data-reiniciar="app"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Voltar à tela inicial</button>
-          <a class="botao botao--leve" data-nova-aba="app" href="pages/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Abrir em tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
+          <button class="botao botao--leve" type="button" data-reiniciar="app"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-reiniciar"></use></svg>Tela inicial</button>
+          <a class="botao botao--leve" data-nova-aba="app" href="pages/index.html" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-externo"></use></svg>Tela cheia<span class="so-leitor"> (abre em nova aba)</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== 10. Equipe e conclusão ============================== -->
+  <!-- ============================== 6. Conclusão ============================== -->
   <section class="secao" id="conclusao" data-parada data-indice tabindex="-1" aria-labelledby="conclusao-titulo">
     <div class="miolo">
-      <h2 id="conclusao-titulo">Equipe e conclusão</h2>
-      <div class="fecho">
-        <div class="fecho-equipe">
-          <h3>Equipe</h3>
-          <div class="tabela-rolagem">
-            <table class="tabela tabela--equipe">
-              <thead><tr><th scope="col">Integrante</th><th scope="col">User story</th><th scope="col">Telas</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Samuel Pascini</th><td>US01 · Prévia da 1ª fatura</td><td>7</td></tr>
-                <tr><th scope="row">André Coelho</th><td>US02 · Correção do canal de contato</td><td>2 telas, com 4 estados</td></tr>
-                <tr><th scope="row">João Victor Cândido Lopes Silva</th><td>US03 · Reenvio da fatura pelo Assistente Bulbe</td><td>5</td></tr>
-                <tr><th scope="row">Miguel Fernando Rocha</th><td>US04 · Mudança de endereço</td><td>9</td></tr>
-                <tr><th scope="row">Mariana Vieira Barreto</th><td>US05 · Confirmação de pagamento e comprovante</td><td>8, 3 delas estados de demonstração</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="fecho-conclusoes">
-          <h3>O que concluímos</h3>
-          <ol class="conclusoes">
-            <li><h4>Partir da dor medida manteve cada fluxo curto.</h4><p>Cada US ataca um número: 32,4%, ~20%, 8 dias e 16 h, a 3ª causa de churn.</p></li>
-            <li><h4>A IA acelera, mas a marca vem de regras exatas.</h4><p>Os prompts que deram certo traziam hex, tamanhos, imagens de referência e o que evitar.</p></li>
-            <li><h4>Um padrão comum juntou cinco trabalhos num app.</h4><p>Templates, app.css e navegação integrada ligam todas as telas à tela inicial.</p></li>
-          </ol>
-        </div>
-      </div>
+      <p class="sobretitulo">Conclusão</p>
+      <h2 id="conclusao-titulo">O que aprendemos</h2>
+      <ol class="conclusoes">
+        <li>Partir da dor medida manteve cada fluxo curto.</li>
+        <li>Um padrão comum juntou cinco trabalhos num só app.</li>
+      </ol>
     </div>
     <footer class="rodape">
       <div class="miolo rodape-corpo">
         <img src="pages/templates/assets/logo-bulbe.svg" alt="Bulbe Energia" width="100" height="29">
-        <p>Squad 10 · Turma A · Ibmec BH · Projeto em Ciência de Dados I e Design Gráfico e UX · 2º semestre de 2026</p>
+        <p>Squad 10 · Turma A · Ibmec BH · 2026</p>
         <ul class="rodape-links">
-          <li><a href="https://github.com/joaocandd/202602-projeto1-a-10" target="_blank" rel="noopener">Repositório no GitHub<span class="so-leitor"> (abre em nova aba)</span></a></li>
-          <li><a href="https://www.figma.com/design/6ruqxEURW9tMveAf7caSpO" target="_blank" rel="noopener">Figma do squad<span class="so-leitor"> (abre em nova aba)</span></a></li>
-          <li><a href="docs/apresentacao-final/Bulbe_Squad10_Design_UX.pdf" download>Slides em PDF</a></li>
+          <li><a href="https://github.com/joaocandd/202602-projeto1-a-10" target="_blank" rel="noopener">GitHub<span class="so-leitor"> (abre em nova aba)</span></a></li>
+          <li><a href="https://www.figma.com/design/6ruqxEURW9tMveAf7caSpO" target="_blank" rel="noopener">Figma<span class="so-leitor"> (abre em nova aba)</span></a></li>
         </ul>
       </div>
     </footer>
   </section>
 
 </main>
-
-<!-- Ampliação das fotos -->
-<dialog class="ampliacao" id="ampliacao" aria-label="Imagem ampliada">
-  <button class="ampliacao-botao ampliacao-fechar" type="button" data-ampliacao-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-fechar"></use></svg></button>
-  <button class="ampliacao-botao ampliacao-anterior" type="button" data-ampliacao-passo="-1" aria-label="Imagem anterior"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-anterior"></use></svg></button>
-  <figure>
-    <img alt="" id="ampliacao-imagem">
-    <figcaption id="ampliacao-legenda"></figcaption>
-  </figure>
-  <button class="ampliacao-botao ampliacao-proxima" type="button" data-ampliacao-passo="1" aria-label="Próxima imagem"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-proxima"></use></svg></button>
-</dialog>
 
 <script src="assets/js/site.js" defer></script>
 </body>
